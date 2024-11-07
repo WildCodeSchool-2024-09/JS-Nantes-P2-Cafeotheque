@@ -6,7 +6,7 @@ function Header() {
       <header>
         <nav>
           <a href="">
-            <img alt="" />
+            <img src=".images/logo-coffee.png" alt="Logo Coffee" />
           </a>
         </nav>
       </header>
