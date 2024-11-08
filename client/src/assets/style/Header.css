@@ -16,9 +16,26 @@ nav {
   width: 10vh;
 }
 
-h1 {
+.title-header {
   font-family: "Poetsen One", sans-serif;
   font-size: 54px;
   color: #452f25;
   text-shadow: 2px 5px 3px rgb(160, 157, 157);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 480px) {
+  header {
+    border: none;
+  }
+
+  .title-header {
+    display: none;
+  }
+}
+
+.logo-coffee,
+.avatar-profile {
+  width: 8vh;
 }

@@ -1,31 +1,30 @@
+import { Link } from "react-router-dom";
 import "../assets/style/Header.css";
 
 function Header() {
   return (
     <>
-      <body>
-        <header>
-          <nav>
-            <a href="../src/pages/HomePage.tsx">
-              <img
-                className="logo-coffee"
-                src="../src/assets/images/logo-coffee.png"
-                alt="Logo Coffee"
-              />
-            </a>
+      <header>
+        <nav>
+          <Link to="/">
+            <img
+              className="logo-coffee"
+              src="../src/assets/images/logo-coffee.png"
+              alt="Logo Coffee"
+            />
+          </Link>
 
-            <h1>Caféothèque</h1>
+          <p className="title-header">Caféothèque</p>
 
-            <a href="./pages/ProfilePage.tsx">
-              <img
-                className="avatar-profile"
-                src="../src/assets/images/avatar.png"
-                alt="Profile Avatar"
-              />
-            </a>
-          </nav>
-        </header>
-      </body>
+          <Link to="/profile">
+            <img
+              className="avatar-profile"
+              src="../src/assets/images/avatar.png"
+              alt="Profile Avatar"
+            />
+          </Link>
+        </nav>
+      </header>
     </>
   );
 }
