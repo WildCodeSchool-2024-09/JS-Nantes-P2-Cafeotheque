@@ -1,16 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
 
-body {
-  background-color: #fdf8f6;
-  font-family: "Poetsen One";
-}
-
 body,
 h1,
 h2,
 h3,
 p,
 section {
+  background-color: #fdf8f6;
   font-family: "Poetsen One", sans-serif;
 }
 
@@ -26,6 +22,7 @@ section {
 }
 
 .image-container {
+  border-radius: 20px;
   flex: 0 0 auto;
   width: 300px;
   height: 500px;
@@ -74,4 +71,31 @@ section {
   object-fit: cover;
   margin: 100 auto;
   display: block;
+}
+
+/* Coffee Grain */
+
+.coffee-grain {
+  margin-top: 40px;
+  text-align: center;
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+  margin: 100 auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .image-container {
+    width: 100%;
+    height: auto;
+  }
+  .world-map {
+    width: 100%;
+    height: auto;
+  }
 }
