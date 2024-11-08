@@ -14,7 +14,7 @@ function Header() {
             />
           </Link>
 
-          <h1>Caféothèque</h1>
+          <p className="title-header">Caféothèque</p>
 
           <Link to="/profile">
             <img
