@@ -1,0 +1,89 @@
+#register-container {
+  background-color: #eec7ab05;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  height: 90vh;
+  border: solid 2px #452f2540;
+  padding: 8% 4%;
+  border-radius: 20px;
+  color: #452f25;
+  box-shadow: 0px 3px 3px #452f2540;
+}
+#register-form {
+  height: 75%;
+}
+#register-container > :nth-child(2) {
+  margin-top: 1%;
+}
+
+#register-container > :nth-child(3) {
+  margin-top: 7.5%;
+}
+#register-container > h1 {
+  font-weight: 150;
+  font-size: 25px;
+}
+#register-radio > input {
+  box-shadow: 0px 3px 3px #452f2540;
+}
+#register-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.register-field {
+  display: flex;
+  flex-direction: column;
+  width: 33.4%;
+}
+.register-field > input {
+  height: 33px;
+  border: 0;
+  background-color: white;
+  box-shadow: 0px 3px 5px 0px #452f2540;
+  margin-bottom: 3px;
+  border-radius: 5px;
+}
+.register-radio {
+  width: 33.4%;
+  display: flex;
+  align-items: center;
+}
+.register-radio > label {
+  margin-left: 20px;
+  font-size: 10px;
+}
+.register-field > label {
+  margin-bottom: 6px;
+  margin-top: 15px;
+}
+
+.test {
+  width: 13px;
+  height: 13px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0px 3px 3px #452f2540;
+  position: absolute;
+  display: inline-block;
+  transition: background-color translate 0.3s;
+  z-index: 0;
+}
+
+#test-id:checked + .test {
+  background-color: #bb6e4c;
+}
+
+#test-id:hover + .test {
+  translate: 0 -1px;
+}
+
+#test-id {
+  cursor: pointer;
+  opacity: 0;
+  position: absolute;
+  z-index: 1;
+}
