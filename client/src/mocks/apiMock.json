@@ -1,16 +1,5 @@
 [
   {
-    "id": 0,
-    "name": "Espresso Italien",
-    "continent": "Europe",
-    "country": "Italie",
-    "profile": "Chocolaté",
-    "price": 25.5,
-    "added_date": "2024-10-12",
-    "description": "Un café puissant et intense, avec des arômes de chocolat noir et de caramel brûlé. L'espresso italien est riche, avec une légère amertume qui ajoute de la profondeur à chaque gorgée. Ce café est un incontournable pour les amateurs de café corsé, particulièrement apprécié pour sa texture crémeuse et son caractère robuste. Préparé à l'aide d'une machine espresso, il offre une expérience authentique et énergisante.",
-    "preparation": "Pour préparer un espresso italien parfait, utilisez une machine à espresso avec une pression d'eau de 9 bars. La mouture doit être fine, presque poudreuse, et la quantité de café idéale est d'environ 9 à 10g pour une tasse. L'eau doit être chauffée à environ 90-95°C pour obtenir un espresso crémeux avec une riche crema."
-  },
-  {
     "id": 1,
     "name": "Café de Colombie",
     "continent": "Amérique",
@@ -669,5 +658,16 @@
     "added_date": "2024-10-26",
     "description": "Ce café de La Réunion est un café rare et raffiné, aux arômes fruités et floraux, cultivé sur les pentes volcaniques de l'île. Avec des notes d’agrumes et une légère acidité, il offre une expérience de dégustation vive et exotique. Ce café capture l'essence de la flore de La Réunion, avec une saveur qui évoque les paysages tropicaux et le caractère unique de cette île française de l’océan Indien.",
     "preparation": "Le café réunionnais est préparé en infusant des grains fraîchement moulus, souvent à l'aide d'une cafetière à piston, pour faire ressortir ses arômes fruités et floraux, caractéristiques de cette île volcanique."
+  },
+  {
+    "id": 61,
+    "name": "Espresso Italien",
+    "continent": "Europe",
+    "country": "Italie",
+    "profile": "Chocolaté",
+    "price": 25.5,
+    "added_date": "2024-10-12",
+    "description": "Un café puissant et intense, avec des arômes de chocolat noir et de caramel brûlé. L'espresso italien est riche, avec une légère amertume qui ajoute de la profondeur à chaque gorgée. Ce café est un incontournable pour les amateurs de café corsé, particulièrement apprécié pour sa texture crémeuse et son caractère robuste. Préparé à l'aide d'une machine espresso, il offre une expérience authentique et énergisante.",
+    "preparation": "Pour préparer un espresso italien parfait, utilisez une machine à espresso avec une pression d'eau de 9 bars. La mouture doit être fine, presque poudreuse, et la quantité de café idéale est d'environ 9 à 10g pour une tasse. L'eau doit être chauffée à environ 90-95°C pour obtenir un espresso crémeux avec une riche crema."
   }
 ]
