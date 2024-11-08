@@ -4,7 +4,7 @@ header {
   border-bottom: 0.3rem solid rgba(69, 47, 37, 0.4);
 }
 
-nav {
+header > nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
