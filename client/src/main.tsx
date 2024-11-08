@@ -10,7 +10,7 @@ import App from "./App";
 
 // Import additional components for new routes
 
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 import CoffeesPage from "./pages/CoffeesPage";
 import CoffeeDetailPage from "./pages/CoffeeDetailPage";
 import LoginPage from "./pages/LoginPage";
