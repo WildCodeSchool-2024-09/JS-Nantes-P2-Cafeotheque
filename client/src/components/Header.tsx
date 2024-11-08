@@ -6,7 +6,7 @@ function Header() {
     <>
       <header>
         <nav>
-          <Link to="../src/pages/HomePage.tsx">
+          <Link to="/">
             <img
               className="logo-coffee"
               src="../src/assets/images/logo-coffee.png"
@@ -16,7 +16,7 @@ function Header() {
 
           <h1>Caféothèque</h1>
 
-          <Link to="./pages/ProfilePage.tsx">
+          <Link to="/profile">
             <img
               className="avatar-profile"
               src="../src/assets/images/avatar.png"
