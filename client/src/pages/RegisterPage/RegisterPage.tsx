@@ -1,7 +1,36 @@
 import "./RegisterPage.css";
 import { Link } from "react-router-dom";
-
 import { useState } from "react";
+
+interface FormValueInterface {
+  username: string;
+  email: string;
+  password: string;
+  confirmPassword: string;
+  acceptedConditions: boolean;
+  subscribe: boolean;
+}
+
+function dataValidation(data: FormValueInterface) {
+  // console.log(data);
+  if (
+    data.username.length === 0 ||
+    data.email.length === 0 ||
+    data.password.length === 0 ||
+    data.confirmPassword.length === 0
+  ) {
+    // handle 1 input not long enough
+    return false;
+  }
+  if (!data.acceptedConditions) {
+    // handle conditions not accepted
+    return false;
+  }
+  if (data.password !== data.confirmPassword) {
+    // handle password !== confirm password
+    return false;
+  }
+}
 
 function RegisterPage() {
   const [formValues, setFormValues] = useState({
@@ -9,70 +38,100 @@ function RegisterPage() {
     email: "",
     password: "",
     confirmPassword: "",
-    accepteConditions: false,
+    acceptedConditions: false,
+    subscribe: false,
   });
+
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
-    const { name, value, type, checked } = event.target;
-    // console.log(name, value, type, checked);
-    setFormValues((prevValues) => ({
-      ...prevValues,
-      [name]: type === "checkbox" || type === "radio" ? checked : value,
-    }));
+    const { name, type } = event.target;
+    if (type === "checkbox") {
+      setFormValues((prevValues) => ({
+        ...prevValues,
+        [name]: !prevValues[name as keyof typeof formValues],
+      }));
+    } else {
+      setFormValues((prevValues) => ({
+        ...prevValues,
+        [name]: event.target.value,
+      }));
+    }
+  }
+
+  function handleSubmit() {
+    // console.log(formValues);
+    const usersData = localStorage.getItem("super-secured-database-users");
+    // console.log(usersData);
+    dataValidation(formValues);
+    if (usersData) {
+    } else {
+    }
   }
 
   return (
     <main id="register-container">
-      <h1>Inscription</h1>
+      <h2>Inscription</h2>
       <form id="register-form">
         <div className="register-field">
           <label htmlFor="username">Nom d'utilisateur</label>
           <input
+            autoComplete="username"
             value={formValues.username}
             onChange={handleChange}
             name="username"
+            id="username"
           />
         </div>
         <div className="register-field">
           <label htmlFor="email">Email</label>
           <input
+            autoComplete="email"
             value={formValues.email}
             onChange={handleChange}
             name="email"
+            id="email"
           />
         </div>
         <div className="register-field">
           <label htmlFor="password">Mot de passe</label>
           <input
+            autoComplete="new-password"
             value={formValues.password}
             onChange={handleChange}
             name="password"
+            id="password"
           />
         </div>
         <div className="register-field">
           <label htmlFor="confirm-password">Confirmation du mot de passe</label>
           <input
+            autoComplete="new-password"
             value={formValues.confirmPassword}
             onChange={handleChange}
             name="confirmPassword"
+            id="confirm-password"
           />
         </div>
-        <div className="register-radio">
-          <input type="radio" name="newsletter-subscribe" />
+        <div className="register-checkbox">
+          <input
+            id="newsletter-subscribe"
+            type="checkbox"
+            name="subscribe"
+            onChange={handleChange}
+            checked={formValues.subscribe}
+          />
           <label htmlFor="newsletter-subscribe">
             Je m'abonne à la Newsletter
           </label>
         </div>
-        <div className="register-radio" id="conditions-radio">
+        <div className="register-checkbox" id="conditions-checkbox">
           <input
+            type="checkbox"
+            name="acceptedConditions"
             onChange={handleChange}
-            // onClick={handleChange}
-            checked={formValues.accepteConditions}
+            checked={formValues.acceptedConditions}
             required
-            type="radio"
-            name="accepteConditions"
-            id="test-id"
+            id="condition-usage"
           />
-          <span className="test" />
           <label htmlFor="condition-usage">
             J’accepte les conditions d’utilisation
           </label>
@@ -80,7 +139,7 @@ function RegisterPage() {
       </form>
       <div id="button-container">
         <Link to="/login">Se connecter</Link>
-        <button type="submit" form="myForm">
+        <button onClick={handleSubmit} type="submit" form="myForm">
           S'inscrire
         </button>
       </div>
