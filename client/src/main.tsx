@@ -5,20 +5,12 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 /* ************************************************************************* */
 
+import routes from "./router/routes";
+
 // Import the main app component
 import App from "./App";
 
 // Import additional components for new routes
-
-import CoffeeDetailPage from "./pages/CoffeeDetailPage";
-import CoffeesPage from "./pages/CoffeesPage";
-import HistoryOfCoffeePage from "./pages/HistoryPage";
-import HomePage from "./pages/HomePage/HomePage";
-import LoginPage from "./pages/LoginPage";
-import ProfilePage from "./pages/ProfilePage";
-import RecipeePage from "./pages/RecipeePage";
-import RegisterPage from "./pages/RegisterPage";
-import WorldCoffeePage from "./pages/WorldCoffeePage";
 
 /* ************************************************************************* */
 
@@ -27,44 +19,7 @@ import WorldCoffeePage from "./pages/WorldCoffeePage";
 const router = createBrowserRouter([
   {
     element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <HomePage />,
-      },
-      {
-        path: "/coffees",
-        element: <CoffeesPage />,
-      },
-      {
-        path: "/coffee/:id",
-        element: <CoffeeDetailPage />,
-      },
-      {
-        path: "/login",
-        element: <LoginPage />,
-      },
-      {
-        path: "/register",
-        element: <RegisterPage />,
-      },
-      {
-        path: "/profile",
-        element: <ProfilePage />,
-      },
-      {
-        path: "/recipes",
-        element: <RecipeePage />,
-      },
-      {
-        path: "/world-coffees",
-        element: <WorldCoffeePage />,
-      },
-      {
-        path: "/the-history-of-coffee",
-        element: <HistoryOfCoffeePage />,
-      },
-    ],
+    children: routes,
   },
   // Try adding a new route! For example, "/about" with an About component
 ]);
