@@ -5,10 +5,14 @@ function Header() {
     <>
       <header>
         <nav>
-          <a href="">
-            <img src=".images/logo-coffee.png" alt="Logo Coffee" />
+          <a href="./pages/HomePage.tsx">
+            <img src="./images/logo-coffee.png" alt="Logo Coffee" />
           </a>
+          <h1>Caféothèque</h1>
         </nav>
+        <a href="./pages/ProfilePage.tsx">
+          <img src="./images/" alt="Avatar" />
+        </a>
       </header>
     </>
   );
