@@ -3,17 +3,14 @@ import "./CoffeeDetailPage.css";
 function CoffeeDetailPage() {
   return (
     <div className="coffee-detail-page">
-      {/* Conteneur de l'image et du texte */}
+      {/* Conteneur de l'image du café */}
       <div className="content-container">
-        {/* Image */}
         <div className="image-container">
           <img
             src="https://i.ibb.co/VmKTCwc/Vietnam-coffee-beans-VOA.jpg"
             alt="Café"
           />
         </div>
-
-        {/* Section texte */}
         <div className="text-container">
           <section>
             <h2>Café du Vietnam</h2>
@@ -38,8 +35,6 @@ function CoffeeDetailPage() {
               sucré. Servez chaud ou glacé selon votre préférence.
             </p>
           </section>
-
-          <br />
           <section className="info-section">
             <div className="info-item">
               <span className="label">Continent:</span>
@@ -59,6 +54,15 @@ function CoffeeDetailPage() {
             </div>
           </section>
         </div>
+      </div>
+
+      {/* Nouvelle section pour la carte du monde */}
+      <div className="map-container">
+        <img
+          src="https://i.ibb.co/dMfxKms/Vietnam-orthographic-projection-svg.png"
+          alt="Carte du monde"
+          className="world-map"
+        />
       </div>
     </div>
   );
