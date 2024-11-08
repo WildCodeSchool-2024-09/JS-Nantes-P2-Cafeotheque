@@ -11,7 +11,7 @@ function Header() {
           <h1>Caféothèque</h1>
         </nav>
         <a href="./pages/ProfilePage.tsx">
-          <img src="./images/" alt="Avatar" />
+          <img src="./images/avatar.png" alt="Profile Avatar" />
         </a>
       </header>
     </>
