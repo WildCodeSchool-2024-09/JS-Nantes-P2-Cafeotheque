@@ -1,10 +1,10 @@
-import Nav from "../../components/NavHome";
+import HomeNav from "../../components/HomeNav";
 import "./homeNav.css";
 
 function HomePage() {
   return (
     <>
-      <Nav />
+      <HomeNav />
     </>
   );
 }

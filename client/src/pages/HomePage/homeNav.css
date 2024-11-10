@@ -1,11 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Barriecito&family=MedievalSharp&family=Poetsen+One&display=swap");
-
-:root {
-  --font: "Poetsen One", sans-serif;
-}
 /* Navigation dévouvre les cafés */
-nav {
-  height: 50vh;
+
+.navigation-home-page {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
 }
 
 /* container banniere */
@@ -14,14 +12,13 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 60vh;
 }
 
 /* image banniere */
 
 .banniere-home > img {
   object-fit: cover;
-  object-position: 0px 2%;
   width: 100%;
   height: 100%;
 }
@@ -31,10 +28,8 @@ nav {
 .banniere-home > h2 {
   position: absolute;
   color: rgb(237, 198, 168);
-  font-family: var(--font);
-  font-weight: 400;
   text-shadow: black 10px 5px 8px;
-  font-size: 40px;
+  font-size: 60px;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
 }
