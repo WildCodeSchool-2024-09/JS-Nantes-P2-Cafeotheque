@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "../pages/HomePage/homeNav.css";
 
 function HomeNav() {
   return (
@@ -36,7 +37,6 @@ function HomeNav() {
           </Link>
         </section>
       </nav>
-      ;
     </>
   );
 }

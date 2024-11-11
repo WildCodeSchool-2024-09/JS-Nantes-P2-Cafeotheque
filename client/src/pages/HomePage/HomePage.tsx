@@ -1,10 +1,11 @@
 import HomeNav from "../../components/HomeNav";
-import "./homeNav.css";
+import LatestArrival from "../../components/LatestArrival";
 
 function HomePage() {
   return (
     <>
       <HomeNav />
+      <LatestArrival />
     </>
   );
 }
