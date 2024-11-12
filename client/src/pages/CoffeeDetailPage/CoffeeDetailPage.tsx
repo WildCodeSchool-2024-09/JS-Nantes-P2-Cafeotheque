@@ -1,3 +1,4 @@
+import React from "react";
 import "./CoffeeDetailPage.css";
 
 function CoffeeDetailPage() {
@@ -56,13 +57,70 @@ function CoffeeDetailPage() {
         </div>
       </div>
 
-      {/* Nouvelle section pour la carte du monde */}
-      <div className="map-container">
-        <img
-          src="https://i.ibb.co/dMfxKms/Vietnam-orthographic-projection-svg.png"
-          alt="Carte du monde"
-          className="world-map"
-        />
+      {/* Section avec la carte du monde et les images */}
+      <div className="section-with-map-and-info">
+        <div className="map-container">
+          <img
+            src="https://i.ibb.co/dMfxKms/Vietnam-orthographic-projection-svg.png"
+            alt="Carte du monde"
+            className="world-map"
+          />
+        </div>
+        <div className="extra-info">
+          <div className="coffee-grain">
+            <img
+              src="https://i.ibb.co/kh05r9N/pngegg-2.png"
+              alt="Grains de café"
+            />
+          </div>
+          <div className="card-container">
+            <div className="card">
+              <a href="/coffees-vietnam" className="card-link">
+                <h3>Lien vers tous les cafés de la même origine</h3>
+              </a>
+            </div>
+          </div>
+          <div className="coffee-leaves">
+            <img
+              src="https://i.ibb.co/Tw6jpvR/pngegg-2-2.png"
+              alt="Feuilles de caféier"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* Section des cartes avec des images de café des différentes régions (sous la carte du monde) */}
+      <div className="cards-container">
+        <div className="card-region">
+          <img
+            src="https://i.ibb.co/rcSPZH2/000406-2023-1kg-perou-grains.jpg"
+            alt="Café de Colombie"
+          />
+          <h3>Café de Colombie</h3>
+        </div>
+
+        <div className="card-region">
+          <img
+            src="https://i.ibb.co/F8L7hHd/amerique-latine-fairtrade-bio.jpg"
+            alt="Café du Brésil"
+          />
+          <h3>Café du Brésil</h3>
+        </div>
+
+        <div className="card-region">
+          <img
+            src="https://i.ibb.co/mGydgLc/Borbone-Espresso-Intenso.jpg"
+            alt="Café d'Éthiopie"
+          />
+          <h3>Café d'Éthiopie</h3>
+        </div>
+        <div className="card-region">
+          <img
+            src="https://i.ibb.co/w4qktGd/Cafe-Sati-Pe-rou-bio-fairtrade-moulu-100-arabica.png"
+            alt="Café du Costa Rica"
+          />
+          <h3>Café du Costa Rica</h3>
+        </div>
       </div>
     </div>
   );

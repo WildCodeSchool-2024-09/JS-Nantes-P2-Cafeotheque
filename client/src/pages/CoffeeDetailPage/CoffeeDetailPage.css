@@ -11,7 +11,9 @@ section {
 }
 
 .coffee-detail-page {
-  padding: 10%; /* Réduit le padding global pour éviter trop d'espace */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10%;
 }
 
 .content-container {
@@ -24,19 +26,22 @@ section {
 .image-container {
   border-radius: 20px;
   flex: 0 0 auto;
-  width: 300px;
-  height: 500px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
   overflow: hidden;
+  position: relative;
 }
 
 .image-container img {
-  width: 100%;
-  height: 100%;
+  width: 300px;
+  height: 500px;
   object-fit: cover;
 }
 
 .text-container {
-  flex: 2;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .info-section {
@@ -58,10 +63,18 @@ section {
   margin-right: 10px;
 }
 
-/* Section map */
-
-.map-container {
+/* Section map + nouvelle section avec les images et la card */
+.section-with-map-and-info {
+  display: flex;
+  gap: 30px;
+  align-items: center; /* Centre verticalement les éléments */
+  justify-content: space-between;
   margin-top: 40px;
+}
+
+/* Pour l'image de la carte */
+.map-container {
+  flex: 1;
   text-align: center;
 }
 
@@ -69,33 +82,216 @@ section {
   width: 300px;
   height: 300px;
   object-fit: cover;
-  margin: 100 auto;
-  display: block;
 }
 
-/* Coffee Grain */
+.extra-info {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
+  position: relative; /* Nécessaire pour que les éléments positionnés absolument fonctionnent */
+}
 
 .coffee-grain {
-  margin-top: 40px;
-  text-align: center;
-  width: 400px;
-  height: 300px;
-  object-fit: cover;
-  margin: 100 auto;
-  display: block;
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
 }
 
+.coffee-grain img,
+.coffee-leaves img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coffee-leaves {
+  position: absolute;
+  top: 50%;
+  right: -100%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: 200px;
+  z-index: 10;
+}
+
+/* Card container */
+.card-container {
+  flex: 1;
+  text-align: center;
+}
+
+.card {
+  display: inline-block;
+  border-radius: 15px;
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Container pour les 3 nouvelles cartes */
+.cards-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+/* Card individuel avec image */
+.card-region {
+  background-color: white;
+  display: inline-block;
+  border-radius: 15px;
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.card-region img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card-region h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.card-region:hover {
+  transform: scale(1.05);
+}
+
+.card-region-link {
+  text-decoration: none;
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-weight: bold;
+}
+
+/* Media query pour les petits écrans */
 @media (max-width: 768px) {
   .content-container {
     flex-direction: column;
+    align-items: center;
     gap: 20px;
   }
+
   .image-container {
     width: 100%;
-    height: auto;
+    max-width: 100%;
   }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Toujours garder les proportions et couvrir la zone */
+  }
+
+  .text-container {
+    width: 100%;
+  }
+
+  .section-with-map-and-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .extra-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .coffee-grain,
+  .coffee-leaves {
+    display: none;
+  }
+
+  .card-container {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
   .world-map {
     width: 100%;
     height: auto;
+  }
+}
+@media (max-width: 768px) {
+  /* ... autres styles existants */
+
+  /* Modifier le conteneur des cartes pour qu'il se place en colonne */
+  .cards-container {
+    flex-direction: column; /* Empile les cartes les unes sous les autres */
+    gap: 20px; /* Espacement entre les cartes */
+    align-items: center; /* Centrer les cartes horizontalement */
+  }
+
+  /* Changer la taille des cartes */
+  .card-region {
+    width: 100%; /* Les cartes occupent toute la largeur disponible */
+    max-width: 150px; /* Limiter la largeur max des cartes */
+    height: 150px; /* Fixer une hauteur égale pour toutes les cartes */
+    display: flex; /* Utiliser flex pour centrer le contenu */
+    flex-direction: column;
+    justify-content: center; /* Centrer le texte et l'image verticalement */
+    align-items: center; /* Centrer horizontalement */
+    margin: 0 auto; /* Centrer les cartes horizontalement */
+    position: relative; /* Positionner les éléments à l'intérieur si besoin */
+  }
+
+  /* Assurer que l'image à l'intérieur de la carte ne déborde pas */
+  .card-region img {
+    width: 80%; /* L'image occupe toute la largeur de la carte */
+    height: 100px; /* Fixer une hauteur pour l'image */
+    object-fit: cover; /* Cacher une partie de l'image si nécessaire, sans la déformer */
+    border-radius: 10px; /* Ajouter un petit rayon aux coins des images */
+  }
+
+  .card-region h3 {
+    font-size: 16px; /* Taille du texte dans la carte */
+    font-weight: bold; /* Mettre en gras le texte */
+    color: #333; /* Couleur du texte */
+    margin-top: 10px; /* Espacement entre l'image et le titre */
   }
 }
