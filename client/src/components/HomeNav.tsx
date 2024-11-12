@@ -31,7 +31,7 @@ function HomeNav() {
               <img
                 className="second"
                 src="/images/Café-world.jpg"
-                alt="un plateau avec la carte du monde et un café côté"
+                alt="un plateau avec la carte du monde et un café à côté"
               />
             </figure>
           </Link>

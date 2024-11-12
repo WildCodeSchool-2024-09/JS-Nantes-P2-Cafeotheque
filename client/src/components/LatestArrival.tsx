@@ -14,7 +14,7 @@ interface LatestI {
   preparation: string;
 }
 
-// La fonction LatestArrival sert à récupérer le dernier produit en date et de l'afficher.
+//The LatestArrival function is used to retrieve the latest product and display it.
 
 function LatestArrival() {
   const lastCoffee = (): LatestI => {
