@@ -1,0 +1,79 @@
+#register-container {
+  background-color: #eec7ab05;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  height: 90vh;
+  margin-top: 5vh;
+  border: solid 2px #452f2540;
+  padding: 8% 4%;
+  border-radius: 20px;
+  color: #452f25;
+  box-shadow: 0px 3px 3px #452f2540;
+}
+#register-form {
+  height: 75%;
+}
+#register-container > :nth-child(2) {
+  margin-top: 1%;
+}
+
+#register-container > :nth-child(3) {
+  margin-top: 7.5%;
+}
+#register-container > h2 {
+  font-weight: 150;
+  font-size: 25px;
+}
+#register-radio > input {
+  box-shadow: 0px 3px 3px #452f2540;
+}
+#register-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.register-field {
+  display: flex;
+  flex-direction: column;
+  width: 33.4%;
+}
+.register-field > input {
+  height: 33px;
+  border: 0;
+  background-color: white;
+  box-shadow: 0px 3px 5px 0px #452f2540;
+  margin-bottom: 3px;
+  border-radius: 5px;
+}
+.register-checkbox {
+  margin-top: 2.5%;
+  width: 33.4%;
+  display: flex;
+  align-items: center;
+}
+.register-checkbox > label {
+  margin-left: 10px;
+  font-size: 10px;
+}
+.register-field > label {
+  margin-bottom: 6px;
+  margin-top: 15px;
+}
+#button-container {
+  display: flex;
+}
+#button-container > * {
+  cursor: pointer;
+  text-align: center;
+  color: #ded2d2;
+  background-color: #6a574e;
+  padding: 15px;
+  font-size: 15px;
+  border-radius: 15px;
+  text-decoration: none;
+  border: 0;
+  margin: 0 10px;
+}
