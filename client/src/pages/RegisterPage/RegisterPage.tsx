@@ -36,7 +36,8 @@ function RegisterPage() {
     }
   }
 
-  function dataValidation(data: FormValueInterface) {
+  // Function parsing data
+  function dataValidation(data: FormValueInterface): boolean {
     // console.log(data);
     if (
       data.username.length === 0 ||
@@ -60,13 +61,27 @@ function RegisterPage() {
 
   function handleSubmit() {
     let usersData = localStorage.getItem("super-secured-database-users");
-    // console.log(formValues);
-    // console.log(usersData);
     if (!usersData) {
       localStorage.setItem("super-secured-database-users", "{}");
       usersData = "{}";
     }
     if (dataValidation(formValues)) {
+      const newUsers = JSON.parse(usersData);
+      if (newUsers[formValues.username]) {
+        // handle existing user
+      } else {
+        // handle create user
+        const newUser = {
+          username: formValues.username,
+          password: formValues.password,
+          email: formValues.email,
+        };
+        newUsers[formValues.username] = newUser;
+        localStorage.setItem(
+          "super-secured-database-users",
+          JSON.stringify(newUsers),
+        );
+      }
     }
   }
 
