@@ -5,7 +5,7 @@ import HomePage from "../pages/HomePage/HomePage";
 import LoginPage from "../pages/LoginPage";
 import ProfilePage from "../pages/ProfilePage";
 import RecipeePage from "../pages/RecipeePage";
-import RegisterPage from "../pages/RegisterPage";
+import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import WorldCoffeePage from "../pages/WorldCoffeePage";
 
 const routes = [
