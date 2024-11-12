@@ -1,0 +1,14 @@
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyright-footer {
+  font-family: "Poetsen One", sans-serif;
+  text-align: center;
+  margin: 32px;
+  color: #452f25;
+}
+
+/* Media Queries */
