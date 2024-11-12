@@ -1,6 +1,6 @@
 import "../pages/HomePage/LatestArrival.css";
-import data from "../mocks/apiMock.json";
 import { Link } from "react-router-dom";
+import data from "../mocks/apiMock.json";
 
 interface LatestI {
   id: number;
