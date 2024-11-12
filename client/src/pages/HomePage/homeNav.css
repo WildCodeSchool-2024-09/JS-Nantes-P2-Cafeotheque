@@ -1,4 +1,4 @@
-/* Navigation dévouvre les cafés */
+/* Navigation discover the cafes */
 
 .navigation-home-page {
   display: flex;
@@ -6,7 +6,7 @@
   height: 50%;
 }
 
-/* container banniere */
+/* container banner */
 
 .banniere-home {
   display: flex;
@@ -15,7 +15,7 @@
   height: 60vh;
 }
 
-/* image banniere */
+/* banner image */
 
 .banniere-home > img {
   object-fit: cover;
@@ -23,7 +23,7 @@
   height: 100%;
 }
 
-/* titre Découvre les cafés */
+/* title Discover the cafes */
 
 .banniere-home > h2 {
   position: absolute;
@@ -34,7 +34,7 @@
   -webkit-text-stroke-color: black;
 }
 
-/* Container double banniere  */
+/* Container double banner  */
 
 .container-banniere {
   display: grid;
@@ -44,9 +44,9 @@
   height: 20vh;
 }
 
-/*  Première Bannière  */
+/*  first Banner */
 
-/* titre */
+/* title */
 .container-banniere > a > figure {
   display: flex;
   justify-content: center;
@@ -77,7 +77,7 @@
   height: 20vh;
 }
 
-/* Deuxième Images */
+/* second Images */
 
 .container-banniere .second {
   object-fit: cover;

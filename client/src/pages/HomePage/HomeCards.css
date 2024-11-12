@@ -7,7 +7,7 @@
   margin: 0% 5%;
 }
 
-/* container image cards */
+/* container cards images */
 
 .container-home-cards > a > figure {
   height: 40vh;
@@ -30,7 +30,7 @@
   object-fit: cover;
 }
 
-/* text image cards */
+/* Title image cards */
 
 .container-home-cards > a > figure > figcaption {
   font-size: 32px;
@@ -40,7 +40,7 @@
   -webkit-text-stroke-color: black;
   font-family: "Poetsen One", serif;
 }
-/* premiere card  */
+/* first card  */
 
 .container-home-cards > a > figure > #first-card {
   position: absolute;
@@ -48,7 +48,7 @@
   left: 2%;
 }
 
-/* deuxieme card */
+/* second card */
 
 .container-home-cards > a > figure > #second-card {
   position: absolute;

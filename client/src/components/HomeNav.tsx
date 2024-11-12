@@ -10,7 +10,7 @@ function HomeNav() {
             <h2>Découvre les cafés</h2>
             <img
               src="/images/Grain-de-café.jpg"
-              alt="bannière de grain de café"
+              alt="bannière avec des grains de cafés"
             />
           </figure>
         </Link>
