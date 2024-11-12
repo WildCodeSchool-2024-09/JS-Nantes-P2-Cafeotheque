@@ -11,27 +11,6 @@ interface FormValueInterface {
   subscribe: boolean;
 }
 
-function dataValidation(data: FormValueInterface) {
-  // console.log(data);
-  if (
-    data.username.length === 0 ||
-    data.email.length === 0 ||
-    data.password.length === 0 ||
-    data.confirmPassword.length === 0
-  ) {
-    // handle 1 input not long enough
-    return false;
-  }
-  if (!data.acceptedConditions) {
-    // handle conditions not accepted
-    return false;
-  }
-  if (data.password !== data.confirmPassword) {
-    // handle password !== confirm password
-    return false;
-  }
-}
-
 function RegisterPage() {
   const [formValues, setFormValues] = useState({
     username: "",
@@ -57,13 +36,37 @@ function RegisterPage() {
     }
   }
 
+  function dataValidation(data: FormValueInterface) {
+    // console.log(data);
+    if (
+      data.username.length === 0 ||
+      data.email.length === 0 ||
+      data.password.length === 0 ||
+      data.confirmPassword.length === 0
+    ) {
+      // handle 1 input not long enough
+      return false;
+    }
+    if (!data.acceptedConditions) {
+      // handle conditions not accepted
+      return false;
+    }
+    if (data.password !== data.confirmPassword) {
+      // handle password !== confirm password
+      return false;
+    }
+    return true;
+  }
+
   function handleSubmit() {
+    let usersData = localStorage.getItem("super-secured-database-users");
     // console.log(formValues);
-    const usersData = localStorage.getItem("super-secured-database-users");
     // console.log(usersData);
-    dataValidation(formValues);
-    if (usersData) {
-    } else {
+    if (!usersData) {
+      localStorage.setItem("super-secured-database-users", "{}");
+      usersData = "{}";
+    }
+    if (dataValidation(formValues)) {
     }
   }
 
