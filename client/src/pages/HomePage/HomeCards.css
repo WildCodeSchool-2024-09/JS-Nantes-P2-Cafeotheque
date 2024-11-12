@@ -1,0 +1,57 @@
+/* Container cards  */
+
+.container-home-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12%;
+  margin: 0% 5%;
+}
+
+/* container image cards */
+
+.container-home-cards > a > figure {
+  height: 40vh;
+  border-radius: 10%;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+.container-home-cards > a > figure:hover {
+  box-shadow: rgb(115, 115, 115) 10px 15px 15px 5px;
+  transform: scale(1.1);
+}
+
+/* image cards */
+
+.container-home-cards > a > figure > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10%;
+  object-fit: cover;
+}
+
+/* text image cards */
+
+.container-home-cards > a > figure > figcaption {
+  font-size: 32px;
+  color: rgb(255, 255, 255);
+  opacity: 60%;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-family: "Poetsen One", serif;
+}
+/* premiere card  */
+
+.container-home-cards > a > figure > #first-card {
+  position: absolute;
+  top: 50%;
+  left: 2%;
+}
+
+/* deuxieme card */
+
+.container-home-cards > a > figure > #second-card {
+  position: absolute;
+  top: 25%;
+  left: 10%;
+}
