@@ -1,12 +1,12 @@
-import HomePage from "../pages/HomePage";
-import CoffeesPage from "../pages/CoffeesPage";
 import CoffeeDetailPage from "../pages/CoffeeDetailPage";
+import CoffeesPage from "../pages/CoffeesPage";
+import HistoryOfCoffeePage from "../pages/HistoryPage";
+import HomePage from "../pages/HomePage/HomePage";
 import LoginPage from "../pages/LoginPage";
-import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import ProfilePage from "../pages/ProfilePage";
 import RecipeePage from "../pages/RecipeePage";
+import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import WorldCoffeePage from "../pages/WorldCoffeePage";
-import HistoryOfCoffeePage from "../pages/HistoryPage";
 
 const routes = [
   {
