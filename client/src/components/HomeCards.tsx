@@ -13,7 +13,7 @@ function HomeCards() {
         </Link>
         <Link to="/coffees">
           <figure>
-            <img src="/images/Café-cards.jpg" alt="" />
+            <img src="../public/images/Café-cards.jpg" alt="" />
             <figcaption id="second-card">Café</figcaption>
           </figure>
         </Link>
