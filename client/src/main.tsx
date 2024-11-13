@@ -10,15 +10,15 @@ import App from "./App";
 
 // Import additional components for new routes
 
-import HomePage from "./pages/HomePage";
-import CoffeesPage from "./pages/CoffeesPage";
 import CoffeeDetailPage from "./pages/CoffeeDetailPage/CoffeeDetailPage";
+import CoffeesPage from "./pages/CoffeesPage";
+import HistoryOfCoffeePage from "./pages/HistoryPage";
+import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
 import ProfilePage from "./pages/ProfilePage";
 import RecipeePage from "./pages/RecipeePage";
+import RegisterPage from "./pages/RegisterPage";
 import WorldCoffeePage from "./pages/WorldCoffeePage";
-import HistoryOfCoffeePage from "./pages/HistoryPage";
 
 /* ************************************************************************* */
 
