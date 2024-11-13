@@ -2,7 +2,6 @@
 
 .container-list-left {
   width: 20%;
-  height: 100vh;
 }
 
 /* bordered right */
@@ -15,22 +14,20 @@
 
 /* The unordered list filtered */
 
-.container-list-filtered > div {
+.container-list-filtered {
   display: flex;
-  flex-direction: row-reverse;
+  list-style: none;
   justify-content: center;
-  gap: 5%;
+  width: 100%;
   cursor: pointer;
-  border: solid red 2px;
 }
 
-.container-list-filtered > ul {
-  display: none;
-}
+/* The unordered list select */
 
-.container-list-filtered:active > ul {
-  display: block;
+.list-filter {
+  flex-direction: column;
+  width: 100%;
+  margin: 10%;
+  font-size: 16px;
+  list-style: none;
 }
-/* The unordered bellow listing */
-
-/* Text filtered  */
