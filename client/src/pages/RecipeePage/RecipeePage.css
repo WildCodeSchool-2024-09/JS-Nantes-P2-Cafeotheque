@@ -1,3 +1,7 @@
+body {
+  display: flex;
+}
+
 aside {
   display: flex;
   width: 20%;
@@ -6,6 +10,11 @@ aside {
   align-items: center;
   color: #452f25;
   background-color: rgba(162, 124, 103, 0.5);
+}
+
+main {
+  display: flex;
+  width: 40%;
 }
 
 .ingredients-list {
