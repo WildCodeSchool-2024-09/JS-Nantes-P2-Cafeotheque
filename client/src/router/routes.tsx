@@ -2,7 +2,7 @@ import CoffeeDetailPage from "../pages/CoffeeDetailPage";
 import CoffeesPage from "../pages/CoffeesPage";
 import HistoryOfCoffeePage from "../pages/HistoryPage";
 import HomePage from "../pages/HomePage/HomePage";
-import LoginPage from "../pages/LoginPage";
+import LoginPage from "../pages/LoginPage/LoginPage";
 import ProfilePage from "../pages/ProfilePage";
 import RecipeePage from "../pages/RecipeePage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
