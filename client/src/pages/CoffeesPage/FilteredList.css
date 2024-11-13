@@ -1,0 +1,36 @@
+/* Container filtered aside */
+
+.container-list-left {
+  width: 20%;
+  height: 100vh;
+}
+
+/* bordered right */
+
+.container-list-left > section {
+  margin-top: 20%;
+  height: 80%;
+  border-right: solid black 1px;
+}
+
+/* The unordered list filtered */
+
+.container-list-filtered > div {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 5%;
+  cursor: pointer;
+  border: solid red 2px;
+}
+
+.container-list-filtered > ul {
+  display: none;
+}
+
+.container-list-filtered:active > ul {
+  display: block;
+}
+/* The unordered bellow listing */
+
+/* Text filtered  */

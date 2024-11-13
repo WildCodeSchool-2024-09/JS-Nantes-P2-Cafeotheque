@@ -1,5 +1,5 @@
 import CoffeeDetailPage from "../pages/CoffeeDetailPage";
-import CoffeesPage from "../pages/CoffeesPage";
+import CoffeesPage from "../pages/CoffeesPage/CoffeesPage";
 import HistoryOfCoffeePage from "../pages/HistoryPage";
 import HomePage from "../pages/HomePage/HomePage";
 import LoginPage from "../pages/LoginPage";
