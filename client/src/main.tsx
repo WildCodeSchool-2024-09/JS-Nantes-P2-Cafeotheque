@@ -12,7 +12,7 @@ import App from "./App";
 
 import HomePage from "./pages/HomePage";
 import CoffeesPage from "./pages/CoffeesPage";
-import CoffeeDetailPage from "./pages/CoffeeDetailPage";
+import CoffeeDetailPage from "./pages/CoffeeDetailPage/CoffeeDetailPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import ProfilePage from "./pages/ProfilePage";

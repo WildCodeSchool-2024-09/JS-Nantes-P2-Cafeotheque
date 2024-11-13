@@ -63,6 +63,11 @@ function CoffeeDetailPage() {
             src="https://i.ibb.co/dMfxKms/Vietnam-orthographic-projection-svg.png"
             alt="Carte du monde"
             className="world-map"
+          />{" "}
+          <img
+            src="https://i.ibb.co/6DtJmbv/carte-vietnam-social.jpg"
+            alt="Carte du Vietnam"
+            className="vietnam-map-hover"
           />
         </div>
         <div className="extra-info">
