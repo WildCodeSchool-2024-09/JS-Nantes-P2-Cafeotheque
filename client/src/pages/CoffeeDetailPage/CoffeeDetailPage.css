@@ -258,40 +258,35 @@ section {
   }
 }
 @media (max-width: 768px) {
-  /* ... autres styles existants */
-
-  /* Modifier le conteneur des cartes pour qu'il se place en colonne */
   .cards-container {
-    flex-direction: column; /* Empile les cartes les unes sous les autres */
-    gap: 20px; /* Espacement entre les cartes */
-    align-items: center; /* Centrer les cartes horizontalement */
-  }
-
-  /* Changer la taille des cartes */
-  .card-region {
-    width: 100%; /* Les cartes occupent toute la largeur disponible */
-    max-width: 150px; /* Limiter la largeur max des cartes */
-    height: 150px; /* Fixer une hauteur égale pour toutes les cartes */
-    display: flex; /* Utiliser flex pour centrer le contenu */
     flex-direction: column;
-    justify-content: center; /* Centrer le texte et l'image verticalement */
-    align-items: center; /* Centrer horizontalement */
-    margin: 0 auto; /* Centrer les cartes horizontalement */
-    position: relative; /* Positionner les éléments à l'intérieur si besoin */
+    gap: 20px;
+    align-items: center;
   }
 
-  /* Assurer que l'image à l'intérieur de la carte ne déborde pas */
+  .card-region {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+  }
+
   .card-region img {
-    width: 80%; /* L'image occupe toute la largeur de la carte */
-    height: 100px; /* Fixer une hauteur pour l'image */
-    object-fit: cover; /* Cacher une partie de l'image si nécessaire, sans la déformer */
-    border-radius: 10px; /* Ajouter un petit rayon aux coins des images */
+    width: 80%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
   }
 
   .card-region h3 {
-    font-size: 16px; /* Taille du texte dans la carte */
-    font-weight: bold; /* Mettre en gras le texte */
-    color: #333; /* Couleur du texte */
-    margin-top: 10px; /* Espacement entre l'image et le titre */
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
   }
 }
