@@ -1,10 +1,7 @@
-import "/src/pages/RecipeePage/RecipeePage.css";
-import IngredientsList from "../../components/IngredientsList";
-
-function RecipeePage() {
+import "/src/pages/RecipeePage/PreparationSteps.css";
+function PreparationSteps() {
   return (
     <>
-      <IngredientsList />
       <main>
         <h1>Idée recette : le tiramisu</h1>
         <h2>Préparation</h2>
@@ -15,8 +12,8 @@ function RecipeePage() {
         <h3>Ėtape 5</h3>
         <h2>La recette en vidéo</h2>
       </main>
+      ;
     </>
   );
 }
-
-export default RecipeePage;
+export default PreparationSteps;
