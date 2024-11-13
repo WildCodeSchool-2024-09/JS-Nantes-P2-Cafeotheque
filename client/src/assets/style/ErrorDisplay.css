@@ -1,0 +1,19 @@
+#error-message {
+  --Error-color: rgb(214, 0, 0);
+  border: var(--Error-color) 1px solid;
+  color: var(--Error-color);
+  padding: 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  animation: fadeIn 1s ease-out;
+  text-align: center;
+  margin: 16px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
