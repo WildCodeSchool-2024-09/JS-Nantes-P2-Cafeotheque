@@ -4,7 +4,7 @@ import HistoryOfCoffeePage from "../pages/HistoryPage";
 import HomePage from "../pages/HomePage/HomePage";
 import LoginPage from "../pages/LoginPage";
 import ProfilePage from "../pages/ProfilePage";
-import RecipeePage from "../pages/RecipeePage";
+import RecipeePage from "../pages/RecipeePage/RecipeePage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import WorldCoffeePage from "../pages/WorldCoffeePage";
 
