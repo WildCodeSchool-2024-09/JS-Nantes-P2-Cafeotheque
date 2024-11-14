@@ -1,6 +1,6 @@
 import "./RegisterPage.css";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 interface FormValueInterface {
   username: string;
@@ -85,6 +85,7 @@ function RegisterPage() {
     }
   }
 
+  if (localStorage.getItem("connected-user")) return <Navigate to="/profile" />;
   return (
     <main id="register-container">
       <h2>Inscription</h2>
