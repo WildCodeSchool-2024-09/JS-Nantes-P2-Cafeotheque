@@ -1,4 +1,4 @@
-#register-container {
+#login-container {
   background-color: #eec7ab05;
   margin: auto;
   display: flex;
@@ -12,32 +12,34 @@
   color: #452f25;
   box-shadow: 0px 3px 3px #452f2540;
 }
-#register-container > :nth-child(2) {
+#login-container > :nth-child(2) {
   margin-top: 1%;
 }
 
-#register-container > :nth-child(3) {
-  margin-top: 7.5%;
+#login-container > :last-child {
+  margin-top: 2.5%;
 }
-#register-container > h2 {
+#login-container > h2 {
   font-weight: 150;
   font-size: 25px;
 }
-#register-radio > input {
-  box-shadow: 0px 3px 3px #452f2540;
-}
-#register-form {
+#login-form {
+  height: 75%;
+  width: 50%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  flex-direction: column;
 }
-.register-field {
+.login-field {
   display: flex;
   flex-direction: column;
-  width: 33.4%;
+  align-items: center;
+  width: 100%;
 }
-.register-field > input {
+.login-field > input {
   padding: 0 8px;
+  width: 100%;
   height: 33px;
   border: 0;
   background-color: white;
@@ -45,24 +47,15 @@
   margin-bottom: 3px;
   border-radius: 5px;
 }
-.register-checkbox {
-  margin-top: 2.5%;
-  width: 33.4%;
-  display: flex;
-  align-items: center;
-}
-.register-checkbox > label {
-  margin-left: 10px;
-  font-size: 10px;
-}
-.register-field > label {
+.login-field > label {
+  text-align: center;
   margin-bottom: 6px;
   margin-top: 15px;
 }
-#button-container {
+#button-login-container {
   display: flex;
 }
-#button-container > * {
+#button-login-container > * {
   cursor: pointer;
   text-align: center;
   color: #ded2d2;
@@ -73,20 +66,11 @@
   text-decoration: none;
   border: 0;
   margin: 0 10px;
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
-#button-container > *:hover {
+#button-login-container > *:hover {
   background-color: #56463f;
   translate: 0 2px;
-}
-
-@media (max-width: 570px) {
-  #register-form {
-    flex-direction: column;
-  }
-  .register-field {
-    width: auto;
-  }
-  .register-checkbox {
-    width: auto;
-  }
 }
