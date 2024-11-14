@@ -1,43 +1,27 @@
-/*aside {
+.ingredients-list-container {
   display: flex;
   width: 20%;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  color: #452f25;
-  background-color: rgba(162, 124, 103, 0.5);
+  background-color: #a27c67;
 }
 
-.ingredients-list {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: start;
-  gap: 16px;
-  margin-bottom: 16px;
-  padding-bottom: 132px;
+.ingredients-list-title {
+  margin: 8px;
+  border-bottom: 1px solid #452f25;
+  padding: 16px;
+  padding-bottom: 3px;
+  align-items: center;
 }
 
-.ingredients-list > ul {
-  font-size: small;
-}
-
-.ingredients-list > ul > li {
-  margin-bottom: 3px;
-}
-
-.tiramisu-illustration {
+.tiramisu-ingredients-list {
+  width: 25%;
   margin: 32px;
 }
 
-.tiramisu-illustration > img {
-  width: 10rem;
-  border-radius: 32px;
+.ingredients-list {
+  margin-bottom: 100px;
+  padding-bottom: 32px;
+  padding-top: 16px;
 }
-
-.ingredients-title {
-  margin: 16px;
-  border-bottom: 1px solid #452f25;
-  padding-bottom: 8px;
-}
-*/
