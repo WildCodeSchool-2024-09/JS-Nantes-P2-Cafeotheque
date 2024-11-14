@@ -6,7 +6,8 @@ import "../pages/CoffeesPage/FilteredList.css";
 // first list
 function FilteredList() {
   const [isActive, setIsActive] = useState({
-    continent: { status: false, checked: [] },
+    // { status: false, checked: [] }
+    continent: false,
     pays: false,
     profile: false,
     price: false,

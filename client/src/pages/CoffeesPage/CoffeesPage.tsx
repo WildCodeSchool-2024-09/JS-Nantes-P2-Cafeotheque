@@ -1,9 +1,12 @@
 import FilteredList from "../../components/FilteredList";
+import "./CoffeesPage.css";
 
 function CoffeesPage() {
   return (
     <>
-      <FilteredList />
+      <main className="container-central-coffeespages">
+        <FilteredList />
+      </main>
     </>
   );
 }
