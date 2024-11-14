@@ -5,16 +5,12 @@
   flex-direction: column;
   align-items: center;
   width: 80%;
-  height: 90vh;
   margin-top: 5vh;
   border: solid 2px #452f2540;
   padding: 8% 4%;
   border-radius: 20px;
   color: #452f25;
   box-shadow: 0px 3px 3px #452f2540;
-}
-#register-form {
-  height: 75%;
 }
 #register-container > :nth-child(2) {
   margin-top: 1%;
@@ -41,6 +37,7 @@
   width: 33.4%;
 }
 .register-field > input {
+  padding: 0 8px;
   height: 33px;
   border: 0;
   background-color: white;
@@ -76,4 +73,20 @@
   text-decoration: none;
   border: 0;
   margin: 0 10px;
+}
+#button-container > *:hover {
+  background-color: #56463f;
+  translate: 0 2px;
+}
+
+@media (max-width: 570px) {
+  #register-form {
+    flex-direction: column;
+  }
+  .register-field {
+    width: auto;
+  }
+  .register-checkbox {
+    width: auto;
+  }
 }
