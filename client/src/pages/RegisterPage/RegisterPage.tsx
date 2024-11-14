@@ -102,6 +102,7 @@ function RegisterPage() {
         <div className="register-field">
           <label htmlFor="email">Email</label>
           <input
+            type="email"
             autoComplete="email"
             value={formValues.email}
             onChange={handleChange}
@@ -112,6 +113,7 @@ function RegisterPage() {
         <div className="register-field">
           <label htmlFor="password">Mot de passe</label>
           <input
+            type="password"
             autoComplete="new-password"
             value={formValues.password}
             onChange={handleChange}
@@ -122,6 +124,7 @@ function RegisterPage() {
         <div className="register-field">
           <label htmlFor="confirm-password">Confirmation du mot de passe</label>
           <input
+            type="password"
             autoComplete="new-password"
             value={formValues.confirmPassword}
             onChange={handleChange}
