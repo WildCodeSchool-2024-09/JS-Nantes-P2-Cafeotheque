@@ -1,0 +1,10 @@
+#pagination-container {
+  display: flex;
+  height: 5vh;
+}
+#pagination-container > * {
+  margin: 10px;
+}
+#pagination-container > img {
+  height: 100%;
+}
