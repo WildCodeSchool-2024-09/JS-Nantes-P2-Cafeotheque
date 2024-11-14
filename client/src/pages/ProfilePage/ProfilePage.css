@@ -1,0 +1,6 @@
+#profile-page-main-container {
+  display: flex;
+}
+#filters {
+  width: 30%;
+}
