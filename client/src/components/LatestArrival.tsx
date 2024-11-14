@@ -1,23 +1,11 @@
 import "../pages/HomePage/LatestArrival.css";
 import { Link } from "react-router-dom";
 import data from "../mocks/apiMock.json";
-
-interface LatestI {
-  id: number;
-  name: string;
-  continent: string;
-  country: string;
-  profile: string;
-  price: number;
-  added_date: string;
-  description: string;
-  preparation: string;
-}
-
+import type { DataModel } from "../models/index";
 //The LatestArrival function is used to retrieve the latest product and display it.
 
 function LatestArrival() {
-  const lastCoffee = (): LatestI => {
+  const lastCoffee = (): DataModel => {
     let result = 0;
     let ret = data[0];
     for (let i = 0; i < data.length; i++) {
