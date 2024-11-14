@@ -1,1 +1,1 @@
-export * from "./DataModels";
+export * from "./DataModel";
