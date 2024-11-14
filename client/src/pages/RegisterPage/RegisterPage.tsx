@@ -1,6 +1,7 @@
 import "./RegisterPage.css";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ErrorDisplay from "../../components/ErrorDisplay";
 
 interface FormValueInterface {
   username: string;
@@ -20,6 +21,7 @@ function RegisterPage() {
     acceptedConditions: false,
     subscribe: false,
   });
+  const [errorMessage, setErrorMessage] = useState<null | string>(null);
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, type } = event.target;
@@ -37,26 +39,38 @@ function RegisterPage() {
   }
 
   // Function parsing data
-  function dataValidation(data: FormValueInterface): boolean {
-    // console.log(data);
+  function dataValidation(data: FormValueInterface): boolean | undefined {
     if (
       data.username.length === 0 ||
       data.email.length === 0 ||
       data.password.length === 0 ||
       data.confirmPassword.length === 0
     ) {
-      // handle 1 input not long enough
+      // handle 1 field not long enough
+      setErrorMessage("Un champ est manquant");
       return false;
     }
     if (!data.acceptedConditions) {
       // handle conditions not accepted
+      setErrorMessage("Veuillez accepter les conditions d'utilisation");
       return false;
     }
     if (data.password !== data.confirmPassword) {
       // handle password !== confirm password
+      setErrorMessage("Les deux mot de passe ne sont pas identiques");
       return false;
     }
-    return true;
+    if (
+      (data.username.length ||
+        data.email.length ||
+        data.password.length ||
+        data.confirmPassword.length) &&
+      data.acceptedConditions &&
+      data.password === data.confirmPassword
+    ) {
+      setErrorMessage(null);
+      return true;
+    }
   }
 
   function handleSubmit() {
@@ -155,6 +169,7 @@ function RegisterPage() {
           </label>
         </div>
       </form>
+      {errorMessage && <ErrorDisplay message={errorMessage} />}
       <div id="button-container">
         <Link to="/login">Se connecter</Link>
         <button onClick={handleSubmit} type="submit" form="myForm">
