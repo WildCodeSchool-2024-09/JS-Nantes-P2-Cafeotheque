@@ -16,8 +16,8 @@ function RecipeePage() {
     recipe && (
       <main className="main-recipe-tiramisu-page">
         <IngredientsList
-          imgSrc={recipe[0].aside.illustration}
-          ingredients={recipe[0].aside.ingredients}
+        // imgSrc={recipe[0].aside.illustration}
+        //ingredients={recipe[0].aside.ingredients}
         />
         <PreparationSteps />
       </main>
