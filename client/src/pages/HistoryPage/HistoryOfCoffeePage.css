@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+
+body {
+  background-color: #fdf8f6;
+  font-family: "Poetsen One", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 10%; /* Espacement du titre du haut de la page */
+  color: #3e2a47;
+  text-shadow: 2px 3px 1px black;
+}
+
+#Coffee-Bottom-image {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+  transition: transform 1s ease, filter 1s ease, opacity 1s ease; /* Transition fluide pour l'image */
+  opacity: 1; /* L'image commence visible */
+}
+
+#Coffee-Bottom-image.reflection {
+  transform: scaleY(-1);
+  opacity: 0.3;
+  filter: blur(2px);
+}
+
+.card-container {
+  z-index: 5;
+  background-color: transparent;
+  margin: 600px auto;
+  width: 80%;
+  max-width: 600px;
+}
+
+.card {
+  display: inline-block;
+  border-radius: 15px;
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #c5b1a6;
+  box-sizing: border-box;
+}
+
+.scroll-card {
+  width: 80px;
+  height: 80px;
+  background-color: #c18a65;
+  color: white;
+  border-radius: 30px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 6px 6px 8px rgb(0, 0, 0);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.scroll-card:hover {
+  background-color: #eec7ab;
+}
+
+.arrow {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.scroll-card .arrow {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Animation pour la transformation */
+}
+
+.scroll-card:hover .arrow {
+  transform: scale(1.5); /* Agrandissement de la flèche au passage de la souris */
+}
