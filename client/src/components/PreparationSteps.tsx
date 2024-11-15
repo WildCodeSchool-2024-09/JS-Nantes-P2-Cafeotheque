@@ -38,8 +38,6 @@ function PreparationSteps() {
           <p>Mettre au réfrigérateur 4 heures minimum puis déguster frais.</p>
         </li>
       </ol>
-
-      <h2>La recette en vidéo</h2>
     </main>
   );
 }
