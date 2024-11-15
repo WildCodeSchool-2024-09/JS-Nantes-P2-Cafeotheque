@@ -7,9 +7,7 @@ const HistoryOfCoffeePage = () => {
   const [imagePosition, setImagePosition] = useState<number>(0);
   const [blurAmount, setBlurAmount] = useState<number>(0);
   const [imageVisible, setImageVisible] = useState<boolean>(true);
-  const [firstCardVisible, setFirstCardVisible] = useState<boolean>(false);
   const [secondCardVisible, setSecondCardVisible] = useState<boolean>(false);
-  const [fourthCardVisible, setFourthCardVisible] = useState<boolean>(false);
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
@@ -38,6 +36,18 @@ const HistoryOfCoffeePage = () => {
     } else {
       setScrolling(false);
     }
+
+    // Mise à jour de la visibilité de la flèche de remontée
+    const secondCardElement = document.getElementById("second-card");
+    if (secondCardElement) {
+      const secondCardPosition = secondCardElement.offsetTop;
+      // Afficher la flèche quand la deuxième carte est visible
+      if (scrollY >= secondCardPosition) {
+        setSecondCardVisible(true);
+      } else {
+        setSecondCardVisible(false);
+      }
+    }
   };
 
   // Fonction pour défiler vers une carte spécifique
@@ -46,7 +56,6 @@ const HistoryOfCoffeePage = () => {
       | React.MouseEvent<HTMLDivElement>
       | React.KeyboardEvent<HTMLDivElement>,
     targetId: string,
-    setVisible: React.Dispatch<React.SetStateAction<boolean>>,
   ) => {
     if (
       event.type === "click" ||
@@ -56,7 +65,6 @@ const HistoryOfCoffeePage = () => {
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: "smooth", block: "center" });
-        setVisible(true); // Rendre la flèche visible après avoir défilé vers la card
       }
     }
   };
@@ -77,8 +85,8 @@ const HistoryOfCoffeePage = () => {
       {/* Card avec flèche vers la première card */}
       <div
         className="scroll-card first-scroll-card"
-        onClick={(e) => scrollToCard(e, "first-card", setFirstCardVisible)}
-        onKeyUp={(e) => scrollToCard(e, "first-card", setFirstCardVisible)}
+        onClick={(e) => scrollToCard(e, "first-card")}
+        onKeyUp={(e) => scrollToCard(e, "first-card")}
       >
         <div className="arrow">&#8595;</div>
       </div>
@@ -89,6 +97,7 @@ const HistoryOfCoffeePage = () => {
           <h3>
             Histoire du café : d’où vient-il ?
             <br />
+            <br />
             Découvert en Éthiopie il y a plus de mille ans, le café s’est
             répandu grâce au commerce et est devenu populaire dans le monde
             entier. Aujourd’hui, les principaux producteurs sont le Brésil, la
@@ -97,22 +106,12 @@ const HistoryOfCoffeePage = () => {
         </div>
       </div>
 
-      {/* Flèche pour aller à la deuxième carte, visible uniquement si la première est visible */}
-      {firstCardVisible && (
-        <div
-          className="scroll-card"
-          onClick={(e) => scrollToCard(e, "second-card", setSecondCardVisible)}
-          onKeyUp={(e) => scrollToCard(e, "second-card", setSecondCardVisible)}
-        >
-          <div className="arrow">&#8595;</div>
-        </div>
-      )}
-
-      {/* Deuxième card avec le texte sur les débuts de la culture du café */}
+      {/* Deuxième carte avec le texte sur les débuts de la culture du café */}
       <div className="card-container">
         <div id="second-card" className="card">
           <h3>
-            Les débuts de la culture du café
+            Les débuts de la culture du café.
+            <br />
             <br />
             D’après les recherches scientifiques sur le sujet, c’est à Harar que
             la culture des caféiers voit le jour. La production de la plante y
@@ -122,11 +121,12 @@ const HistoryOfCoffeePage = () => {
         </div>
       </div>
 
-      {/* Troisième card avec le texte sur l'origine du café' */}
+      {/* Troisième carte avec le texte sur l'origine du café */}
       <div className="card-container">
         <div id="third-card" className="card">
           <h3>
-            Les origines du café
+            Les origines du café.
+            <br />
             <br />
             La légende raconte qu’il y a plus de mille ans, un berger nommé
             Khaldi aurait découvert le café en Éthiopie (autrefois appelée
@@ -136,41 +136,32 @@ const HistoryOfCoffeePage = () => {
             énergisant des cerises des plants du caféier arabica, en raison de
             la caféine qu’elles renfermaient. C’est de là qu’est parti
             l’invention du célèbre café au goût si exquis.
-          </h3>{" "}
+          </h3>
         </div>
       </div>
 
-      {/* Flèche pour aller à la quatrième carte, visible uniquement si la première est visible */}
-      {firstCardVisible && (
-        <div
-          className="scroll-card"
-          onClick={(e) => scrollToCard(e, "fourth-card", setFourthCardVisible)}
-          onKeyUp={(e) => scrollToCard(e, "fourth-card", setFourthCardVisible)}
-        >
-          <div className="arrow">&#8595;</div>
-        </div>
-      )}
-
-      {/* Quatrième card avec le texte sur l'ouverture du premier établissement' */}
+      {/* Quatrième carte avec le texte sur l'ouverture du premier établissement */}
       <div className="card-container">
         <div id="fourth-card" className="card">
           <h3>
-            L’ouverture du 1er établissement de café
+            L’ouverture du 1er établissement de café.
+            <br />
             <br />
             C’est en 1554 à Constantinople que s’ouvre le 1er établissement de
             café, grâce à Hakim d’Alep et Djem de Damas. À partir de ce
             moment-là, il conquiert rapidement le cœur et les papilles des
             Européens. Grâce à cette montée en puissance de la consommation du
             café celui ci connaitra un succès fou auprès des populations.
-          </h3>{" "}
+          </h3>
         </div>
       </div>
 
-      {/* Cinquième card avec le texte sur la popularisation du café' */}
+      {/* Cinquième carte avec le texte sur la popularisation du café */}
       <div className="card-container">
         <div id="fifth-card" className="card">
           <h3>
-            La popularisation du café
+            La popularisation du café.
+            <br />
             <br />
             La plus grande partie du négoce de café se passe au port de Moccha,
             d’où l’appellation Moka, célèbre variété de café dont on a tous déjà
@@ -180,7 +171,7 @@ const HistoryOfCoffeePage = () => {
             dans la péninsule Arabique. Très utilisé par les religieux car il
             permet de rester éveillé pour prier, le café est adopté par la
             population : il est souvent décrit comme le vin de l’Islam.
-          </h3>{" "}
+          </h3>
         </div>
       </div>
 
@@ -193,12 +184,12 @@ const HistoryOfCoffeePage = () => {
         />
       </div>
 
-      {/* Sixième card avec le texte sur le café arrive en europe' */}
+      {/* Sixième carte avec le texte sur le café arrive en europe */}
       <div className="card-container">
-        <div id="fifth-card" className="card">
+        <div id="sixth-card" className="card">
           <h3>
-            {" "}
-            Le café arrive en Europe
+            Le café arrive en Europe.
+            <br />
             <br />
             C’est via les commerçants italiens que les premiers grains de café
             font leur entrée en Europe au début du XVIIe siècle, à Venise qui
@@ -215,16 +206,16 @@ const HistoryOfCoffeePage = () => {
             Saviez-vous que la percolation sera utilisée pour la préparation du
             café pour la première fois en France ? Avant, c’est l’infusion qui
             permettait de préparer les grains.
-          </h3>{" "}
+          </h3>
         </div>
       </div>
 
       {/* Flèche pour retourner en haut de la page (si vous le souhaitez) */}
       {secondCardVisible && (
         <div
-          className="scroll-card"
+          className="scroll-card fixed-bottom-right"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          onKeyUp={(e) => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onKeyUp={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
           <div className="arrow">&#8593;</div>
         </div>
@@ -240,10 +231,18 @@ const HistoryOfCoffeePage = () => {
           style={{
             transform: `translateY(${imagePosition}px)`,
             filter: `blur(${blurAmount}px)`,
-            transition: "transform 1s ease, filter 1s ease, opacity 1s ease", // Transition plus longue pour la disparition
+            transition: "transform 1s ease, filter 1s ease, opacity 1s ease",
           }}
         />
       )}
+      {/* Nouvelle image à la fin de la page */}
+      <div className="final-image-container">
+        <img
+          src="https://i.ibb.co/BNsb2fK/pngegg-1-1.png"
+          alt="grain coffee final page"
+          className="final-image"
+        />
+      </div>
     </div>
   );
 };
