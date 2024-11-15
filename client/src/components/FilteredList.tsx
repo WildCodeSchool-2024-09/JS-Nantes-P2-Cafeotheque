@@ -1,13 +1,19 @@
-import { useState } from "react";
-import data from "../mocks/apiMock.json";
+import { useEffect, useState } from "react";
 import "../pages/CoffeesPage/FilteredList.css";
-import type { dataModel } from "../types/FilteredList";
+import type { DataModel } from "../models";
 
 // function that makes a ul appear when you click on the input
 // first list
+
 function FilteredList() {
+  const [data, setData] = useState<DataModel[]>([]);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/api/coffee")
+      .then((response) => response.json())
+      .then((result) => setData(result));
+  }, []);
   const [isActive, setIsActive] = useState({
-    // { status: false, checked: [] }
     continent: false,
     country: false,
     profile: false,
@@ -21,7 +27,7 @@ function FilteredList() {
     }));
   };
 
-  function getDifferentElement(key: keyof dataModel) {
+  function getDifferentElement(key: keyof DataModel) {
     const newArray = [];
     for (let i = 0; i < data.length; i++) {
       if (newArray.indexOf(data[i][key].toString()) === -1) {
