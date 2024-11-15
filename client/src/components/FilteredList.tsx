@@ -1,6 +1,7 @@
 import { useState } from "react";
 import data from "../mocks/apiMock.json";
 import "../pages/CoffeesPage/FilteredList.css";
+import type { dataModel } from "../types/FilteredList";
 
 // function that makes a ul appear when you click on the input
 // first list
@@ -8,7 +9,7 @@ function FilteredList() {
   const [isActive, setIsActive] = useState({
     // { status: false, checked: [] }
     continent: false,
-    pays: false,
+    country: false,
     profile: false,
     price: false,
   });
@@ -18,20 +19,7 @@ function FilteredList() {
       ...prevValues,
       [target.id]: !prevValues[target.id as keyof typeof isActive],
     }));
-    console.warn(handleClick);
   };
-
-  interface dataModel {
-    id: number;
-    name: string;
-    continent: string;
-    country: string;
-    profile: string;
-    price: number;
-    added_date: string;
-    description: string;
-    preparation: string;
-  }
 
   function getDifferentElement(key: keyof dataModel) {
     const newArray = [];
@@ -46,7 +34,7 @@ function FilteredList() {
     <aside className="container-list-left">
       <section>
         {/* Listing Continents */}
-        <ul className="container-list-filtered">
+        <section className="container-list-filtered">
           <input
             onClick={handleClick}
             type="checkbox"
@@ -55,7 +43,7 @@ function FilteredList() {
           />
           <label htmlFor="continent">Continent</label>
           {isActive.continent && (
-            <li className="list-filter">
+            <section className="list-filter">
               {getDifferentElement("continent").map((el) => {
                 return (
                   <div key={`${el}-porte`}>
@@ -66,15 +54,20 @@ function FilteredList() {
                   </div>
                 );
               })}
-            </li>
+            </section>
           )}
-        </ul>
+        </section>
 
-        <ul className="container-list-filtered">
-          <input onClick={handleClick} type="checkbox" id="pays" name="pays" />
-          <label htmlFor="pays">Pays</label>
-          {isActive.pays && (
-            <li className="list-filter">
+        <section className="container-list-filtered">
+          <input
+            onClick={handleClick}
+            type="checkbox"
+            id="country"
+            name="country"
+          />
+          <label htmlFor="country">Pays</label>
+          {isActive.country && (
+            <section className="list-filter">
               {getDifferentElement("country").map((el) => {
                 return (
                   <div key={`${el}-porte`}>
@@ -85,20 +78,20 @@ function FilteredList() {
                   </div>
                 );
               })}
-            </li>
+            </section>
           )}
-        </ul>
+        </section>
 
-        <ul className="container-list-filtered">
+        <section className="container-list-filtered">
           <input
             onClick={handleClick}
             type="checkbox"
             id="profile"
-            name="saveur"
+            name="profile"
           />
-          <label htmlFor="saveur">Saveur</label>
+          <label htmlFor="profile">Saveur</label>
           {isActive.profile && (
-            <li className="list-filter">
+            <section className="list-filter">
               {getDifferentElement("profile").map((el) => {
                 return (
                   <div key={`${el}-porte`}>
@@ -109,14 +102,19 @@ function FilteredList() {
                   </div>
                 );
               })}
-            </li>
+            </section>
           )}
-        </ul>
-        <ul className="container-list-filtered">
-          <input onClick={handleClick} type="checkbox" id="price" name="prix" />
-          <label htmlFor="prix">Prix</label>
+        </section>
+        <section className="container-list-filtered">
+          <input
+            onClick={handleClick}
+            type="checkbox"
+            id="price"
+            name="price"
+          />
+          <label htmlFor="price">Prix</label>
           {isActive.price && (
-            <li className="list-filter">
+            <section className="list-filter">
               {getDifferentElement("price").map((el) => {
                 return (
                   <div key={`${el}-porte`}>
@@ -127,9 +125,9 @@ function FilteredList() {
                   </div>
                 );
               })}
-            </li>
+            </section>
           )}
-        </ul>
+        </section>
       </section>
     </aside>
   );
