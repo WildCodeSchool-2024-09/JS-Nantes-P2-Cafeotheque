@@ -1,4 +1,3 @@
-import { useState } from "react";
 import type React from "react";
 import "../assets/style/Pagination.css";
 import type { DataModel } from "../models/index";
@@ -7,15 +6,17 @@ interface PaginationProps {
   data: DataModel[];
   setCurrentElem: React.Dispatch<React.SetStateAction<DataModel[]>>;
   nbrOfElementsPerPage: number;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
+  page: number;
 }
 
 function Pagination({
   data,
   nbrOfElementsPerPage,
   setCurrentElem,
+  setPage,
+  page,
 }: PaginationProps) {
-  const [page, setPage] = useState<number>(0);
-
   function handleClickPage(sign: string) {
     if (sign === "-" && page > 0) {
       setPage((currentPage) => currentPage - 1);
@@ -50,7 +51,10 @@ function Pagination({
           onClick={() => handleClickPage("-")}
         />
       )}
-      <p>{page + 1}</p>
+      <p>
+        {(data.length > nbrOfElementsPerPage * (page + 1) || page > 0) &&
+          page + 1}
+      </p>
       {data.length > nbrOfElementsPerPage * (page + 1) && (
         <img
           className="pointer"

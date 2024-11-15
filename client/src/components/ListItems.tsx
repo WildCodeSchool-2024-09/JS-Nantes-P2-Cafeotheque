@@ -14,6 +14,7 @@ interface ListItemsProps {
 
 function ListItems({ data }: ListItemsProps) {
   const [currentElem, setCurrentElem] = useState<DataModel[]>([]);
+  const [page, setPage] = useState(0);
   // Defining choices of numbers of element per page
   const nbrOfElemsPerPageChoice = [6, 12, 24];
   // Defining the numbers of elements per page, default is the index 0 of choice array
@@ -22,6 +23,7 @@ function ListItems({ data }: ListItemsProps) {
   );
 
   useEffect(() => {
+    setPage(0);
     setCurrentElem(data.slice(0, nbrOfElementsPerPage));
   }, [nbrOfElementsPerPage, data]);
 
@@ -31,6 +33,7 @@ function ListItems({ data }: ListItemsProps) {
       <NbrOfElementsPerPage
         setNbrOfElementsPerPage={setNbrOfElementsPerPage}
         possibleNumbers={nbrOfElemsPerPageChoice}
+        setPage={setPage}
       />
       {/* Listing the items */}
       <div id="list-items-container">
@@ -40,9 +43,11 @@ function ListItems({ data }: ListItemsProps) {
       </div>
       {/* Pagination component */}
       <Pagination
+        page={page}
         data={data}
         setCurrentElem={setCurrentElem}
         nbrOfElementsPerPage={nbrOfElementsPerPage}
+        setPage={setPage}
       />
     </div>
   );

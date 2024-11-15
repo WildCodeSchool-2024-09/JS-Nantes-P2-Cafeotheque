@@ -3,6 +3,7 @@ import "../assets/style/NbrOfElementsPerPage.css";
 interface NbrOfElementsPerPageProps {
   possibleNumbers: number[];
   setNbrOfElementsPerPage: React.Dispatch<React.SetStateAction<number>>;
+  setPage: React.Dispatch<React.SetStateAction<number>>;
 }
 
 function NbrOfElementsPerPage({
