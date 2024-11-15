@@ -1,0 +1,4 @@
+/* for align two components listcoffees and filteredlist */
+.container-central-coffeespages {
+  display: flex;
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./LoginPage.css";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import ErrorDisplay from "../../components/ErrorDisplay";
 
 function LoginPage() {
@@ -9,6 +9,7 @@ function LoginPage() {
     username: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name } = event.target;
@@ -37,6 +38,7 @@ function LoginPage() {
       if (usersData[formValues.username].password === formValues.password) {
         // handle connection
         localStorage.setItem("connected-user", `${formValues.username}`);
+        navigate("/profile");
         setFormError(null);
       } else {
         // handle wrong password
@@ -48,6 +50,7 @@ function LoginPage() {
     }
   }
 
+  if (localStorage.getItem("connected-user")) return <Navigate to="/profile" />;
   return (
     <main id="login-container">
       <h2>Connexion</h2>
