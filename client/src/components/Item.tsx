@@ -14,7 +14,7 @@ function Item({ item }: ItemProps) {
         src={
           item.imgSrc
             ? item.imgSrc
-            : "https://www.svgrepo.com/show/312966/roasted-coffee-bean.svg"
+            : "https://www.svgrepo.com/show/513896/coffee-cup-tea.svg"
         }
       />
       <p>{item.name}</p>
