@@ -7,6 +7,9 @@ const HistoryOfCoffeePage = () => {
   const [imagePosition, setImagePosition] = useState<number>(0);
   const [blurAmount, setBlurAmount] = useState<number>(0);
   const [imageVisible, setImageVisible] = useState<boolean>(true);
+  const [firstCardVisible, setFirstCardVisible] = useState<boolean>(false);
+  const [secondCardVisible, setSecondCardVisible] = useState<boolean>(false);
+  const [fourthCardVisible, setFourthCardVisible] = useState<boolean>(false);
 
   const handleScroll = () => {
     const scrollY = window.scrollY;
@@ -37,20 +40,24 @@ const HistoryOfCoffeePage = () => {
     }
   };
 
-  // Fonction pour défiler vers la première card de texte
+  // Fonction pour défiler vers une carte spécifique
   const scrollToCard = (
     event:
       | React.MouseEvent<HTMLDivElement>
       | React.KeyboardEvent<HTMLDivElement>,
+    targetId: string,
+    setVisible: React.Dispatch<React.SetStateAction<boolean>>,
   ) => {
     if (
       event.type === "click" ||
       event.type === "Enter" ||
       event.type === " "
     ) {
-      document
-        .getElementById("first-card")
-        ?.scrollIntoView({ behavior: "smooth" });
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth", block: "center" });
+        setVisible(true); // Rendre la flèche visible après avoir défilé vers la card
+      }
     }
   };
 
@@ -69,15 +76,15 @@ const HistoryOfCoffeePage = () => {
 
       {/* Card avec flèche vers la première card */}
       <div
-        className="scroll-card"
-        onClick={scrollToCard}
-        onKeyUp={scrollToCard} // Ajout de l'événement clavier
+        className="scroll-card first-scroll-card"
+        onClick={(e) => scrollToCard(e, "first-card", setFirstCardVisible)}
+        onKeyUp={(e) => scrollToCard(e, "first-card", setFirstCardVisible)}
       >
         <div className="arrow">&#8595;</div>
       </div>
 
-      {/* Première card avec du texte */}
-      <div className="card-container">
+      {/* Première carte avec le texte sur l'histoire du café */}
+      <div className="card-container first-card-container">
         <div id="first-card" className="card">
           <h3>
             Histoire du café : d’où vient-il ?
@@ -89,6 +96,139 @@ const HistoryOfCoffeePage = () => {
           </h3>
         </div>
       </div>
+
+      {/* Flèche pour aller à la deuxième carte, visible uniquement si la première est visible */}
+      {firstCardVisible && (
+        <div
+          className="scroll-card"
+          onClick={(e) => scrollToCard(e, "second-card", setSecondCardVisible)}
+          onKeyUp={(e) => scrollToCard(e, "second-card", setSecondCardVisible)}
+        >
+          <div className="arrow">&#8595;</div>
+        </div>
+      )}
+
+      {/* Deuxième card avec le texte sur les débuts de la culture du café */}
+      <div className="card-container">
+        <div id="second-card" className="card">
+          <h3>
+            Les débuts de la culture du café
+            <br />
+            D’après les recherches scientifiques sur le sujet, c’est à Harar que
+            la culture des caféiers voit le jour. La production de la plante y
+            est maîtrisée, ainsi que la torréfaction des grains. Puis, la
+            culture s’étend et se développe au Yémen à partir du XIIIe siècle.
+          </h3>
+        </div>
+      </div>
+
+      {/* Troisième card avec le texte sur l'origine du café' */}
+      <div className="card-container">
+        <div id="third-card" className="card">
+          <h3>
+            Les origines du café
+            <br />
+            La légende raconte qu’il y a plus de mille ans, un berger nommé
+            Khaldi aurait découvert le café en Éthiopie (autrefois appelée
+            Abyssinie). Après avoir ingéré les fruits d’un arbuste, ses chèvres
+            étaient plus agitées qu’habituellement. Curieux, il décida d’en
+            consommer lui-même. C’est là qu’il se rendit compte du pouvoir
+            énergisant des cerises des plants du caféier arabica, en raison de
+            la caféine qu’elles renfermaient. C’est de là qu’est parti
+            l’invention du célèbre café au goût si exquis.
+          </h3>{" "}
+        </div>
+      </div>
+
+      {/* Flèche pour aller à la quatrième carte, visible uniquement si la première est visible */}
+      {firstCardVisible && (
+        <div
+          className="scroll-card"
+          onClick={(e) => scrollToCard(e, "fourth-card", setFourthCardVisible)}
+          onKeyUp={(e) => scrollToCard(e, "fourth-card", setFourthCardVisible)}
+        >
+          <div className="arrow">&#8595;</div>
+        </div>
+      )}
+
+      {/* Quatrième card avec le texte sur l'ouverture du premier établissement' */}
+      <div className="card-container">
+        <div id="fourth-card" className="card">
+          <h3>
+            L’ouverture du 1er établissement de café
+            <br />
+            C’est en 1554 à Constantinople que s’ouvre le 1er établissement de
+            café, grâce à Hakim d’Alep et Djem de Damas. À partir de ce
+            moment-là, il conquiert rapidement le cœur et les papilles des
+            Européens. Grâce à cette montée en puissance de la consommation du
+            café celui ci connaitra un succès fou auprès des populations.
+          </h3>{" "}
+        </div>
+      </div>
+
+      {/* Cinquième card avec le texte sur la popularisation du café' */}
+      <div className="card-container">
+        <div id="fifth-card" className="card">
+          <h3>
+            La popularisation du café
+            <br />
+            La plus grande partie du négoce de café se passe au port de Moccha,
+            d’où l’appellation Moka, célèbre variété de café dont on a tous déjà
+            entendu parler. C’est dans ce port que la majorité du café destiné
+            au commerce transite vers d’autres pays. En parallèle, le café
+            arabica devient une boisson rituelle et médicinale très populaire
+            dans la péninsule Arabique. Très utilisé par les religieux car il
+            permet de rester éveillé pour prier, le café est adopté par la
+            population : il est souvent décrit comme le vin de l’Islam.
+          </h3>{" "}
+        </div>
+      </div>
+
+      {/* Image sous la dernière carte */}
+      <div className="europe-container">
+        <img
+          src="https://i.ibb.co/7rrdv3v/Diffusion-Cafe-Europe.webp"
+          alt="Diffusion du café en Europe"
+          className="history-image"
+        />
+      </div>
+
+      {/* Sixième card avec le texte sur le café arrive en europe' */}
+      <div className="card-container">
+        <div id="fifth-card" className="card">
+          <h3>
+            {" "}
+            Le café arrive en Europe
+            <br />
+            C’est via les commerçants italiens que les premiers grains de café
+            font leur entrée en Europe au début du XVIIe siècle, à Venise qui
+            était alors un grand port de commerce. En effet, déjà spécialisés
+            dans le commerce d’épices entre l’Orient et l’Europe, le café
+            s’ajoute naturellement aux produits que les Italiens introduisent en
+            Europe. Le célèbre breuvage a d’abord commencé à se répandre chez
+            les moines et les commerçants vénitiens, puis auprès du peuple. Le
+            café arrive rapidement dans plusieurs pays d’Europe, comme la
+            Hollande, l’Angleterre, l’Autriche, etc. En France, les premiers
+            sacs de café vert sont débarqués en 1644 à Marseille, importés par
+            des Égyptiens. Sa consommation très appréciée s’est rapidement
+            popularisée, les premiers cafés français voient le jour en 1671.
+            Saviez-vous que la percolation sera utilisée pour la préparation du
+            café pour la première fois en France ? Avant, c’est l’infusion qui
+            permettait de préparer les grains.
+          </h3>{" "}
+        </div>
+      </div>
+
+      {/* Flèche pour retourner en haut de la page (si vous le souhaitez) */}
+      {secondCardVisible && (
+        <div
+          className="scroll-card"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          onKeyUp={(e) => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <div className="arrow">&#8593;</div>
+        </div>
+      )}
 
       {/* Image en bas de la page */}
       {imageVisible && (

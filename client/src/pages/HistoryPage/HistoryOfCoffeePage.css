@@ -10,7 +10,7 @@ body {
 h1 {
   font-size: 3rem;
   text-align: center;
-  margin-top: 10%; /* Espacement du titre du haut de la page */
+  margin-top: 10%;
   color: #3e2a47;
   text-shadow: 2px 3px 1px black;
 }
@@ -22,8 +22,8 @@ h1 {
   width: 100%;
   height: auto;
   z-index: -1;
-  transition: transform 1s ease, filter 1s ease, opacity 1s ease; /* Transition fluide pour l'image */
-  opacity: 1; /* L'image commence visible */
+  transition: transform 1s ease, filter 1s ease, opacity 1s ease;
+  opacity: 1;
 }
 
 #Coffee-Bottom-image.reflection {
@@ -35,9 +35,9 @@ h1 {
 .card-container {
   z-index: 5;
   background-color: transparent;
-  margin: 600px auto;
+  margin: 100px auto;
   width: 80%;
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .card {
@@ -63,7 +63,7 @@ h1 {
   background-color: #c18a65;
   color: white;
   border-radius: 30px;
-  padding: 30px;
+  padding: 20px;
   text-align: center;
   cursor: pointer;
   margin: 50px auto;
@@ -82,14 +82,53 @@ h1 {
 .arrow {
   font-size: 2rem;
   cursor: pointer;
-}
-
-.scroll-card .arrow {
-  font-size: 2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease; /* Animation pour la transformation */
+  transition: transform 0.3s ease;
 }
 
 .scroll-card:hover .arrow {
-  transform: scale(1.5); /* Agrandissement de la flèche au passage de la souris */
+  transform: scale(1.5);
+}
+
+/* Première flèche : ajouter un espacement plus grand */
+.first-scroll-card {
+  width: 80px;
+  height: 80px;
+  background-color: #c18a65;
+  color: white;
+  border-radius: 30px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  margin: 50px auto 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 6px 6px 8px rgb(0, 0, 0);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Première carte : ajouter un espacement plus grand au-dessus */
+.first-card-container {
+  z-index: 5;
+  background-color: transparent;
+  margin: 600px auto 0;
+  width: 80%;
+  max-width: 500px;
+}
+
+/* Conteneur de l'image sur l'Europe */
+.europe-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* Image de l'histoire du café */
+.history-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
 }
