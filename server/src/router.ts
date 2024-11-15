@@ -14,7 +14,7 @@ router.get("/api/items/:id", itemActions.read);
 router.post("/api/items", itemActions.add);
 
 import coffeeData from "./mocks/CoffeeMock.json";
-import RecipeData from "./mocks/RecipeeMock.json";
+import RecipeData from "./mocks/RecipeMock.json";
 
 router.get("/api/coffee", (_, res) => {
   res.status(200).json(coffeeData);
