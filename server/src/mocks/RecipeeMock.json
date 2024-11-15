@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "aside": {
+      "illustration": "tiramisu.jpg",
+      "ingredients": [
+        "3 oeufs",
+        "100 g de sucre roux",
+        "1 sachet de sucre vanillé",
+        "250 g de mascarpone",
+        "50 cl de café noir",
+        "24 biscuits à la cuillère",
+        "30 g de cacao amer"
+      ]
+    },
+    "mainContent": {
+      "name": "le tiramisu",
+      "preparationSteps": [
+        "Séparer les blancs des jaunes d'oeufs. Mélanger les jaunes avec le sucre roux et le sucre vanillé.",
+        "Ajouter le mascarpone au fouet.",
+        "Monter les blancs en neige et les incorporer délicatement à la spatule au mélange précédent. Réserver.",
+        "Mouiller les biscuits dans le café rapidement avant d'en tapisser le fond du plat.",
+        "Recouvrir d'une couche de crème au mascarpone puis répéter l'opération en alternant couche de biscuits et couche de crème en terminant par cette dernière. Saupoudrer de cacao.",
+        "Mettre au réfrigérateur 4 heures minimum puis déguster frais."
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "aside": {
+      "illustration": "affogato.jpg",
+      "ingredients": [
+        "4 boules de glace à la vanille",
+        "4 expressos bien chauds",
+        "50 g de chocolat noir (optionnel, pour la garniture)",
+        "Quelques feuilles de menthe fraîche (optionnel)"
+      ]
+    },
+    "mainContent": {
+      "name": "l'affogato",
+      "preparationSteps": [
+        "Préparer les expressos bien chauds et les réserver.",
+        "Placer une boule de glace à la vanille dans chaque coupe ou verre résistant à la chaleur.",
+        "Verser doucement un expresso chaud sur chaque boule de glace.",
+        "Pour une touche gourmande, râper un peu de chocolat noir sur le dessus.",
+        "Ajouter une feuille de menthe pour la décoration si désiré.",
+        "Servir immédiatement et savourer l'alliance chaude et froide."
+      ]
+    }
+  }
+]
