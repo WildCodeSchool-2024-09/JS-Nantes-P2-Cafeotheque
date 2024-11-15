@@ -14,28 +14,28 @@ router.get("/api/items/:id", itemActions.read);
 router.post("/api/items", itemActions.add);
 
 import coffeeData from "./mocks/CoffeeMock.json";
-import RecipeData from "./mocks/RecipeMock.json";
+import recipeData from "./mocks/RecipeMock.json";
 
 router.get("/api/coffee", (_, res) => {
   res.status(200).json(coffeeData);
 });
 
 router.get("/api/coffee/:id", (req, res) => {
-  const id = req.params.id;
-  for (const el of coffeeData)
-    if (el.id === Number.parseInt(id)) res.status(200).json(el);
-  res.status(404).send("Coffee was not found");
+  const id = Number.parseInt(req.params.id);
+  const coffee = coffeeData.find((el) => el.id === id);
+  if (coffee) res.status(200).json(coffee);
+  else res.status(404).send("Coffee was not found");
 });
 
 router.get("/api/recipe", (_, res) => {
-  res.status(200).json(RecipeData);
+  res.status(200).json(recipeData);
 });
 
 router.get("/api/recipe/:id", (req, res) => {
-  const id = req.params.id;
-  for (const el of RecipeData)
-    if (el.id === Number.parseInt(id)) res.status(200).json(el);
-  res.status(404).send("Recipe was not found");
+  const id = Number.parseInt(req.params.id);
+  const recipe = recipeData.find((el) => el.id === id);
+  if (recipe) res.status(200).json(recipe);
+  else res.status(404).send("Recipe was not found");
 });
 
 /* ************************************************************************* */
