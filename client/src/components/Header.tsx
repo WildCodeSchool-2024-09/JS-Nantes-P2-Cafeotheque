@@ -1,7 +1,13 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../assets/style/Header.css";
 
 function Header() {
+  const location = useLocation();
+
+  function handleDisconnect() {
+    localStorage.removeItem("connected-user");
+  }
+
   return (
     <>
       <header>
@@ -15,14 +21,25 @@ function Header() {
           </Link>
 
           <p className="title-header">Caféothèque</p>
-
-          <Link to="/profile">
+          {location.pathname === "/profile" ? (
             <img
-              className="avatar-profile"
-              src="../src/assets/images/avatar.png"
-              alt="Profile Avatar"
+              className="avatar-profile pointer"
+              alt="disconnect waving hand"
+              src="https://www.svgrepo.com/show/387056/bye.svg"
+              onClick={handleDisconnect}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") handleDisconnect;
+              }}
             />
-          </Link>
+          ) : (
+            <Link to="/profile">
+              <img
+                className="avatar-profile"
+                src="../src/assets/images/avatar.png"
+                alt="Profile Avatar"
+              />
+            </Link>
+          )}
         </nav>
       </header>
     </>
