@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ListItems from "../../components/ListItems";
 import type { DataModel, UserModel } from "../../models/index";
 import "./ProfilePage.css";
+import { Navigate } from "react-router-dom";
 
 function ProfilePage() {
   const [data, setData] = useState<DataModel[]>([]);
@@ -34,6 +35,7 @@ function ProfilePage() {
   }
 
   // Replace div filters with filters component
+  if (!localStorage.getItem("connected-user")) return <Navigate to="/login" />;
   return (
     <main id="profile-page-main-container">
       <div id="filters" />
