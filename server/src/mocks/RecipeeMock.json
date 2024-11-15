@@ -22,7 +22,8 @@
         "Mouiller les biscuits dans le café rapidement avant d'en tapisser le fond du plat.",
         "Recouvrir d'une couche de crème au mascarpone puis répéter l'opération en alternant couche de biscuits et couche de crème en terminant par cette dernière. Saupoudrer de cacao.",
         "Mettre au réfrigérateur 4 heures minimum puis déguster frais."
-      ]
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=wDsKC3g-KHE"
     }
   },
   {
@@ -45,7 +46,42 @@
         "Pour une touche gourmande, râper un peu de chocolat noir sur le dessus.",
         "Ajouter une feuille de menthe pour la décoration si désiré.",
         "Servir immédiatement et savourer l'alliance chaude et froide."
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=w6P2KTaL1MQ"
+    }
+  },
+  {
+    "id": 3,
+    "aside": {
+      "illustration": "moka_cake.jpg",
+      "ingredients": [
+        "200 g de farine",
+        "150 g de sucre",
+        "100 g de beurre fondu",
+        "3 œufs",
+        "1 sachet de levure chimique",
+        "10 cl de café fort",
+        "100 g de chocolat noir fondu",
+        "200 g de mascarpone (pour le glaçage)",
+        "50 g de sucre glace (pour le glaçage)",
+        "1 cuillère à café d'extrait de café (pour le glaçage)"
       ]
+    },
+    "mainContent": {
+      "name": "le moka cake",
+      "preparationSteps": [
+        "Préchauffer le four à 180°C (thermostat 6).",
+        "Dans un bol, mélanger les œufs et le sucre jusqu'à ce que le mélange blanchisse.",
+        "Ajouter le beurre fondu, le café fort, et mélanger.",
+        "Incorporer la farine et la levure chimique petit à petit jusqu'à obtenir une pâte homogène.",
+        "Ajouter le chocolat fondu et bien mélanger.",
+        "Verser la pâte dans un moule préalablement beurré et fariné.",
+        "Enfourner pendant 30 à 35 minutes. Vérifier la cuisson avec la lame d'un couteau, qui doit ressortir sèche.",
+        "Pendant que le gâteau refroidit, préparer le glaçage : mélanger le mascarpone, le sucre glace et l'extrait de café jusqu'à obtenir une crème lisse.",
+        "Une fois le gâteau refroidi, étaler le glaçage uniformément sur le dessus.",
+        "Décorer avec des grains de café ou du chocolat râpé si désiré. Servir et savourer !"
+      ],
+      "videoUrl": "https://www.youtube.com/watch?v=CzsgS059IRs"
     }
   }
 ]
