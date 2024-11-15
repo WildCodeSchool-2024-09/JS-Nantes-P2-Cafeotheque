@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "../pages/CoffeesPage/FilteredList.css";
-import type { DataModel } from "../models";
+import type { DataModel } from "../types/FilteredList";
 
 // function that makes a ul appear when you click on the input
 // first list
