@@ -1,4 +1,5 @@
 import FilteredList from "../../components/FilteredList";
+import ListCoffees from "../../components/ListCoffees";
 import "./CoffeesPage.css";
 
 function CoffeesPage() {
@@ -6,6 +7,7 @@ function CoffeesPage() {
     <>
       <main className="container-central-coffeespages">
         <FilteredList />
+        <ListCoffees />
       </main>
     </>
   );
