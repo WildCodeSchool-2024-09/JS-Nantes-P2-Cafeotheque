@@ -1,5 +1,5 @@
 import "../assets/style/Pagination.css";
-import type { PaginationProps } from "../types/pagination";
+import type { PaginationProps } from "../types/Pagination";
 
 function Pagination({
   data,
