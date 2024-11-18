@@ -20,18 +20,16 @@ function NbrOfElementsPerPage({
         {/* Map the table given in props of choices of elements per page */}
         {possibleNumbers.map((el) => {
           return (
-            <li
+            <button
+              type="button"
               key={el}
               className="pointer"
-              onKeyDown={(e) => {
-                if (e.key === "Enter") () => handleClickNumberOfElems(el);
-              }}
               onClick={() => {
                 handleClickNumberOfElems(el);
               }}
             >
               {el}
-            </li>
+            </button>
           );
         })}
       </ul>

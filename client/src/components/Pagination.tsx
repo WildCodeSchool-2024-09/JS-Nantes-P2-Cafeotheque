@@ -1,14 +1,5 @@
-import type React from "react";
 import "../assets/style/Pagination.css";
-import type { DataModel } from "../models/index";
-
-interface PaginationProps {
-  data: DataModel[];
-  setCurrentElem: React.Dispatch<React.SetStateAction<DataModel[]>>;
-  nbrOfElementsPerPage: number;
-  setPage: React.Dispatch<React.SetStateAction<number>>;
-  page: number;
-}
+import type { PaginationProps } from "../types/pagination";
 
 function Pagination({
   data,
@@ -41,30 +32,32 @@ function Pagination({
   return (
     <div id="pagination-container">
       {page > 0 && (
-        <img
+        <button
           className="pointer"
-          alt="left-arrow precedent page"
-          src="https://www.svgrepo.com/show/533593/arrow-left.svg"
-          onKeyDown={(e) => {
-            if (e.key === "Enter") () => handleClickPage("-");
-          }}
+          type="button"
           onClick={() => handleClickPage("-")}
-        />
+        >
+          <img
+            alt="left-arrow precedent page"
+            src="https://www.svgrepo.com/show/533593/arrow-left.svg"
+          />
+        </button>
       )}
       <p>
         {(data.length > nbrOfElementsPerPage * (page + 1) || page > 0) &&
           page + 1}
       </p>
       {data.length > nbrOfElementsPerPage * (page + 1) && (
-        <img
+        <button
           className="pointer"
-          alt="right-arrow next page"
-          src="https://www.svgrepo.com/show/533610/arrow-right.svg"
-          onKeyDown={(e) => {
-            if (e.key === "Enter") () => handleClickPage("+");
-          }}
+          type="button"
           onClick={() => handleClickPage("+")}
-        />
+        >
+          <img
+            alt="right-arrow next page"
+            src="https://www.svgrepo.com/show/533610/arrow-right.svg"
+          />
+        </button>
       )}
     </div>
   );

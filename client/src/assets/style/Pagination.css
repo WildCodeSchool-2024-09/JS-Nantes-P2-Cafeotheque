@@ -1,10 +1,20 @@
 #pagination-container {
   display: flex;
+  align-items: center;
   height: 5vh;
+  margin-top: 10px;
 }
 #pagination-container > * {
-  margin: 10px;
+  margin: 0 10px;
 }
-#pagination-container > img {
+#pagination-container > button {
+  width: auto;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background-color: inherit;
+}
+#pagination-container > button > img {
   height: 100%;
 }
