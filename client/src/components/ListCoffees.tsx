@@ -19,16 +19,10 @@ function ListCoffees() {
   }, []);
 
   // Event next page
-  const handlePageChange = () => {
-    const nextPage = currentPage + 1;
+  const handlePageChange = (sign: number) => {
+    const nextPage = currentPage + sign;
     setCurrentPage(nextPage);
     setNewData(data.slice((nextPage - 1) * 9, nextPage * 9));
-  };
-  // Event previous page
-  const handlePageChange2 = () => {
-    const prevPage = currentPage - 1;
-    setCurrentPage(prevPage);
-    setNewData(data.slice((prevPage - 1) * 9, prevPage * 9));
   };
   window.scrollTo({
     top: 0,
@@ -49,7 +43,7 @@ function ListCoffees() {
         <section className="container-button-listCoffees">
           <button
             disabled={currentPage <= 1}
-            onClick={handlePageChange2}
+            onClick={() => handlePageChange(-1)}
             type="button"
           >
             précédent
@@ -57,7 +51,7 @@ function ListCoffees() {
           <p>{currentPage}</p>
           <button
             disabled={currentPage >= 7}
-            onClick={handlePageChange}
+            onClick={() => handlePageChange(1)}
             type="button"
           >
             suivant
