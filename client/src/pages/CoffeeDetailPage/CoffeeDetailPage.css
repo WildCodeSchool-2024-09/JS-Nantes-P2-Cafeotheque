@@ -1,7 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
 
+:root {
+  --primary-bg: #fdf8f6;
+  --primary-color: #333;
+  --accent-color: #eec7ab;
+  --hover-color: #c18a65;
+  --font-family: "Poetsen One", sans-serif;
+
+  --max-width: 1200px;
+  --card-width: 150px;
+  --card-height: 150px;
+  --transition-duration: 0.3s;
+}
+
 body {
-  background-color: #fdf8f6;
+  background-color: var(--primary-bg);
+  font-family: var(--font-family), sans-serif;
 }
 
 h1,
@@ -9,11 +23,13 @@ h2,
 h3,
 p,
 section {
-  font-family: "Poetsen One", sans-serif;
+  font-family: var(--font-family), sans-serif;
 }
 
+/* Page principale */
+
 .coffee-detail-page {
-  max-width: 1200px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 10%;
 }
@@ -65,17 +81,11 @@ section {
 .toggle-button img {
   width: 40px;
   height: 40px;
-  transition: filter 0.3s ease;
+  transition: filter var(--transition-duration) ease;
 }
 
 .toggle-button:hover img {
   transform: scale(1.5);
-}
-
-.button-image {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
 }
 
 /* Card return arrow */
@@ -91,10 +101,10 @@ section {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background-color: #eec7ab;
+  background-color: var(--accent-color);
   margin-left: 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color var(--transition-duration) ease;
   position: absolute;
   right: 0;
   top: 50%;
@@ -102,12 +112,12 @@ section {
 }
 
 .mini-card:hover {
-  background-color: #c18a65;
+  background-color: var(--hover-color);
 }
 
 .back-arrow {
   font-size: 20px;
-  color: #333;
+  color: var(--primary-color);
   font-weight: bold;
 }
 
@@ -142,17 +152,10 @@ section {
   width: 100%;
 }
 
-/* Pour l'image de la carte */
-.map-container .extra-info .card-container {
-  flex: 1;
-  text-align: center;
-}
-
 .map-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   position: relative;
 }
 
@@ -171,7 +174,7 @@ section {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-duration) ease;
   z-index: 2;
 }
 
@@ -186,6 +189,8 @@ section {
   flex: 2;
   position: relative;
 }
+
+/* Image des grains de café + Feuillage fixe */
 
 .coffee-grain {
   width: 200px;
@@ -212,45 +217,31 @@ section {
 }
 
 /* Card container */
-.card-container {
-  z-index: 5;
-  background-color: transparent;
-  margin-left: 50px;
-}
 
-.card {
-  display: inline-block;
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--card-width);
+  height: var(--card-height);
   border-radius: 15px;
   box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  width: 150px;
-  height: 150px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-duration) ease;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
   background-color: transparent;
-}
-
-.card:hover {
-  transform: scale(1.05);
+  z-index: 10;
 }
 
 .card-link {
   text-decoration: none;
-  color: #333;
-  background-color: transparent;
+  color: var(--primary-color);
 }
 
 .card h3 {
   font-size: 18px;
   font-weight: bold;
-  color: #333;
-  margin: 0;
 }
 
 /* Container pour les 4 nouvelles cartes */
@@ -264,20 +255,18 @@ section {
 /* Card individuel avec image */
 .card-region {
   background-color: white;
-  display: inline-block;
   border-radius: 15px;
   box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
   padding: 15px;
   width: 200px;
   height: 200px;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-duration) ease;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .card-region img {
@@ -290,7 +279,7 @@ section {
 .card-region h3 {
   font-size: 16px;
   font-weight: bold;
-  color: #333;
+  color: var(--primary-color);
   margin-top: 10px;
 }
 
@@ -313,7 +302,6 @@ section {
   .content-container {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
   }
 
   .image-container {
@@ -354,7 +342,8 @@ section {
 
   .card-container {
     display: block;
-    width: 100%;
+    width: 200px;
+    height: 200px;
     text-align: center;
   }
 
@@ -362,8 +351,7 @@ section {
     width: 100%;
     height: auto;
   }
-}
-@media (max-width: 768px) {
+
   .cards-container {
     flex-direction: column;
     gap: 20px;
@@ -374,25 +362,11 @@ section {
     width: 100%;
     max-width: 250px;
     height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 0 auto;
-    position: relative;
   }
 
   .card-region img {
     width: 80%;
     height: 200px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-
-  .card-region h3 {
-    font-size: 16px;
-    font-weight: bold;
-    color: #333;
-    margin-top: 10px;
   }
 }
