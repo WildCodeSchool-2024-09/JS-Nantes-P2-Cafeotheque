@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
+
+header {
+  border-bottom: 0.3rem solid rgba(69, 47, 37, 0.4);
+}
+
+header > nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px;
+}
+
+.logo-coffee,
+.avatar-profile {
+  width: 10vh;
+}
+
+.title-header {
+  font-family: "Poetsen One", sans-serif;
+  font-size: 54px;
+  color: #452f25;
+  text-shadow: 2px 5px 3px rgb(160, 157, 157);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 480px) {
+  header {
+    border: none;
+  }
+
+  .title-header {
+    display: none;
+  }
+}
+
+.logo-coffee,
+.avatar-profile {
+  width: 8vh;
+}

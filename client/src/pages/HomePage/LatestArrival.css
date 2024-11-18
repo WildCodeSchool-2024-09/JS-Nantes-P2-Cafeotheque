@@ -1,0 +1,46 @@
+/* Container  */
+
+.container-latest-arrival {
+  display: flex;
+  height: 60vh;
+  background-color: rgba(141, 106, 87, 1);
+  margin: 6% 8%;
+}
+
+/* image latest arrival */
+
+.container-latest-arrival > img {
+  margin: 4% 0% 4% 5%;
+  border: solid black 4px;
+  width: 50%;
+}
+
+/* Container information latest arrival */
+
+.container-text-latest-arrival {
+  align-items: center;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  margin: 6% 10%;
+  font-size: 18px;
+}
+
+/* Latest arrival title */
+
+.container-text-latest-arrival > h3 {
+  margin-bottom: 5%;
+  color: rgba(238, 199, 171, 1);
+}
+
+/* button to have more information on the latest product (+ Info) */
+
+.container-text-latest-arrival a > button {
+  margin-top: 6%;
+  width: 12em;
+  height: 4em;
+  border-radius: 16px;
+  background-color: rgba(69, 47, 37, 1);
+  color: rgba(238, 199, 171, 1);
+  border: none;
+  cursor: pointer;
+}
