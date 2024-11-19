@@ -14,3 +14,7 @@ export interface preparationStepsProps {
   name: string;
   preparationSteps: string[];
 }
+
+export interface recipeVideoProps {
+  videoUrl: string;
+}

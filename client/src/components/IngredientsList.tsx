@@ -12,7 +12,11 @@ function IngredientsList({ imgSrc, ingredients }: IngredientsListProps) {
       <h2 className="ingredients-list-title">Ingrédients</h2>
       <ul className="ingredients-list">
         {ingredients.map((ingredient) => {
-          return <li key={ingredient}>{ingredient}</li>;
+          return (
+            <li className="el-list-ingredients" key={ingredient}>
+              {ingredient}
+            </li>
+          );
         })}
       </ul>
     </aside>

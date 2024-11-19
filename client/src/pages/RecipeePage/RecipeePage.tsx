@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import IngredientsList from "../../components/IngredientsList";
 import PreparationSteps from "../../components/PreparationSteps";
 import "./RecipeePage.css";
+import RecipeVideo from "../../components/RecipeVideo";
 import type { Recipe } from "../../types/RecipePage";
 
 function RecipeePage() {
@@ -24,6 +25,7 @@ function RecipeePage() {
           name={recipe[0].mainContent.name}
           preparationSteps={recipe[0].mainContent.preparationSteps}
         />
+        <RecipeVideo />
       </main>
     )
   );
