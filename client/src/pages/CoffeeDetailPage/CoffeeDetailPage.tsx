@@ -1,158 +1,114 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./CoffeeDetailPage.css";
+import { Link, useParams } from "react-router-dom";
+import type { DataModel } from "../../models/index";
 
 function CoffeeDetailPage() {
-  const [isClicked, setIsClicked] = useState(false);
-  const handleClick = () => {
-    setIsClicked(!isClicked);
-  };
+  const [data, setData] = useState<DataModel | false | null>(null);
+  const [alikeItems, setAlikeItems] = useState<DataModel[]>([]);
 
+  const { id } = useParams();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let response = await fetch(`http://localhost:4000/api/coffee/${id}`);
+      if (response.status !== 200) return setData(false);
+      const itemData = await response.json();
+      setData(itemData);
+      response = await fetch("http://localhost:4000/api/coffee");
+      if (response.status !== 200) return;
+      let alikeItems = await response.json();
+      alikeItems = alikeItems.filter(
+        (el: DataModel) => el.continent === itemData.continent,
+      );
+      const startIndex = Math.floor(Math.random() * (alikeItems.length - 3));
+      alikeItems = alikeItems.slice(startIndex, startIndex + 4);
+      setAlikeItems(alikeItems);
+    };
+    fetchData();
+  }, [id]);
+
+  if (data === null) return <p>chargement</p>;
+  if (data === false) return <p>coffee not found</p>;
   return (
     <div className="coffee-detail-page">
+      <img
+        src="https://i.ibb.co/Tw6jpvR/pngegg-2-2.png"
+        alt="Feuilles de caféier"
+        className="coffee-leaves"
+      />
       {/* Conteneur de l'image du café */}
       <div className="content-container">
-        <div className="image-container">
-          <img
-            src="https://i.ibb.co/VmKTCwc/Vietnam-coffee-beans-VOA.jpg"
-            alt="Café"
-          />
-        </div>
+        <img
+          src={
+            data.imgSrc
+              ? data.imgSrc
+              : "https://i.ibb.co/VmKTCwc/Vietnam-coffee-beans-VOA.jpg"
+          }
+          alt="Café"
+        />
         <div className="text-container">
           <section>
-            <h2>
-              Café du Vietnam
-              <button
-                type="button"
-                className={`toggle-button ${isClicked ? "clicked" : ""}`}
-                onClick={handleClick}
-                aria-label="Activer le bouton"
-              >
-                <img
-                  src={
-                    isClicked
-                      ? "https://i.ibb.co/F5g3MZ2/Property-1-Variant2.png"
-                      : "https://i.ibb.co/MB1L9Wy/Property-1-Default.png"
-                  }
-                  alt="Bouton"
-                  className="button-image"
-                />
-              </button>
-              {/* Mini Card avec flèche retour */}
-              <div className="mini-card">
-                <span className="back-arrow">←</span>
-              </div>
-            </h2>
-            <p>Profil : Sucré</p>
-            <br />
+            <h2>{data.name}</h2>
+            <p>Profil : {data.profile}</p>
             <h3>Histoire</h3>
-            <p>
-              Un café corsé et sucré, avec des notes de chocolat noir et de lait
-              concentré, ce qui le rend crémeux et agréable. Il est souvent
-              préparé glacé avec du lait sucré, créant une boisson
-              rafraîchissante qui se distingue par sa douceur. Ce café est très
-              populaire au Vietnam, offrant une riche expérience de dégustation
-              qui combine intensité et douceur pour une expérience unique.
-            </p>
-            <br />
+            <p>{data.description}</p>
             <h3>Conseil de préparation</h3>
-            <p>
-              Préparez ce café avec une méthode de filtrage vietnamienne
-              traditionnelle, en versant lentement de l'eau chaude sur le café
-              moulu dans un filtre métallique. Une fois l'infusion terminée,
-              mélangez le café avec une généreuse portion de lait concentré
-              sucré. Servez chaud ou glacé selon votre préférence.
-            </p>
+            <p>{data.preparation}</p>
           </section>
           <section className="info-section">
-            <div className="info-item">
-              <span className="label">Continent:</span>
-              <span className="value">Asie</span>
-            </div>
-            <div className="info-item">
-              <span className="label">Pays:</span>
-              <span className="value">Vietnam</span>
-            </div>
-            <div className="info-item">
-              <span className="label">Profil:</span>
-              <span className="value">Sucré</span>
-            </div>
-            <div className="info-item">
-              <span className="label">Prix:</span>
-              <span className="value">€22.50</span>
-            </div>
+            <hgroup className="info-item">
+              <h4 className="label">Continent:</h4>
+              <p className="value">{data.continent}</p>
+            </hgroup>
+            <hgroup className="info-item">
+              <h4 className="label">Pays:</h4>
+              <p className="value">{data.country}</p>
+            </hgroup>
+            <hgroup className="info-item">
+              <h4 className="label">Profil:</h4>
+              <p className="value">{data.profile}</p>
+            </hgroup>
+            <hgroup className="info-item">
+              <h4 className="label">Prix:</h4>
+              <p className="value">€{data.price}</p>
+            </hgroup>
           </section>
         </div>
       </div>
 
       {/* Section avec la carte du monde et les images */}
       <div className="section-with-map-and-info">
-        <div className="map-container">
-          <img
-            src="https://i.ibb.co/dMfxKms/Vietnam-orthographic-projection-svg.png"
-            alt="Carte du monde"
-            className="world-map"
-          />{" "}
-          <img
-            src="https://i.ibb.co/6DtJmbv/carte-vietnam-social.jpg"
-            alt="Carte du Vietnam"
-            className="vietnam-map-hover"
-          />
-        </div>
-        <div className="extra-info">
-          <div className="coffee-grain">
-            <img
-              src="https://i.ibb.co/kh05r9N/pngegg-2.png"
-              alt="Grains de café"
-            />
-          </div>
-          <div className="card-container">
-            <div className="card">
-              <a href="/coffees-vietnam" className="card-link">
-                <h3>Lien vers tous les cafés de la même origine</h3>
-              </a>
-            </div>
-          </div>
-          <div className="coffee-leaves">
-            <img
-              src="https://i.ibb.co/Tw6jpvR/pngegg-2-2.png"
-              alt="Feuilles de caféier"
-            />
-          </div>
-        </div>
+        <img
+          className="no-mob"
+          src="https://i.ibb.co/kh05r9N/pngegg-2.png"
+          alt="Grains de café"
+        />
+        <Link
+          to={`/coffees?country=${data.country}`}
+          className="card-link pointer"
+        >
+          <button type="button">Voir tout les cafés du même pays</button>
+        </Link>
       </div>
 
       {/* Section des cartes avec des images de café des différentes régions (sous la carte du monde) */}
       <div className="cards-container">
-        <div className="card-region">
-          <img
-            src="https://i.ibb.co/rcSPZH2/000406-2023-1kg-perou-grains.jpg"
-            alt="Café de Colombie"
-          />
-          <h3>Café de Colombie</h3>
-        </div>
-
-        <div className="card-region">
-          <img
-            src="https://i.ibb.co/F8L7hHd/amerique-latine-fairtrade-bio.jpg"
-            alt="Café du Brésil"
-          />
-          <h3>Café du Brésil</h3>
-        </div>
-
-        <div className="card-region">
-          <img
-            src="https://i.ibb.co/wCJZqS7/grani-misclea-intensa-classica-01.jpg"
-            alt="Café d'Éthiopie"
-          />
-          <h3>Café d'Éthiopie</h3>
-        </div>
-        <div className="card-region">
-          <img
-            src="https://i.ibb.co/sbcPc99/cafe-bio-en-grains-origine-perou-max-havelaar-torrefacteur-sati.png"
-            alt="Café du Costa Rica"
-          />
-          <h3>Café du Costa Rica</h3>
-        </div>
+        {alikeItems.map((el) => {
+          return (
+            <Link to={`/coffee/${el.id}`} key={el.id} className="card-region">
+              <img
+                src={
+                  el.imgSrc
+                    ? el.imgSrc
+                    : "https://i.ibb.co/rcSPZH2/000406-2023-1kg-perou-grains.jpg"
+                }
+                alt={`${el.name}`}
+              />
+              <h3>{el.name}</h3>
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

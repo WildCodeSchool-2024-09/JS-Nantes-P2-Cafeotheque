@@ -1,4 +1,4 @@
-import CoffeeDetailPage from "../pages/CoffeeDetailPage";
+import CoffeeDetailPage from "../pages/CoffeeDetailPage/CoffeeDetailPage";
 import CoffeesPage from "../pages/CoffeesPage/CoffeesPage";
 import HistoryOfCoffeePage from "../pages/HistoryPage";
 import HomePage from "../pages/HomePage/HomePage";
