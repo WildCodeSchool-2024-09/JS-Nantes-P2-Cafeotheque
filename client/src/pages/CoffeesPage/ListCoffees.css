@@ -11,7 +11,7 @@
 
 /* Cards coffees  */
 
-.container-cards-list > #card-list {
+.container-cards-list > a > #card-list {
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -26,16 +26,21 @@
 
 /* text cards coffees  */
 
-.container-cards-list > section > h3 {
-  font-weight: bold;
-  font-size: large;
+.container-cards-list > a {
+  text-decoration: none;
+  color: black;
 }
 
-.container-cards-list > section > h4 {
+.container-cards-list a > section > h3 {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.container-cards-list a > section > h4 {
   font-weight: lighter;
 }
 
-.container-cards-list > section > h5 {
+.container-cards-list a > section > h5 {
   font-weight: lighter;
 }
 
