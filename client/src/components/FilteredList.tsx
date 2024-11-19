@@ -5,6 +5,13 @@ import type { DataModel } from "../types/FilteredList";
 // function that makes a ul appear when you click on the input
 // first list
 
+interface FilterCheck {
+  continent: { isActive: boolean; filters: string[] | [] };
+  country: { isActive: boolean; filters: string[] | [] };
+  profile: { isActive: boolean; filters: string[] | [] };
+  price: { isActive: boolean; filters: string[] | [] };
+}
+
 function FilteredList() {
   const [data, setData] = useState<DataModel[]>([]);
 
@@ -19,11 +26,24 @@ function FilteredList() {
     profile: false,
     price: false,
   });
+  setIsActive;
+  // Checkbox select
+  const [checked, setChecked] = useState<FilterCheck>({
+    continent: { isActive: false, filters: [] },
+    country: { isActive: false, filters: [] },
+    profile: { isActive: false, filters: [] },
+    price: { isActive: false, filters: [] },
+  });
+
   const handleClick = (el: React.MouseEvent<HTMLInputElement>) => {
     const target = el.target as HTMLInputElement;
-    setIsActive((prevValues) => ({
+    // console.warn(checked[target.id].isActive);
+    setChecked((prevValues) => ({
       ...prevValues,
-      [target.id]: !prevValues[target.id as keyof typeof isActive],
+      [target.id]: {
+        // isActive: !checked[target.id].isActive,
+        filters: [],
+      },
     }));
   };
 
@@ -46,14 +66,21 @@ function FilteredList() {
             type="checkbox"
             id="continent"
             name="continent"
+            checked={checked.continent.isActive}
           />
           <label htmlFor="continent">Continent</label>
-          {isActive.continent && (
+          {checked.continent.isActive && (
             <section className="list-filter">
               {getDifferentElement("continent").map((el) => {
                 return (
                   <div key={`${el}-porte`}>
-                    <input key={el} type="checkbox" id={el} name={el} />
+                    <input
+                      key={el}
+                      type="checkbox"
+                      onClick={handleClick}
+                      id={el}
+                      name={el}
+                    />
                     <label key={`${el}-label`} htmlFor={el}>
                       {el}
                     </label>
