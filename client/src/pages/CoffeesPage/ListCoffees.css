@@ -1,0 +1,62 @@
+/* Container for list cards  */
+
+.container-cards-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 2%;
+  column-gap: 10%;
+  margin: 5% 5%;
+  width: 100%;
+}
+
+/* Cards coffees  */
+
+.container-cards-list > a > #card-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  background-color: rgb(233, 233, 233);
+  border-radius: 10%;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding: 3%;
+  width: 80%;
+  height: 30vh;
+}
+
+/* text cards coffees  */
+
+.container-cards-list > a {
+  text-decoration: none;
+  color: black;
+}
+
+.container-cards-list a > section > h3 {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.container-cards-list a > section > h4 {
+  font-weight: lighter;
+}
+
+.container-cards-list a > section > h5 {
+  font-weight: lighter;
+}
+
+/* Button location */
+
+.container-button-listCoffees {
+  grid-area: 6 / 3;
+  display: inline-flex;
+  gap: 10%;
+  width: 100%;
+}
+
+/* Button style */
+
+.container-button-listCoffees > button {
+  cursor: pointer;
+  width: 80px;
+  border-radius: 20%;
+}

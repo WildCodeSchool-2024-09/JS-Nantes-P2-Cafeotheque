@@ -1,0 +1,27 @@
+.ingredients-list-container {
+  display: flex;
+  width: 20%;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #a27c67;
+}
+
+.ingredients-list-title {
+  margin: 8px;
+  border-bottom: 1px solid #452f25;
+  padding: 16px;
+  padding-bottom: 3px;
+  align-items: center;
+}
+
+.tiramisu-ingredients-list {
+  width: 25%;
+  margin: 32px;
+}
+
+.ingredients-list {
+  margin-bottom: 100px;
+  padding-bottom: 32px;
+  padding-top: 16px;
+}
