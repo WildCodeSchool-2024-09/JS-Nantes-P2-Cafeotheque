@@ -1,4 +1,5 @@
 import "../pages/HomePage/LatestArrival.css";
+import "../pages/HomePage/Responsive/resp-LatestArrival.css";
 import { Link } from "react-router-dom";
 import data from "../mocks/apiMock.json";
 import type { DataModel } from "../models/index";
