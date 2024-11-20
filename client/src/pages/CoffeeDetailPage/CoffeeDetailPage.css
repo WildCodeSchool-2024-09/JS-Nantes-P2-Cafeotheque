@@ -1,33 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
-
-:root {
-  --primary-bg: #fdf8f6;
-  --primary-color: #333;
-  --accent-color: #eec7ab;
-  --hover-color: #c18a65;
-  --font-family: "Poetsen One", sans-serif;
-
-  --max-width: 1200px;
-  --card-width: 150px;
-  --card-height: 150px;
-  --transition-duration: 0.3s;
-}
-
-body {
-  background-color: var(--primary-bg);
-  font-family: var(--font-family), sans-serif;
-}
-
-h1,
-h2,
-h3,
-p,
-section {
-  font-family: var(--font-family), sans-serif;
-}
-
-/* Page principale */
-
 .coffee-detail-page {
   max-width: 1200px;
   width: 80%;
@@ -86,7 +56,7 @@ section {
 .toggle-button img {
   width: 40px;
   height: 40px;
-  transition: filter var(--transition-duration) ease;
+  transition: filter 0.3s ease;
 }
 
 .toggle-button:hover img {
@@ -106,10 +76,10 @@ section {
   width: 40px;
   height: 40px;
   border-radius: 10px;
-  background-color: var(--accent-color);
+  background-color: #eec7ab;
   margin-left: 15px;
   cursor: pointer;
-  transition: background-color var(--transition-duration) ease;
+  transition: background-color 0.3s ease;
   position: absolute;
   right: 0;
   top: 50%;
@@ -117,7 +87,7 @@ section {
 }
 
 .mini-card:hover {
-  background-color: var(--hover-color);
+  background-color: #c18a65;
 }
 
 /* Section infos */
@@ -189,7 +159,7 @@ section {
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity var(--transition-duration) ease;
+  transition: opacity 0.3s ease;
   z-index: 2;
 }
 
@@ -237,13 +207,13 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: var(--card-width);
-  height: var(--card-height);
+  width: 150px;
+  height: 150px;
   border-radius: 15px;
   box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
   padding: 15px;
   cursor: pointer;
-  transition: transform var(--transition-duration) ease;
+  transition: transform 0.3s ease;
   text-align: center;
   background-color: transparent;
   z-index: 10;
@@ -290,7 +260,7 @@ section {
   width: 200px;
   height: 200px;
   cursor: pointer;
-  transition: transform var(--transition-duration) ease;
+  transition: transform 0.3s ease;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -308,7 +278,7 @@ section {
 .card-region h3 {
   font-size: 16px;
   font-weight: bold;
-  color: var(--primary-color);
+  color: #333;
   margin-top: 10px;
 }
 
