@@ -1,3 +1,4 @@
+import CoffeesLoader from "../loaders/CoffeesLoader";
 import CoffeeDetailPage from "../pages/CoffeeDetailPage";
 import CoffeesPage from "../pages/CoffeesPage/CoffeesPage";
 import HistoryOfCoffeePage from "../pages/HistoryPage";
@@ -7,7 +8,6 @@ import ProfilePage from "../pages/ProfilePage";
 import RecipeePage from "../pages/RecipeePage/RecipeePage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import WorldCoffeePage from "../pages/WorldCoffeePage";
-import CoffeesLoader from "../loaders/CoffeesLoader";
 
 const routes = [
   {
