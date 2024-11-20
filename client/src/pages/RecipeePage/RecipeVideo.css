@@ -1,4 +1,5 @@
 .recipe-video {
   display: flex;
+  align-items: flex-end;
   margin: 32px;
 }
