@@ -1,45 +1,24 @@
+import type { preparationStepsProps } from "../types/RecipePage";
 import "/src/pages/RecipeePage/PreparationSteps.css";
 
-function PreparationSteps() {
+function PreparationSteps({ name, preparationSteps }: preparationStepsProps) {
   return (
     <main className="main-preparation-steps-container">
       <h1 className="idee-recette-tiramisu-title">
-        Idée recette : le tiramisu
+        {`Idée recette : ${name}`}
       </h1>
-      <h2 className="preparation-title">Préparation</h2>
-      <ol className="preparation-steps-list">
-        <li>
-          <p>
-            Séparer les blancs des jaunes d'oeufs. Mélanger les jaunes avec le
-            sucre roux et le sucre vanillé.
-          </p>
-        </li>
-        <li>
-          <p>Ajouter le mascarpone au fouet.</p>
-        </li>
-        <li>
-          <p>
-            Monter les blancs en neige et les incorporer délicatement à la
-            spatule au mélange précédent. Réserver.
-          </p>
-        </li>
-        <li>
-          <p>
-            Mouiller les biscuits dans le café rapidement avant d'en tapisser le
-            fond du plat.{" "}
-          </p>
-          <p>
-            Recouvrir d'une couche de crème au mascarpone puis répéter
-            l'opération en alternant couche de biscuits et couche de crème en
-            terminant par cette dernière. Saupoudrer de cacao.
-          </p>
-        </li>
-        <li>
-          <p>Mettre au réfrigérateur 4 heures minimum puis déguster frais.</p>
-        </li>
-      </ol>
-
-      <h2>La recette en vidéo</h2>
+      <section className="text-and-video-tiramisu-sections">
+        <h2 className="preparation-title">Préparation</h2>
+        <ol className="preparation-steps-list">
+          {preparationSteps.map((step) => {
+            return (
+              <li key={step} className="number-of-step">
+                <p>{step}</p>
+              </li>
+            );
+          })}
+        </ol>
+      </section>
     </main>
   );
 }

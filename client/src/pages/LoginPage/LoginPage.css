@@ -74,3 +74,18 @@
   background-color: #56463f;
   translate: 0 2px;
 }
+
+@media (max-width: 570px) {
+  #login-container {
+    width: 90%;
+  }
+  #login-form {
+    width: 80%;
+  }
+  .login-field {
+    align-items: flex-start;
+  }
+  #login-container > :last-child {
+    margin-top: 32px;
+  }
+}

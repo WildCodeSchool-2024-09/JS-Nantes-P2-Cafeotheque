@@ -1,22 +1,23 @@
 import "/src/pages/RecipeePage/IngredientsList.css";
+import type { IngredientsListProps } from "../types/RecipePage";
 
-function IngredientsList() {
+function IngredientsList({ imgSrc, ingredients }: IngredientsListProps) {
   return (
     <aside className="ingredients-list-container">
       <img
         className="tiramisu-ingredients-list"
-        src="src/assets/images/tiramisu.jpg"
+        src={`src/assets/images/${imgSrc}`}
         alt="Illustration Tiramisu"
       />
       <h2 className="ingredients-list-title">Ingrédients</h2>
       <ul className="ingredients-list">
-        <li> 3 oeufs</li>
-        <li>100 g de sucre roux</li>
-        <li>1 sachet de sucre vanillé</li>
-        <li>250 g de mascarpone</li>
-        <li>50 cl de café noir</li>
-        <li>24 biscuits à la cuillère</li>
-        <li>30 g de cacao amer</li>
+        {ingredients.map((ingredient) => {
+          return (
+            <li className="el-list-ingredients" key={ingredient}>
+              {ingredient}
+            </li>
+          );
+        })}
       </ul>
     </aside>
   );

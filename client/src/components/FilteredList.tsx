@@ -1,30 +1,53 @@
-import { useEffect, useState } from "react";
 import "../pages/CoffeesPage/FilteredList.css";
-import type { DataModel } from "../types/FilteredList";
+import type {
+  DataModel,
+  FilteredListProps,
+  FiltersStateType,
+} from "../types/FilteredList";
 
-// function that makes a ul appear when you click on the input
-// first list
-
-function FilteredList() {
-  const [data, setData] = useState<DataModel[]>([]);
-
-  useEffect(() => {
-    fetch("http://localhost:4000/api/coffee")
-      .then((response) => response.json())
-      .then((result) => setData(result));
-  }, []);
-  const [isActive, setIsActive] = useState({
-    continent: false,
-    country: false,
-    profile: false,
-    price: false,
-  });
+function FilteredList({ filters, setFilters, data }: FilteredListProps) {
   const handleClick = (el: React.MouseEvent<HTMLInputElement>) => {
     const target = el.target as HTMLInputElement;
-    setIsActive((prevValues) => ({
+    const id = target.id as keyof FiltersStateType;
+    setFilters((prevValues) => ({
       ...prevValues,
-      [target.id]: !prevValues[target.id as keyof typeof isActive],
+      [id]: {
+        isActive: !prevValues[id].isActive,
+        filters: prevValues[id].filters,
+      },
     }));
+  };
+
+  const handleClickSub = (el: React.MouseEvent<HTMLInputElement>) => {
+    const target = el.target as HTMLInputElement;
+    const clickedFilterName = target.name;
+    const filterType = target.dataset.filtertype as keyof FiltersStateType;
+    setFilters((prevValues) => {
+      // Create a copy of the current state so we can set it after
+      const filtersCopy = [...prevValues[filterType].filters];
+      // check if the subfilter is already active so we can substract it
+      if (filtersCopy.includes(clickedFilterName)) {
+        // delete the subfilter
+        const newFilters = filtersCopy.filter((el) => el !== clickedFilterName);
+        // and return the new object
+        return {
+          ...prevValues,
+          [filterType]: {
+            isActive: prevValues[filterType].isActive,
+            filters: newFilters,
+          },
+        };
+      }
+      // else we simply add it
+      return {
+        ...prevValues,
+        [filterType]: {
+          isActive: prevValues[filterType].isActive,
+          // with this next line
+          filters: [...filtersCopy, clickedFilterName],
+        },
+      };
+    });
   };
 
   function getDifferentElement(key: keyof DataModel) {
@@ -36,106 +59,52 @@ function FilteredList() {
     }
     return newArray;
   }
+
   return (
-    <aside className="container-list-left">
-      <section>
-        {/* Listing Continents */}
-        <section className="container-list-filtered">
-          <input
-            onClick={handleClick}
-            type="checkbox"
-            id="continent"
-            name="continent"
-          />
-          <label htmlFor="continent">Continent</label>
-          {isActive.continent && (
-            <section className="list-filter">
-              {getDifferentElement("continent").map((el) => {
-                return (
-                  <div key={`${el}-porte`}>
-                    <input key={el} type="checkbox" id={el} name={el} />
-                    <label key={`${el}-label`} htmlFor={el}>
-                      {el}
-                    </label>
-                  </div>
-                );
-              })}
-            </section>
-          )}
-        </section>
-
-        <section className="container-list-filtered">
-          <input
-            onClick={handleClick}
-            type="checkbox"
-            id="country"
-            name="country"
-          />
-          <label htmlFor="country">Pays</label>
-          {isActive.country && (
-            <section className="list-filter">
-              {getDifferentElement("country").map((el) => {
-                return (
-                  <div key={`${el}-porte`}>
-                    <input key={el} type="checkbox" id={el} name={el} />
-                    <label key={`${el}-label`} htmlFor={el}>
-                      {el}
-                    </label>
-                  </div>
-                );
-              })}
-            </section>
-          )}
-        </section>
-
-        <section className="container-list-filtered">
-          <input
-            onClick={handleClick}
-            type="checkbox"
-            id="profile"
-            name="profile"
-          />
-          <label htmlFor="profile">Saveur</label>
-          {isActive.profile && (
-            <section className="list-filter">
-              {getDifferentElement("profile").map((el) => {
-                return (
-                  <div key={`${el}-porte`}>
-                    <input key={el} type="checkbox" id={el} name={el} />
-                    <label key={`${el}-label`} htmlFor={el}>
-                      {el}
-                    </label>
-                  </div>
-                );
-              })}
-            </section>
-          )}
-        </section>
-        <section className="container-list-filtered">
-          <input
-            onClick={handleClick}
-            type="checkbox"
-            id="price"
-            name="price"
-          />
-          <label htmlFor="price">Prix</label>
-          {isActive.price && (
-            <section className="list-filter">
-              {getDifferentElement("price").map((el) => {
-                return (
-                  <div key={`${el}-porte`}>
-                    <input key={el} type="checkbox" id={el} name={el} />
-                    <label key={`${el}-label`} htmlFor={el}>
-                      {el}
-                    </label>
-                  </div>
-                );
-              })}
-            </section>
-          )}
-        </section>
-      </section>
-    </aside>
+    <ul className="filters-container">
+      {/* List main filters */}
+      {Object.keys(filters).map((filterName) => {
+        return (
+          <li key={filterName}>
+            <input
+              className="pointer"
+              onClick={handleClick}
+              type="checkbox"
+              id={filterName}
+              name={filterName}
+              checked={filters[filterName as keyof FiltersStateType].isActive}
+            />
+            <label className="pointer" htmlFor={filterName}>
+              {filterName}
+            </label>
+            {/* List sub-filters if main is checked */}
+            {filters[filterName as keyof FiltersStateType].isActive && (
+              <ul className="list-filter">
+                {getDifferentElement(filterName as keyof DataModel).map(
+                  (el) => {
+                    return (
+                      <li key={`${el}-porte`}>
+                        <input
+                          className="pointer"
+                          data-filtertype={filterName}
+                          key={el}
+                          type="checkbox"
+                          onClick={handleClickSub}
+                          name={el}
+                        />
+                        <label key={`${el}-label`} htmlFor={el}>
+                          {el}
+                        </label>
+                      </li>
+                    );
+                  },
+                )}
+              </ul>
+            )}
+          </li>
+        );
+      })}
+    </ul>
   );
 }
 
