@@ -1,33 +1,29 @@
 /* Container filtered aside */
 
-.container-list-left {
-  width: 20%;
-}
-
-/* bordered right */
-
-.container-list-left > section {
-  margin-top: 20%;
-  height: 80%;
-  border-right: solid black 1px;
-}
-
-/* The unordered list filtered */
-
-.container-list-filtered {
+.filters-container {
   display: flex;
-  list-style: none;
-  justify-content: center;
-  width: 100%;
-  cursor: pointer;
+  flex-direction: column;
 }
 
-/* The unordered list select */
+.filters-container label {
+  margin-left: 4px;
+}
 
 .list-filter {
-  flex-direction: column;
-  width: 100%;
-  margin: 10%;
-  font-size: 16px;
+  margin: 4px 0 10px 15px;
   list-style: none;
+}
+
+.list-filter > li {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-bottom: 2.33px;
+}
+
+.list-filter > li > label {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.60em;
 }
