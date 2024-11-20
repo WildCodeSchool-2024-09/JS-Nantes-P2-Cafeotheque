@@ -2,3 +2,7 @@
 .container-central-coffeespages {
   display: flex;
 }
+
+.container-central-coffeespages > :first-child {
+  width: 20%;
+}

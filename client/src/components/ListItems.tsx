@@ -5,9 +5,7 @@ import "../assets/style/ListItems.css";
 import type { DataModel } from "../models/index";
 
 import Item from "../components/Item";
-
 import NbrOfElementsPerPage from "../components/NbrOfElementsPerPage";
-
 import Pagination from "../components/Pagination";
 
 interface ListItemsProps {
