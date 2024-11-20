@@ -1,0 +1,17 @@
+#elements-per-page-container {
+  font-size: 0.66em;
+  margin-right: 8px;
+  display: flex;
+  align-self: flex-end;
+  flex-direction: column;
+}
+#elements-per-page {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+}
+#elements-per-page > button {
+  margin-left: 6px;
+  background-color: inherit;
+  border: 0;
+}

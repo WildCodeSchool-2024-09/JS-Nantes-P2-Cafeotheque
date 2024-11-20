@@ -2,6 +2,7 @@ import "../pages/CoffeesPage/ListCoffees.css";
 import { useEffect, useState } from "react";
 import type { DataModel } from "../types/FilteredList";
 import "../pages/CoffeesPage/ListCoffees.css";
+import { Link } from "react-router-dom";
 
 function ListCoffees() {
   const [data, setData] = useState<DataModel[]>([]);
@@ -33,11 +34,13 @@ function ListCoffees() {
       <main className="container-cards-list">
         {newData.map((el) => {
           return (
-            <section id="card-list" key={el.id}>
-              <h3>{el.name}</h3>
-              <h4>{el.profile}</h4>
-              <h5>{el.country}</h5>
-            </section>
+            <Link key="id" to={`/coffee/${el.id}`}>
+              <section id="card-list" key={el.id}>
+                <h3>{el.name}</h3>
+                <h4>{el.profile}</h4>
+                <h5>{el.country}</h5>
+              </section>
+            </Link>
           );
         })}
         <section className="container-button-listCoffees">
