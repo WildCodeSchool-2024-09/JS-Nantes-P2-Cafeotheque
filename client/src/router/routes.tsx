@@ -7,6 +7,7 @@ import ProfilePage from "../pages/ProfilePage";
 import RecipeePage from "../pages/RecipeePage/RecipeePage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import WorldCoffeePage from "../pages/WorldCoffeePage";
+import CoffeesLoader from "../loaders/CoffeesLoader";
 
 const routes = [
   {
@@ -16,6 +17,7 @@ const routes = [
   {
     path: "/coffees",
     element: <CoffeesPage />,
+    loader: CoffeesLoader,
   },
   {
     path: "/coffee/:id",
