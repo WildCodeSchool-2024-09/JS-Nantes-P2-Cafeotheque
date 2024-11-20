@@ -3,3 +3,11 @@
   align-items: flex-end;
   margin: 32px;
 }
+
+/* Media Queries */
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .recipe-video {
+    width: 100%;
+  }
+}
