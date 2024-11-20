@@ -1,7 +1,7 @@
-import type { preparationStepsProps } from "../types/RecipePage";
+import type { PreparationStepsProps } from "../types/RecipePage";
 import "/src/pages/RecipeePage/PreparationSteps.css";
 
-function PreparationSteps({ name, preparationSteps }: preparationStepsProps) {
+function PreparationSteps({ name, preparationSteps }: PreparationStepsProps) {
   return (
     <main className="main-preparation-steps-container">
       <h1 className="idee-recette-tiramisu-title">
