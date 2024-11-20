@@ -15,7 +15,7 @@ function Header() {
           <Link to="/">
             <img
               className="logo-coffee"
-              src="../src/assets/images/logo-coffee.png"
+              src="../public/images/logo-coffee.png"
               alt="Logo Coffee"
             />
           </Link>
@@ -35,7 +35,7 @@ function Header() {
             <Link to="/profile">
               <img
                 className="avatar-profile"
-                src="../src/assets/images/avatar.png"
+                src="../public/images/avatar.png"
                 alt="Profile Avatar"
               />
             </Link>
