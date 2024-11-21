@@ -1,11 +1,13 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "../assets/style/Header.css";
 
 function Header() {
   const location = useLocation();
+  const navigate = useNavigate();
 
   function handleDisconnect() {
     localStorage.removeItem("connected-user");
+    navigate("/login");
   }
 
   return (
