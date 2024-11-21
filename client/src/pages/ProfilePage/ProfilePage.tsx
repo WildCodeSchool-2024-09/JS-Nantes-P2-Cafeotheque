@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import ListItems from "../../components/ListItems";
-import type { DataModel, UserModel } from "../../models/index";
+import type { DataModel } from "../../models/index";
 import "./ProfilePage.css";
 import { Navigate } from "react-router-dom";
+import { useAuth } from "../../utils/context/AuthContext";
 
 function ProfilePage() {
   const [data, setData] = useState<DataModel[]>([]);
+
+  const { loggedIn, userData } = useAuth();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,24 +21,18 @@ function ProfilePage() {
   }, []);
 
   function filterData(fullData: DataModel[]) {
+    if (!userData) return [];
     const filteredData: DataModel[] = [];
-    const likedArrayString = localStorage.getItem(
-      "super-secured-database-users",
-    );
-    const userUsername = localStorage.getItem("connected-user");
-    if (!likedArrayString) return [];
-    const likedArrayJSON: UserModel = JSON.parse(likedArrayString);
-    if (!likedArrayJSON || !userUsername) return [];
+    const likedArray = userData.likedCoffees || [];
 
     for (const el of fullData) {
-      if (likedArrayJSON[userUsername].likedCoffees.indexOf(el.id) !== -1)
-        filteredData.push(el);
+      if (likedArray.indexOf(el.id) !== -1) filteredData.push(el);
     }
     return filteredData;
   }
 
   // Replace div filters with filters component
-  if (!localStorage.getItem("connected-user")) return <Navigate to="/login" />;
+  if (!loggedIn) return <Navigate to="/login" />;
   return (
     <main id="profile-page-main-container">
       <div id="filters" />
