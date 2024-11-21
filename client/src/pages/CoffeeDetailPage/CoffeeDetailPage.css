@@ -1,0 +1,386 @@
+.coffee-detail-page {
+  max-width: 1200px;
+  width: 80%;
+  margin: 15px auto 0 auto;
+}
+
+#title-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-container {
+  width: 100%;
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  justify-content: space-between;
+}
+
+.content-container > img {
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  width: 35%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.text-container {
+  width: 60%;
+  margin-top: 20px;
+}
+
+/* Style pour le bouton */
+
+.text-container h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text-container > section > h3 {
+  margin-top: 8px;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 20px;
+  margin-top: 5px;
+}
+
+.toggle-button img {
+  width: 40px;
+  height: 40px;
+  transition: filter 0.3s ease;
+}
+
+.toggle-button:hover img {
+  transform: scale(1.5);
+}
+
+/* Card return arrow */
+
+.text-container h2 {
+  position: relative;
+}
+
+.mini-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #eec7ab;
+  margin-left: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.mini-card:hover {
+  background-color: #c18a65;
+}
+
+/* Section infos */
+
+.info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+/* Section map + nouvelle section avec les images et la card */
+
+.section-with-map-and-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40px;
+  height: 300px;
+  width: 100%;
+}
+
+.section-with-map-and-info > img {
+  height: 100%;
+}
+
+/* Pour l'image de la carte */
+.map-container .extra-info .card-container {
+  flex: 1;
+  text-align: center;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: auto;
+  position: relative;
+}
+.map-container > img {
+  height: 100%;
+}
+
+.world-map {
+  width: 50%;
+  height: auto;
+  object-fit: cover;
+}
+
+.map-container .vietnam-map-hover {
+  position: absolute;
+  border-radius: 15px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.map-container:hover .vietnam-map-hover {
+  opacity: 1;
+}
+
+.extra-info {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  flex: 2;
+  position: relative;
+}
+
+/* Image des grains de café + Feuillage fixe */
+
+.coffee-grain {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+}
+
+.coffee-grain img,
+.coffee-leaves img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coffee-leaves {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 300px;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+/* Card container */
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 15px;
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+  background-color: transparent;
+  z-index: 10;
+}
+
+.card-link {
+  display: flex;
+  text-decoration: none;
+  height: 33%;
+}
+
+.card-link > button {
+  border-radius: 10px;
+  border: 0;
+  padding: 0 36px;
+  color: #333;
+  background-color: white;
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Container pour les 4 nouvelles cartes */
+.cards-container {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.cards-container > a {
+  text-decoration: none;
+}
+
+/* Card individuel avec image */
+.card-region {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-region img {
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card-region h3 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-top: 10px;
+}
+
+.card-region:hover {
+  transform: scale(1.05);
+}
+
+.card-region-link {
+  text-decoration: none;
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .no-mob {
+    display: none;
+  }
+
+  .content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content-container > img {
+    width: 66%;
+  }
+
+  .image-container {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .text-container {
+    width: 100%;
+  }
+
+  .section-with-map-and-info {
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-with-map-and-info > a {
+    height: 100%;
+  }
+
+  .map-container {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .extra-info {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .coffee-grain,
+  .coffee-leaves {
+    display: none;
+  }
+
+  .card-container {
+    display: block;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+  }
+
+  .world-map {
+    width: 100%;
+    height: auto;
+  }
+
+  .cards-container {
+    gap: 20px;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .card-region {
+    width: 100%;
+    max-width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+
+  .card-region img {
+    width: 80%;
+    height: 200px;
+  }
+}

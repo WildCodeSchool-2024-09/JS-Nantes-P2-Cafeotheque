@@ -1,7 +1,11 @@
 .recipe-video {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   margin: 32px;
+}
+
+.recipe-video > iframe {
+  border: 0;
 }
 
 /* Media Queries */
