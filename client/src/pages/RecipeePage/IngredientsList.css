@@ -34,23 +34,26 @@
 
 /* Media Queries */
 
-@media screen and (min-width: 320px) and (max-width: 480px) {
+@media screen and (min-width: 320px) and (max-width: 767px) {
   .ingredients-list-container {
-    flex-wrap: wrap;
-    width: 100px;
-    justify-content: center;
-    padding: 0;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 0px;
   }
 
   .ingredients-list-container > img {
     display: none;
+  }
+  .ingredients-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
   }
 
   .ingredients-list-title {
     margin: 8px;
     border: 1px solid #452f25;
     padding: 16px;
-    padding-bottom: 3px;
-    align-items: center;
+    align-self: flex-start;
   }
 }
