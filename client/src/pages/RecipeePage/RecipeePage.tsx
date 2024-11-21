@@ -25,7 +25,7 @@ function RecipeePage() {
           name={recipe[0].mainContent.name}
           preparationSteps={recipe[0].mainContent.preparationSteps}
         />
-        <RecipeVideo />
+        <RecipeVideo videoUrl={recipe[0].mainContent.videoUrl} />
       </main>
     )
   );

@@ -1,8 +1,16 @@
 export interface Recipe {
   id: number;
-  aside: { illustration: string; ingredients: string[] };
-  mainContent: { name: string; preparationSteps: string[] };
-  videoUrl: string;
+
+  aside: {
+    illustration: string;
+    ingredients: string[];
+  };
+
+  mainContent: {
+    name: string;
+    preparationSteps: string[];
+    videoUrl: string;
+  };
 }
 
 export interface IngredientsListProps {
@@ -10,11 +18,11 @@ export interface IngredientsListProps {
   ingredients: string[];
 }
 
-export interface preparationStepsProps {
+export interface PreparationStepsProps {
   name: string;
   preparationSteps: string[];
 }
 
-export interface recipeVideoProps {
+export interface RecipeVideoProps {
   videoUrl: string;
 }

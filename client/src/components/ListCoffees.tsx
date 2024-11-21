@@ -4,20 +4,14 @@ import type { DataModel } from "../types/FilteredList";
 import "../pages/CoffeesPage/ListCoffees.css";
 import { Link } from "react-router-dom";
 
-function ListCoffees() {
-  const [data, setData] = useState<DataModel[]>([]);
+function ListCoffees({ data }: { data: DataModel[] }) {
   const [newData, setNewData] = useState<DataModel[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/coffee")
-      .then((response) => response.json())
-      .then((result) => {
-        //  filter the number of elements
-        setData(result);
-        setNewData(result.slice(0, 9));
-      });
-  }, []);
+    //  filter the number of elements
+    setNewData(data.slice(0, 9));
+  }, [data]);
 
   // Event next page
   const handlePageChange = (sign: number) => {
