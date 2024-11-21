@@ -1,4 +1,5 @@
-import CoffeeDetailPage from "../pages/CoffeeDetailPage";
+import CoffeesLoader from "../loaders/CoffeesLoader";
+import CoffeeDetailPage from "../pages/CoffeeDetailPage/CoffeeDetailPage";
 import CoffeesPage from "../pages/CoffeesPage/CoffeesPage";
 import HistoryOfCoffeePage from "../pages/HistoryPage/HistoryOfCoffeePage";
 import HomePage from "../pages/HomePage/HomePage";
@@ -16,6 +17,7 @@ const routes = [
   {
     path: "/coffees",
     element: <CoffeesPage />,
+    loader: CoffeesLoader,
   },
   {
     path: "/coffee/:id",

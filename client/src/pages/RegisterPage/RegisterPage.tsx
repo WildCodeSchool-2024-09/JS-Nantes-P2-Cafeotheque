@@ -2,6 +2,7 @@ import "./RegisterPage.css";
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import ErrorDisplay from "../../components/ErrorDisplay";
+import { useAuth } from "../../utils/context/AuthContext";
 
 interface FormValueInterface {
   username: string;
@@ -22,6 +23,8 @@ function RegisterPage() {
     subscribe: false,
   });
   const [errorMessage, setErrorMessage] = useState<null | string>(null);
+
+  const { loggedIn } = useAuth();
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name, type } = event.target;
@@ -99,7 +102,7 @@ function RegisterPage() {
     }
   }
 
-  if (localStorage.getItem("connected-user")) return <Navigate to="/profile" />;
+  if (loggedIn) return <Navigate to="/profile" />;
   return (
     <main id="register-container">
       <h2>Inscription</h2>
