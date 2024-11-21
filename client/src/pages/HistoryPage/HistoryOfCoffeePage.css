@@ -1,21 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
 
-body {
+/* body {
   background-color: #fdf8f6;
   font-family: "Poetsen One", sans-serif;
   margin: 0;
   padding: 0;
-}
+} */
 
-h1 {
+/* h1 {
   font-size: 3rem;
   text-align: center;
   margin-top: 10%;
   color: #3e2a47;
   text-shadow: 2px 3px 1px black;
-}
+} */
 
-#Coffee-Bottom-image {
+/* #Coffee-Bottom-image {
   position: fixed;
   bottom: 0;
   left: 0;
@@ -24,23 +24,23 @@ h1 {
   z-index: -1;
   transition: transform 1s ease, filter 1s ease, opacity 1s ease;
   opacity: 1;
-}
+} */
 
-#Coffee-Bottom-image.reflection {
+/* #Coffee-Bottom-image.reflection {
   transform: scaleY(-1);
   opacity: 0.3;
   filter: blur(2px);
-}
+} */
 
-.card-container {
+/* /* .card-container {
   z-index: 5;
   background-color: transparent;
   margin: 100px auto;
   width: 80%;
   max-width: 500px;
-}
+} */
 
-.card {
+/* .card {
   display: inline-block;
   border-radius: 15px;
   box-shadow: 6px 6px 8px rgba(0, 0, 0, 0.1);
@@ -55,9 +55,9 @@ h1 {
   align-items: center;
   background-color: #c5b1a6;
   box-sizing: border-box;
-}
+} */
 
-.scroll-card {
+/* .scroll-card {
   width: 80px;
   height: 80px;
   background-color: #c18a65;
@@ -73,10 +73,10 @@ h1 {
   align-items: center;
   box-shadow: 6px 6px 8px rgb(0, 0, 0);
   transition: transform 0.3s ease, background-color 0.3s ease;
-}
+} */
 
 /* Position fixe pour la flèche en bas à droite */
-.scroll-card.fixed-bottom-right {
+/* .scroll-card.fixed-bottom-right {
   position: fixed;
   bottom: 20px;
   right: 5%;
@@ -95,58 +95,15 @@ h1 {
 
 .scroll-card:hover .arrow {
   transform: scale(1.5);
-}
+} */
 
 /* Première flèche : ajouter un espacement plus grand */
-.first-scroll-card {
-  width: 80px;
-  height: 80px;
-  background-color: #c18a65;
-  color: white;
-  border-radius: 30px;
-  padding: 20px;
-  text-align: center;
-  cursor: pointer;
-  margin: 50px auto 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 6px 6px 8px rgb(0, 0, 0);
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
 
 /* Première carte : ajouter un espacement plus grand au-dessus */
-.first-card-container {
+/* .first-card-container {
   z-index: 5;
   background-color: transparent;
   margin: 600px auto 0;
   width: 80%;
   max-width: 500px;
-}
-
-/* Conteneur de l'image sur l'Europe */
-.europe-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-}
-
-/* Image de l'histoire du café */
-.history-image {
-  max-width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.final-image-container {
-  text-align: center;
-  padding-bottom: 30px;
-}
-
-.final-image {
-  max-width: 50%;
-  height: auto;
-}
+} */

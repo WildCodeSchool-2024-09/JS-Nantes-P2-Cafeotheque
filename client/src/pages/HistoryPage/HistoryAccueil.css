@@ -1,0 +1,28 @@
+/* * Affichage accueil title*/
+
+.Container-accueil-title {
+  margin: -5px 0px;
+}
+
+.Container-accueil-title > h1 {
+  position: static;
+  font-size: 56px;
+  text-align: center;
+  width: 40%;
+  margin: -5% 30% auto;
+  letter-spacing: 2px;
+  color: #000000;
+}
+
+/* * Affichage Image Accueil */
+
+.Container-accueil-title > img:first-child {
+  width: 100%;
+  rotate: 180deg;
+  border-bottom: solid black 5px;
+}
+
+.Container-accueil-title > img {
+  width: 100%;
+  border-bottom: solid black 5px;
+}
