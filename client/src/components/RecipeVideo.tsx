@@ -1,14 +1,15 @@
 import "/src/pages/RecipeePage/RecipeVideo.css";
+import type { RecipeVideoProps } from "../types/RecipePage";
 
-function RecipeVideo() {
+function RecipeVideo({ videoUrl }: RecipeVideoProps) {
   return (
     <aside className="recipe-video">
       <iframe
+        key={videoUrl}
         width="640"
         height="360"
-        src="http://www.youtube.com/embed/7VTtenyKRg4"
-        frameBorder="0"
-        title="TiramisuYoutubeVideo"
+        src={videoUrl}
+        title="YoutubeVideo"
       />
     </aside>
   );
