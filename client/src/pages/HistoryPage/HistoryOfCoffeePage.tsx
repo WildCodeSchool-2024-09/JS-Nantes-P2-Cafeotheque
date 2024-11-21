@@ -1,6 +1,6 @@
 import "./HistoryOfCoffeePage.css";
-import HistoryCard from "../../components/HistoryPage/HistoryCard";
 import HistoryAccueil from "../../components/HistoryPage/HistoryAccueil";
+import HistoryCard from "../../components/HistoryPage/HistoryCard";
 
 // Définir les types pour l'état
 const HistoryOfCoffeePage = () => {
