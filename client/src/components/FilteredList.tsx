@@ -69,6 +69,7 @@ function FilteredList({ filters, setFilters, data }: FilteredListProps) {
             <input
               className="pointer"
               onClick={handleClick}
+              onChange={() => {}}
               type="checkbox"
               id={filterName}
               name={filterName}
