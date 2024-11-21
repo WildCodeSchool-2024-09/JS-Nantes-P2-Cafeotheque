@@ -11,6 +11,11 @@ header > nav {
   margin: 16px;
 }
 
+header > nav > button {
+  border: 0;
+  background-color: inherit;
+}
+
 .logo-coffee,
 .avatar-profile {
   width: 10vh;

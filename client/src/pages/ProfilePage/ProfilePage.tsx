@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import ListItems from "../../components/ListItems";
-import type { DataModel, UserModel } from "../../models/index";
+import type { DataModel } from "../../models/index";
 import "./ProfilePage.css";
 import { Navigate } from "react-router-dom";
 import FilteredList from "../../components/FilteredList";
 import type { FiltersStateType } from "../../types/FilteredList";
+import { useAuth } from "../../utils/context/AuthContext";
 
 function ProfilePage() {
   const [fullData, setfullData] = useState<DataModel[]>([]);
@@ -14,6 +15,8 @@ function ProfilePage() {
     country: { isActive: false, filters: [] },
     profile: { isActive: false, filters: [] },
   });
+
+  const { loggedIn, userData } = useAuth();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,18 +30,12 @@ function ProfilePage() {
   }, []);
 
   function filterLikedData(fullData: DataModel[]) {
+    if (!userData) return [];
     const filteredData: DataModel[] = [];
-    const likedArrayString = localStorage.getItem(
-      "super-secured-database-users",
-    );
-    const userUsername = localStorage.getItem("connected-user");
-    if (!likedArrayString) return [];
-    const likedArrayJSON: UserModel = JSON.parse(likedArrayString);
-    if (!likedArrayJSON || !userUsername) return [];
+    const likedArray = userData.likedCoffees || [];
 
     for (const el of fullData) {
-      if (likedArrayJSON[userUsername].likedCoffees.indexOf(el.id) !== -1)
-        filteredData.push(el);
+      if (likedArray.indexOf(el.id) !== -1) filteredData.push(el);
     }
     return filteredData;
   }
@@ -58,7 +55,7 @@ function ProfilePage() {
     setCurrentData(newData);
   }, [filters, fullData]);
 
-  if (!localStorage.getItem("connected-user")) return <Navigate to="/login" />;
+  if (!loggedIn) return <Navigate to="/login" />;
   return (
     <main id="profile-page-main-container">
       <FilteredList filters={filters} setFilters={setFilters} data={fullData} />

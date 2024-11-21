@@ -6,7 +6,7 @@ function IngredientsList({ imgSrc, ingredients }: IngredientsListProps) {
     <aside className="ingredients-list-container">
       <img
         className="tiramisu-ingredients-list"
-        src={`src/assets/images/${imgSrc}`}
+        src={`/public/images/${imgSrc}`}
         alt="Illustration Tiramisu"
       />
       <h2 className="ingredients-list-title">Ingrédients</h2>
