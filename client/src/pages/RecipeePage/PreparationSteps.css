@@ -1,0 +1,26 @@
+.preparation-steps-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 32px;
+  padding: 16px;
+  gap: 8px;
+  list-style-type: none;
+  counter-reset: elementcounter;
+  padding-left: 0;
+}
+.idee-recette-tiramisu-title {
+  text-align: center;
+  margin: 8px;
+  padding: 8px;
+}
+
+.preparation-title {
+  padding: 32px;
+}
+
+.number-of-step:before {
+  content: "Étape " counter(elementcounter) ". ";
+  counter-increment: elementcounter;
+  font-weight: bold;
+}

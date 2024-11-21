@@ -1,12 +1,21 @@
 import "../pages/HomePage/LatestArrival.css";
-import "../pages/HomePage/Responsive/resp-LatestArrival.css";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import data from "../mocks/apiMock.json";
 import type { DataModel } from "../models/index";
 //The LatestArrival function is used to retrieve the latest product and display it.
 
 function LatestArrival() {
-  const lastCoffee = (): DataModel => {
+  const [lastElement, setLastElement] = useState<DataModel | null>(null);
+
+  useEffect(() => {
+    fetch("http://localhost:4000/api/coffee")
+      .then((response) => response.json())
+      .then((result) => {
+        setLastElement(lastCoffee(result));
+      });
+  }, []);
+
+  const lastCoffee = (data: DataModel[]): DataModel => {
     let result = 0;
     let ret = data[0];
     for (let i = 0; i < data.length; i++) {
@@ -18,7 +27,7 @@ function LatestArrival() {
     }
     return ret;
   };
-  const lastElement = lastCoffee();
+
   return (
     <>
       <section className="container-latest-arrival">
@@ -28,10 +37,16 @@ function LatestArrival() {
         />
         <section className="container-text-latest-arrival">
           <h3>Latest arrival</h3>
-          <p>{lastElement.description}</p>
-          <Link to={`/coffee/${lastElement.id}`}>
-            <button type="button">+ D'info</button>
-          </Link>
+          {lastElement ? (
+            <>
+              <p>{lastElement.description}</p>
+              <Link to={`/coffee/${lastElement.id}`}>
+                <button type="button">+ D'info</button>
+              </Link>
+            </>
+          ) : (
+            <p>chargement..</p>
+          )}
         </section>
       </section>
     </>
