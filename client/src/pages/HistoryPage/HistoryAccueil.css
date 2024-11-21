@@ -26,3 +26,26 @@
   width: 100%;
   border-bottom: solid black 5px;
 }
+
+/* * Button  */
+
+.Container-accueil-title > div {
+  display: flex;
+  justify-content: center;
+}
+
+.Container-accueil-title > div > a {
+  position: absolute;
+  margin-top: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 10px;
+  background-color: burlywood;
+  border: none;
+  width: 40px;
+}
+
+.Container-accueil-title > div > a:hover {
+  box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+}

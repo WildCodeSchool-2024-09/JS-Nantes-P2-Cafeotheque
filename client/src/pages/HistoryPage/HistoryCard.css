@@ -1,5 +1,9 @@
 /* * Image Top */
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container-central-history > img {
   width: 100%;
   rotate: 180deg;
@@ -49,7 +53,6 @@
 
 .card-container .card-1 > figure > img {
   width: 40%;
-  rotate: 12deg;
   object-position: 50px;
 }
 
@@ -163,4 +166,50 @@
 
 .image-end-page-container > img {
   height: 500px;
+}
+
+/* Button scroll bottom */
+
+.container-central-history .first-button {
+  display: flex;
+  justify-content: end;
+  margin-right: 5%;
+}
+
+.container-central-history .first-button > a {
+  background-color: burlywood;
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 25px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.container-central-history .first-button > a:hover {
+  box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* button scoll top */
+
+main .second-button {
+  display: flex;
+  justify-content: end;
+  text-align: center;
+  margin-right: 5%;
+}
+
+main .second-button > a {
+  background-color: burlywood;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  width: 40px;
+  height: 25px;
+  cursor: pointer;
+}
+
+main .second-button > a:hover {
+  box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
 }

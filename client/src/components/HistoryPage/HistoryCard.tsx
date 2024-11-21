@@ -40,12 +40,14 @@ function HistoryCard() {
     },
   ];
   return (
-    <main className="container-central-history">
+    <main id="historyTop" className="container-central-history">
       <img
         src="https://i.ibb.co/MkYhTj1/pngegg-4.png"
         alt="Plein de grain de café"
       />
-
+      <div className="first-button">
+        <a href="#historyBottom">⬇</a>
+      </div>
       <section className="card-container">
         {cards.map((el) => (
           <section key={el.id} className={`card-${el.id}`}>
@@ -72,6 +74,11 @@ function HistoryCard() {
           />
         </figure>
       </section>
+      <div className="second-button">
+        <a id="historyBottom" href="#historyTop">
+          ⬆︎
+        </a>
+      </div>
     </main>
   );
 }

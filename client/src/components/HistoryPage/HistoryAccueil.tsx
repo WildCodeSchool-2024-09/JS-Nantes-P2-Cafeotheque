@@ -8,6 +8,11 @@ function HistoryAccueil() {
         alt="Plein de grain de café"
       />
       <h1>Tout savoir sur l'histoire du Café</h1>
+      <div>
+        <a href="#historyTop" type="button">
+          ⬇
+        </a>
+      </div>
       <img
         src="https://i.ibb.co/MkYhTj1/pngegg-4.png"
         alt="Plein de grain de café"
