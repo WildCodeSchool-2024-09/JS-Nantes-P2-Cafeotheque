@@ -4,3 +4,45 @@
 #filters {
   width: 30%;
 }
+
+/* No item style */
+
+#no-item-profile-container {
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#jumpy-link {
+  display: inline-flex;
+  text-decoration: none;
+  color: #a54d01;
+  animation-name: jumpy;
+  animation-timing-function: ease;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-delay: 3s;
+}
+
+@keyframes jumpy {
+  0% {
+    transform: translateY(0);
+  }
+  10% {
+    transform: translateY(-10px);
+  }
+  20% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-5px);
+  }
+
+  40% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
