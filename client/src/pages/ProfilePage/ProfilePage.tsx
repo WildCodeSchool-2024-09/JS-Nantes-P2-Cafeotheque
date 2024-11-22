@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ListItems from "../../components/ListItems";
 import type { DataModel } from "../../models/index";
 import "./ProfilePage.css";
-import { Navigate } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import FilteredList from "../../components/FilteredList";
 import type { FiltersStateType } from "../../types/FilteredList";
 import { useAuth } from "../../utils/context/AuthContext";
@@ -51,7 +51,6 @@ function ProfilePage() {
           filters[key].filters.includes(el[key]),
         );
     }
-    newData;
     setCurrentData(newData);
   }, [filters, fullData]);
 
@@ -63,6 +62,17 @@ function ProfilePage() {
           message: "Vous devez être connecté pour accéder à cette page",
         }}
       />
+    );
+  if (!currentData.length)
+    return (
+      <main id="no-item-profile-container">
+        <p>
+          Aucun article aimé pour le moment pour y remedier c'est{" "}
+          <Link id="jumpy-link" to="/coffees">
+            par ici !
+          </Link>
+        </p>
+      </main>
     );
   return (
     <main id="profile-page-main-container">

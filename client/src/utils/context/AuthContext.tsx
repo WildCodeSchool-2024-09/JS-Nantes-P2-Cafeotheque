@@ -24,8 +24,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     const loggedInUser = localStorage.getItem("connected-user");
     if (!loggedInUser || !savedData) return null;
     const parsedData = JSON.parse(savedData) as UserData[];
-    const userData = parsedData.filter((el) => el.username === loggedInUser)[0];
-    return userData || null;
+    const uData = parsedData.find((u: UserData) => u.username === loggedInUser);
+    return uData || null;
   });
 
   const setUserData = (newUserData: UserData) => {
