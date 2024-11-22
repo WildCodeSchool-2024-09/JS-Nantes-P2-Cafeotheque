@@ -65,19 +65,21 @@ function FilteredList({ filters, setFilters, data }: FilteredListProps) {
       {/* List main filters */}
       {Object.keys(filters).map((filterName) => {
         return (
-          <li key={filterName}>
-            <input
-              className="pointer"
-              onClick={handleClick}
-              onChange={() => {}}
-              type="checkbox"
-              id={filterName}
-              name={filterName}
-              checked={filters[filterName as keyof FiltersStateType].isActive}
-            />
-            <label className="pointer" htmlFor={filterName}>
-              {filterName}
-            </label>
+          <>
+            <li key={filterName}>
+              <input
+                className="pointer"
+                onClick={handleClick}
+                onChange={() => {}}
+                type="checkbox"
+                id={filterName}
+                name={filterName}
+                checked={filters[filterName as keyof FiltersStateType].isActive}
+              />
+              <label className="pointer" htmlFor={filterName}>
+                {filterName}
+              </label>
+            </li>
             {/* List sub-filters if main is checked */}
             {filters[filterName as keyof FiltersStateType].isActive && (
               <ul className="list-filter">
@@ -102,7 +104,7 @@ function FilteredList({ filters, setFilters, data }: FilteredListProps) {
                 )}
               </ul>
             )}
-          </li>
+          </>
         );
       })}
     </ul>

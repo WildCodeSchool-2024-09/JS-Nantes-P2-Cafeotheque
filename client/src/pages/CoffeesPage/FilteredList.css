@@ -12,13 +12,20 @@
 .list-filter {
   margin: 4px 0 10px 15px;
   list-style: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .list-filter > li {
   display: flex;
+  margin-top: 3px;
+}
+
+.filters-container > li {
+  display: flex;
   align-items: center;
-  flex-wrap: nowrap;
   margin-bottom: 2.33px;
+  flex: 1 1 auto; /* Les deux premiers partagent l'espace */
 }
 
 .list-filter > li > label {
