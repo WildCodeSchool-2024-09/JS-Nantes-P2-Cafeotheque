@@ -36,10 +36,13 @@ html {
   width: 40%;
   margin-left: 10%;
 }
-.card-container-history .card-1 > article::after {
-  width: 40%;
-  margin-left: 10%;
-  background-color: white;
+
+/* ? Cards n°1 Changement au click */
+
+.card-container-history .card-1 > article:active {
+  font-size: 0;
+  background-image: url("images/Histoirecoffee.png");
+  height: 35rem;
 }
 
 /* * Image plante coffee */
@@ -61,6 +64,15 @@ html {
 .card-container-history .card-2 > article {
   width: 70%;
   margin: 0 auto;
+}
+
+/* ? Cards n°2 Changement au click */
+
+.card-container-history .card-2 > article:active {
+  font-size: 0;
+  background-image: url("images/CarteHarar.png");
+  height: 24rem;
+  width: 33%;
 }
 
 /* * Image plante coffee */
@@ -101,6 +113,12 @@ html {
 .card-container-history .card-4 > article {
   width: 70%;
   margin: 0% 10% auto;
+}
+
+.card-container-history .card-4 > article:active {
+  font-size: 0;
+  background-image: url("images/CafeBar.png");
+  height: 50rem;
 }
 
 /* * Image plante coffee */
