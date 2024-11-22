@@ -2,6 +2,7 @@ import "./RegisterPage.css";
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import ErrorDisplay from "../../components/ErrorDisplay";
+import type { UserData } from "../../types/userData";
 import { useAuth } from "../../utils/context/AuthContext";
 
 interface FormValueInterface {
@@ -76,28 +77,34 @@ function RegisterPage() {
     }
   }
 
+  function doUserExist(arr: UserData[], username: string) {
+    return arr.filter((acc) => acc.username === username).length;
+  }
+
   function handleSubmit() {
     let usersData = localStorage.getItem("super-secured-database-users");
     if (!usersData) {
-      localStorage.setItem("super-secured-database-users", "{}");
-      usersData = "{}";
+      localStorage.setItem("super-secured-database-users", "[]");
+      usersData = "[]";
     }
     if (dataValidation(formValues)) {
-      const newUsers = JSON.parse(usersData);
-      if (newUsers[formValues.username]) {
+      const usersDataJSON = JSON.parse(usersData);
+      if (doUserExist(usersDataJSON, formValues.username)) {
         // handle existing user
+        setErrorMessage(
+          "Oups.. Il semblerait que ce nom d'utilisateur soit déjà pris !",
+        );
       } else {
         // handle create user
         const newUser = {
           username: formValues.username,
           password: formValues.password,
           email: formValues.email,
+          likedCoffees: [],
         };
-        newUsers[formValues.username] = newUser;
-        localStorage.setItem(
-          "super-secured-database-users",
-          JSON.stringify(newUsers),
-        );
+        usersDataJSON.push(newUser);
+        const newUsers = JSON.stringify(usersDataJSON);
+        localStorage.setItem("super-secured-database-users", newUsers);
       }
     }
   }
