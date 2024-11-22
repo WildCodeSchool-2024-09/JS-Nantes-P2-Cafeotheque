@@ -1,10 +1,10 @@
 /* * Affichage accueil title  */
 
-.Container-accueil-title {
+.container-accueil-title {
   margin: -5px 0px;
 }
 
-.Container-accueil-title > h1 {
+.container-accueil-title > h1 {
   position: static;
   font-size: 56px;
   text-align: center;
@@ -16,25 +16,25 @@
 
 /* * Affichage Image Accueil */
 
-.Container-accueil-title > img:first-child {
+.container-accueil-title > img:first-child {
   width: 100%;
   rotate: 180deg;
   border-bottom: solid black 5px;
 }
 
-.Container-accueil-title > img {
+.container-accueil-title > img {
   width: 100%;
   border-bottom: solid black 5px;
 }
 
 /* * Button  */
 
-.Container-accueil-title > div {
+.container-accueil-title > div {
   display: flex;
   justify-content: center;
 }
 
-.Container-accueil-title > div > a {
+.container-accueil-title > div > a {
   position: absolute;
   margin-top: 20px;
   cursor: pointer;
@@ -46,6 +46,6 @@
   width: 40px;
 }
 
-.Container-accueil-title > div > a:hover {
+.container-accueil-title > div > a:hover {
   box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
 }

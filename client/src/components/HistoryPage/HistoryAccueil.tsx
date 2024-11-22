@@ -2,7 +2,7 @@ import "../../pages/HistoryPage/HistoryAccueil.css";
 
 function HistoryAccueil() {
   return (
-    <section className="Container-accueil-title">
+    <section className="container-accueil-title">
       <img
         src="https://i.ibb.co/MkYhTj1/pngegg-4.png"
         alt="Plein de grain de café"
