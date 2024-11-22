@@ -1,11 +1,15 @@
 import { useState } from "react";
 import "./LoginPage.css";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import ErrorDisplay from "../../components/ErrorDisplay";
 import { useAuth } from "../../utils/context/AuthContext";
 
 function LoginPage() {
-  const [formError, setFormError] = useState<string | null>(null);
+  const location = useLocation();
+  const [formError, setFormError] = useState<string | null>(() => {
+    if (location.state) return location.state.message;
+    return null;
+  });
   const [formValues, setFormValues] = useState({
     username: "",
     password: "",
