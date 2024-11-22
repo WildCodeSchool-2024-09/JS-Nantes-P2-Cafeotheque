@@ -17,7 +17,9 @@
 }
 
 .container-home-cards > a > figure:hover {
-  box-shadow: rgb(115, 115, 115) 10px 15px 15px 5px;
+  box-shadow: black 0 0.7em 0.7em -0.2em;
+  background-color: black;
+  transform: translateY(-0.25em);
   transform: scale(1.1);
 }
 
