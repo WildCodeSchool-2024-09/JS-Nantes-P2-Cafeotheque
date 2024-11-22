@@ -8,7 +8,8 @@
     "price": 28.0,
     "added_date": "2024-10-03",
     "description": "Un café équilibré, aux arômes de noisette, caramel et fruits rouges. Ce café offre une acidité agréable qui équilibre parfaitement la douceur naturelle du caramel. Cultivé dans les montagnes colombiennes, il est réputé pour son goût doux et rond, avec des notes fruitées qui rappellent la fraicheur des baies et des agrumes. Parfait pour ceux qui recherchent un café fruité et accessible à toute heure de la journée.",
-    "preparation": "Pour préparer ce café, optez pour une méthode de filtrage comme la cafetière à piston (French Press) ou une méthode de pour-over. Utilisez environ 15g de café pour 250ml d'eau. L'eau doit être entre 90 et 96°C, et le temps d'infusion de 4 à 5 minutes, pour extraire toutes les saveurs fruitées et équilibrées."
+    "preparation": "Pour préparer ce café, optez pour une méthode de filtrage comme la cafetière à piston (French Press) ou une méthode de pour-over. Utilisez environ 15g de café pour 250ml d'eau. L'eau doit être entre 90 et 96°C, et le temps d'infusion de 4 à 5 minutes, pour extraire toutes les saveurs fruitées et équilibrées.",
+    "image": "https://historias.starbucks.com/_next/image/?url=https%3A%2F%2Fstories.starbucks.com%2Fuploads%2Fsites%2F34%2F2024%2F01%2FColombia_narino_10_2.jpg&w=1920&q=75"
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "price": 23.0,
     "added_date": "2024-10-09",
     "description": "Le café grec (Ellinikos) est intense et légèrement sucré, avec des notes de chocolat et de noix. Il est souvent préparé avec une mousse dense, offrant une texture veloutée qui le distingue des autres cafés. Servi dans une petite tasse, il est traditionnellement accompagné de sucre ou d'épices comme la cannelle. Ce café robuste est parfait pour ceux qui aiment une boisson sucrée et corsée avec une richesse aromatique.",
-    "preparation": "Pour préparer le café grec, utilisez un cezve (pot traditionnel). Mélangez le café moulu finement avec de l'eau froide (environ 50ml par tasse) et du sucre, selon votre goût. Chauffez lentement à feu doux sans remuer, jusqu'à ce que le café commence à mousser. Retirez du feu avant qu'il ne déborde, puis servez immédiatement dans une petite tasse."
+    "preparation": "Pour préparer le café grec, utilisez un cezve (pot traditionnel). Mélangez le café moulu finement avec de l'eau froide (environ 50ml par tasse) et du sucre, selon votre goût. Chauffez lentement à feu doux sans remuer, jusqu'à ce que le café commence à mousser. Retirez du feu avant qu'il ne déborde, puis servez immédiatement dans une petite tasse.",
+    "image": "https://i.etsystatic.com/48753366/r/il/b31283/5747435506/il_794xN.5747435506_r3m1.jpg"
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "price": 22.5,
     "added_date": "2024-10-18",
     "description": "Un café corsé et sucré, avec des notes de chocolat noir et de lait concentré, ce qui le rend crémeux et agréable. Il est souvent préparé glacé avec du lait sucré, créant une boisson rafraîchissante qui se distingue par sa douceur. Ce café est très populaire au Vietnam, offrant une riche expérience de dégustation qui combine intensité et douceur pour une expérience unique.",
-    "preparation": "Préparez ce café avec une méthode de filtrage vietnamienne traditionnelle, en versant lentement de l'eau chaude sur le café moulu dans un filtre métallique. Une fois l'infusion terminée, mélangez le café avec une généreuse portion de lait concentré sucré. Servez chaud ou glacé selon votre préférence."
+    "preparation": "Préparez ce café avec une méthode de filtrage vietnamienne traditionnelle, en versant lentement de l'eau chaude sur le café moulu dans un filtre métallique. Une fois l'infusion terminée, mélangez le café avec une généreuse portion de lait concentré sucré. Servez chaud ou glacé selon votre préférence.",
+    "image": "https://www.asiamarche.fr/cdn/shop/files/3132.jpg?v=1696256182"
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "price": 27.0,
     "added_date": "2024-10-06",
     "description": "Un café puissant avec des arômes terreux et boisés, accompagnés de notes épicées et de chocolat noir. Ce café est très peu acide, offrant une texture riche et veloutée. Cultivé dans les terres volcaniques de Sumatra, il bénéficie d'un sol fertile qui lui confère des saveurs profondes et complexes. Idéal pour ceux qui aiment les cafés forts et épicés avec une touche de douceur chocolatée.",
-    "preparation": "Pour préparer ce café indonésien, optez pour une méthode de filtration à froid ou une cafetière à piston (French Press). Utilisez une mouture grossière et une proportion de 15g de café pour 250ml d'eau. L'eau doit être juste en dessous de l'ébullition, entre 90 et 94°C, et le temps d'infusion d'environ 4 minutes."
+    "preparation": "Pour préparer ce café indonésien, optez pour une méthode de filtration à froid ou une cafetière à piston (French Press). Utilisez une mouture grossière et une proportion de 15g de café pour 250ml d'eau. L'eau doit être juste en dessous de l'ébullition, entre 90 et 94°C, et le temps d'infusion d'environ 4 minutes.",
+    "image": "https://produits.bienmanger.com/46313-0w0h0_Cafe_Grains_Bio_Indonesie_Sumatra_Arabica.jpg"
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "price": 30.0,
     "added_date": "2024-10-20",
     "description": "Ce café présente des arômes intenses de fruits secs, de chocolat et d'épices douces, avec une acidité marquée qui lui donne une complexité unique. Cultivé dans les montagnes yéménites, ce café est l'un des plus anciens au monde et bénéficie d'une riche histoire de culture. Il est parfait pour ceux qui recherchent une expérience de café épicée et fruitée, avec une profondeur intense.",
-    "preparation": "Préparez ce café avec une méthode traditionnelle de filtration manuelle, comme un filtre à main ou une cafetière à piston. Utilisez une mouture fine et 15g de café pour 250ml d'eau. L'eau doit être entre 90 et 96°C. Laissez infuser pendant 4 à 5 minutes pour permettre aux arômes d'épices et de fruits secs de se développer pleinement."
+    "preparation": "Préparez ce café avec une méthode traditionnelle de filtration manuelle, comme un filtre à main ou une cafetière à piston. Utilisez une mouture fine et 15g de café pour 250ml d'eau. L'eau doit être entre 90 et 96°C. Laissez infuser pendant 4 à 5 minutes pour permettre aux arômes d'épices et de fruits secs de se développer pleinement.",
+    "image": "https://www.maison-lagrange.com/1704-large_default/cafe-grain-yemen-mof.jpg"
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "price": 24.0,
     "added_date": "2024-10-15",
     "description": "Un café doux et épicé souvent servi avec du lait de coco et des notes d'épices orientales comme la cannelle et la cardamome. Ce café crémeux et épicé est idéal pour ceux qui recherchent une boisson réconfortante et exotique. Le lait de coco ajoute une douceur subtile et une texture onctueuse qui se marie parfaitement avec les épices, créant une expérience de dégustation chaleureuse et enveloppante.",
-    "preparation": "Préparez ce café en utilisant une méthode de filtrage à main ou une cafetière à piston. Ajoutez une petite quantité de lait de coco pour un goût doux et onctueux. Complétez avec des épices comme la cannelle et la cardamome pour accentuer les saveurs orientales. Servez chaud pour une expérience réconfortante et épicée."
+    "preparation": "Préparez ce café en utilisant une méthode de filtrage à main ou une cafetière à piston. Ajoutez une petite quantité de lait de coco pour un goût doux et onctueux. Complétez avec des épices comme la cannelle et la cardamome pour accentuer les saveurs orientales. Servez chaud pour une expérience réconfortante et épicée.",
+    "image": "https://www.vert-tiges.com/11120-thickbox_default/cafe-thailande-pang-khon-tribe-akha-sachet-95g-.jpg"
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "price": 29.5,
     "added_date": "2024-10-05",
     "description": "Ce café est légèrement floral et fruité, avec des arômes d'agrumes, de jasmin et de baies. Sa forte acidité et sa légèreté en font une option rafraîchissante et complexe. Cultivé dans la région de Yirgacheffe en Éthiopie, il est célèbre pour sa finesse et son caractère unique. Parfait pour ceux qui recherchent un café léger, acidulé et délicat, ce café est un excellent choix pour une expérience de dégustation raffinée.",
-    "preparation": "Préparez ce café avec une méthode douce comme le pour-over ou la cafetière à piston pour préserver ses arômes floraux et fruités. Utilisez une mouture moyenne et un ratio de 15g de café pour 250ml d'eau à 92°C. Laissez infuser pendant 3 à 4 minutes pour une tasse légère et acidulée."
+    "preparation": "Préparez ce café avec une méthode douce comme le pour-over ou la cafetière à piston pour préserver ses arômes floraux et fruités. Utilisez une mouture moyenne et un ratio de 15g de café pour 250ml d'eau à 92°C. Laissez infuser pendant 3 à 4 minutes pour une tasse légère et acidulée.",
+    "image": "https://www.graindecafe.com/cdn/shop/files/cafe-vert-ethiopie-yirgacheffe-site-v2.jpg?v=1729933662&width=1125"
   },
   {
     "id": 8,
@@ -85,7 +92,8 @@
     "price": 26.0,
     "added_date": "2024-10-08",
     "description": "Un café vif et acide, avec des notes de baies noires, de fruits tropicaux et une légère touche de thé. Ce café est reconnu pour sa brillance et son intensité, avec une acidité marquée qui en fait une option idéale pour ceux qui aiment les cafés lumineux et fruités. Cultivé sur les pentes des montagnes du Kenya, ce café est parfait pour une tasse énergisante et rafraîchissante.",
-    "preparation": "Pour obtenir un café vif et fruité, privilégiez une méthode de filtration comme la cafetière à piston ou la méthode pour-over. Utilisez une mouture moyenne et 15g de café pour 250ml d'eau chaude (90°C). Le temps d'infusion doit être de 3 à 4 minutes pour une tasse éclatante et acide."
+    "preparation": "Pour obtenir un café vif et fruité, privilégiez une méthode de filtration comme la cafetière à piston ou la méthode pour-over. Utilisez une mouture moyenne et 15g de café pour 250ml d'eau chaude (90°C). Le temps d'infusion doit être de 3 à 4 minutes pour une tasse éclatante et acide.",
+    "image": "https://labruleriedurendezvous.com/wp-content/uploads/2022/09/cafe-moulu-250-gr-fin-Kenya.webp"
   },
   {
     "id": 9,
@@ -96,7 +104,8 @@
     "price": 24.5,
     "added_date": "2024-10-10",
     "description": "Un café robuste et épicé, avec des arômes de chocolat noir et de noix. C'est l'un des cafés les plus corsés du continent africain. Cultivé dans les régions montagneuses de l'Ouganda, il offre une tasse profonde et savoureuse, idéale pour les amateurs de cafés intenses et chocolatés. Sa richesse et son caractère fort en font une boisson parfaite pour les amateurs de café audacieux.",
-    "preparation": "Pour un café intense, utilisez une cafetière à piston avec une mouture grossière. Ajoutez 15g de café pour 250ml d'eau à 94°C. Laissez infuser pendant 4 à 5 minutes pour obtenir une tasse riche et corsée avec des arômes de chocolat noir et de noix."
+    "preparation": "Pour un café intense, utilisez une cafetière à piston avec une mouture grossière. Ajoutez 15g de café pour 250ml d'eau à 94°C. Laissez infuser pendant 4 à 5 minutes pour obtenir une tasse riche et corsée avec des arômes de chocolat noir et de noix.",
+    "image": "https://cafesati.com/app/uploads/2023/04/Cafes-Sati_Grains_OUGANDA-Colobus-Blend_3149330003361_336C10.png"
   },
   {
     "id": 10,
