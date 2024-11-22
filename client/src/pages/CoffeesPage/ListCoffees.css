@@ -1,46 +1,43 @@
 /* Container for list cards  */
 
-.container-cards-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 2%;
-  column-gap: 10%;
-  margin: 5% 5%;
-  width: 100%;
+#container-cards-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
 }
 
 /* Cards coffees  */
 
-.container-cards-list > a > #card-list {
+.list-coffee-item-container {
+  width: 28%;
   display: flex;
   flex-direction: column;
-  justify-content: end;
   align-items: center;
-  background-color: rgb(233, 233, 233);
-  border-radius: 10%;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding: 3%;
-  width: 80%;
-  height: 30vh;
+  text-align: center;
+  box-shadow: 0px 3px 5px 0px #452f2540;
+  border-radius: 5px;
+  padding: 10px 20px;
+}
+
+.list-coffee-item-container > img {
+  width: 50%;
 }
 
 /* text cards coffees  */
 
-.container-cards-list > a {
+#container-cards-list > a {
   text-decoration: none;
   color: black;
 }
 
-.container-cards-list a > section > h3 {
+#container-cards-list a > section > h3 {
   font-weight: bold;
   font-size: medium;
 }
 
-.container-cards-list a > section > h4 {
-  font-weight: lighter;
-}
-
-.container-cards-list a > section > h5 {
+#container-cards-list a > section > h5,
+#container-cards-list a > section > h4 {
   font-weight: lighter;
 }
 
@@ -59,4 +56,15 @@
   cursor: pointer;
   width: 80px;
   border-radius: 20%;
+}
+
+@media screen and (max-width: 480px) {
+  .list-coffee-item-container {
+    width: 42%;
+  }
+}
+@media screen and (max-width: 340px) {
+  .list-coffee-item-container {
+    width: 84%;
+  }
 }

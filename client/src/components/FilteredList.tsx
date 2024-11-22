@@ -6,7 +6,7 @@ import type {
 } from "../types/FilteredList";
 
 function FilteredList({ filters, setFilters, data }: FilteredListProps) {
-  const handleClick = (el: React.MouseEvent<HTMLInputElement>) => {
+  const handleClick = (el: React.ChangeEvent<HTMLInputElement>) => {
     const target = el.target as HTMLInputElement;
     const id = target.id as keyof FiltersStateType;
     setFilters((prevValues) => ({
@@ -65,11 +65,10 @@ function FilteredList({ filters, setFilters, data }: FilteredListProps) {
       {/* List main filters */}
       {Object.keys(filters).map((filterName) => {
         return (
-          <li key={filterName}>
+          <li key={`main-filter-${filterName}`}>
             <input
               className="pointer"
-              onClick={handleClick}
-              onChange={() => {}}
+              onChange={handleClick}
               type="checkbox"
               id={filterName}
               name={filterName}
@@ -84,18 +83,15 @@ function FilteredList({ filters, setFilters, data }: FilteredListProps) {
                 {getDifferentElement(filterName as keyof DataModel).map(
                   (el) => {
                     return (
-                      <li key={`${el}-porte`}>
+                      <li key={`sub-filter-${filterName}-${el}`}>
                         <input
                           className="pointer"
                           data-filtertype={filterName}
-                          key={el}
                           type="checkbox"
                           onClick={handleClickSub}
                           name={el}
                         />
-                        <label key={`${el}-label`} htmlFor={el}>
-                          {el}
-                        </label>
+                        <label htmlFor={el}>{el}</label>
                       </li>
                     );
                   },
