@@ -54,7 +54,15 @@ function ProfilePage() {
     setCurrentData(newData);
   }, [filters, fullData]);
 
-  if (!loggedIn) return <Navigate to="/login" />;
+  if (!loggedIn)
+    return (
+      <Navigate
+        to="/login"
+        state={{
+          message: "Vous devez être connecté pour accéder à cette page",
+        }}
+      />
+    );
   if (!currentData.length)
     return (
       <main id="no-item-profile-container">

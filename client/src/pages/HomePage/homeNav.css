@@ -86,3 +86,36 @@
   border: solid black 2px;
   height: 20vh;
 }
+
+/* * RESPONSIVE  */
+
+@media screen and (max-width: 768px) {
+  .container-banniere a > figure > h2 {
+    font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .banniere-home > h2 {
+    font-size: 55px;
+    text-align: center;
+  }
+  .container-banniere a > figure > h2 {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .banniere-home > h2 {
+    font-size: 45px;
+  }
+  .container-banniere a > figure > h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container-banniere a > figure > h2 {
+    font-size: 18px;
+  }
+}

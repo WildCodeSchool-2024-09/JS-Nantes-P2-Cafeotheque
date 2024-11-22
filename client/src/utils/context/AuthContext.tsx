@@ -1,19 +1,12 @@
 import { createContext, useContext, useState } from "react";
 import type React from "react";
-import type { Dispatch, SetStateAction } from "react";
-
-interface UserData {
-  username: string;
-  password: string;
-  email: string;
-  likedCoffees: number[];
-}
+import type { UserData } from "../../types/userData";
 
 type AuthContextType = {
   loggedIn: string | null;
   toggleLogin: (username?: string) => void;
   userData: UserData | null;
-  setUserData: Dispatch<SetStateAction<UserData | null>>;
+  setUserData: (newUserData: UserData) => void;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -26,7 +19,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     return loggedInUser ? loggedInUser : null;
   });
 
-  const [userData, setUserData] = useState(() => {
+  const [userData, setUserDataState] = useState(() => {
     const savedData = localStorage.getItem("super-secured-database-users");
     const loggedInUser = localStorage.getItem("connected-user");
     if (!loggedInUser || !savedData) return null;
@@ -34,6 +27,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     const uData = parsedData.find((u: UserData) => u.username === loggedInUser);
     return uData || null;
   });
+
+  const setUserData = (newUserData: UserData) => {
+    const localStorageUserData = localStorage.getItem(
+      "super-secured-database-users",
+    ) as string;
+    const JSONUserData = JSON.parse(localStorageUserData);
+    const userIndex = JSONUserData.findIndex(
+      (obj: UserData) => obj.username === userData?.username,
+    );
+    JSONUserData[userIndex] = newUserData;
+    const newData = JSON.stringify(JSONUserData);
+    localStorage.setItem("super-secured-database-users", newData);
+    setUserDataState(newUserData);
+  };
 
   const toggleLogin = (username?: string) => {
     setLoggedIn(() => (username ? username : null));

@@ -2,12 +2,18 @@ import { useEffect, useState } from "react";
 import "./CoffeeDetailPage.css";
 import { Link, useParams } from "react-router-dom";
 import type { DataModel } from "../../models/index";
+import { useAuth } from "../../utils/context/AuthContext";
 
 function CoffeeDetailPage() {
+  const { userData, setUserData, loggedIn } = useAuth();
+  const { id } = useParams();
+
   const [data, setData] = useState<DataModel | false | null>(null);
   const [alikeItems, setAlikeItems] = useState<DataModel[]>([]);
-
-  const { id } = useParams();
+  const [isLiked, setIsLiked] = useState<boolean>(() => {
+    if (!loggedIn || !userData || !id) return false;
+    return userData.likedCoffees.includes(Number.parseInt(id));
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,6 +33,22 @@ function CoffeeDetailPage() {
     };
     fetchData();
   }, [id]);
+
+  function handleLikeItem() {
+    if (!userData || !id) return null;
+    const likedCoffees = userData.likedCoffees;
+    const itemId = Number.parseInt(id);
+    if (isLiked) {
+      // handle unlike item
+      userData.likedCoffees.splice(likedCoffees.indexOf(itemId), 1);
+      setUserData(userData);
+    } else {
+      // Handle like item
+      userData.likedCoffees.push(itemId);
+      setUserData(userData);
+    }
+    setIsLiked((prev) => !prev);
+  }
 
   if (data === null) return <p>chargement</p>;
   if (data === false) return <p>coffee not found</p>;
@@ -49,7 +71,26 @@ function CoffeeDetailPage() {
         />
         <div className="text-container">
           <section>
-            <h2>{data.name}</h2>
+            <div id="title-like-icon-container">
+              <h2>{data.name}</h2>
+              {loggedIn && (
+                <button
+                  className="pointer toggle-button"
+                  onClick={handleLikeItem}
+                  type="button"
+                >
+                  <img
+                    src={
+                      isLiked
+                        ? "https://i.ibb.co/F5g3MZ2/Property-1-Variant2.png"
+                        : "https://i.ibb.co/MB1L9Wy/Property-1-Default.png"
+                    }
+                    alt={isLiked ? "icon unlike item" : "icon like item"}
+                  />
+                  <p id="like-popup">{isLiked ? "Vraiment?" : "Like moi !"}</p>
+                </button>
+              )}
+            </div>
             <p>Profil : {data.profile}</p>
             <h3>Histoire</h3>
             <p>{data.description}</p>

@@ -34,12 +34,38 @@
 
 /* Style pour le bouton */
 
-.text-container h2 {
+#title-like-icon-container {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  height: 33px;
 }
 
+#title-like-icon-container > button {
+  background-color: inherit;
+  border: 0;
+  height: 100%;
+}
+
+#title-like-icon-container > button > img {
+  height: 100%;
+}
+
+.toggle-button:hover img {
+  transform: scale(1.5);
+  transition: transform 0.22s ease-out;
+  position: relative;
+}
+
+.toggle-button:hover #like-popup {
+  opacity: 1;
+}
+
+#like-popup {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}
+
+/* -------------------- */
 .text-container > section > h3 {
   margin-top: 8px;
 }
@@ -57,16 +83,6 @@
   width: 40px;
   height: 40px;
   transition: filter 0.3s ease;
-}
-
-.toggle-button:hover img {
-  transform: scale(1.5);
-}
-
-/* Card return arrow */
-
-.text-container h2 {
-  position: relative;
 }
 
 .mini-card {
