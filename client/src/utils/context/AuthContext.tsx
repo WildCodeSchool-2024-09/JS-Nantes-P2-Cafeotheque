@@ -1,7 +1,6 @@
 import { createContext, useContext, useState } from "react";
 import type React from "react";
 import type { Dispatch, SetStateAction } from "react";
-import type { UserModel } from "../../models";
 
 interface UserData {
   username: string;
@@ -31,8 +30,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     const savedData = localStorage.getItem("super-secured-database-users");
     const loggedInUser = localStorage.getItem("connected-user");
     if (!loggedInUser || !savedData) return null;
-    const parsedData = JSON.parse(savedData) as UserModel;
-    return parsedData[loggedInUser] || null;
+    const parsedData = JSON.parse(savedData) as UserData[];
+    const uData = parsedData.find((u: UserData) => u.username === loggedInUser);
+    return uData || null;
   });
 
   const toggleLogin = (username?: string) => {
