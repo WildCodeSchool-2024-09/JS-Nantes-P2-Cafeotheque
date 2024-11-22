@@ -25,7 +25,6 @@
   display: flex;
   align-items: center;
   margin-bottom: 2.33px;
-  flex: 1 1 auto; /* Les deux premiers partagent l'espace */
 }
 
 .list-filter > li > label {
