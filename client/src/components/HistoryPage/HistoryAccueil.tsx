@@ -9,7 +9,7 @@ function HistoryAccueil() {
       />
       <h1>Tout savoir sur l'histoire du Café</h1>
       <div>
-        <a href="#historyTop" type="button">
+        <a href="#history-top" type="button">
           ⬇
         </a>
       </div>
