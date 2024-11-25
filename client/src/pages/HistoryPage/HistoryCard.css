@@ -1,0 +1,233 @@
+/* * Image Top */
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container-central-history > img {
+  width: 100%;
+  rotate: 180deg;
+}
+
+/* * Container card */
+
+.card-container-history {
+  width: 100%;
+}
+
+.card-container-history > section > article {
+  background-color: #c5b1a6;
+  text-align: center;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 24px;
+}
+
+.card-container-history section > article > .info {
+  cursor: pointer;
+  width: 5%;
+  color: white;
+  margin: 0 auto;
+}
+
+/* ? Cards n°1 */
+
+.card-container-history .card-1 > article {
+  width: 40%;
+  margin-left: 10%;
+}
+
+/* ? Cards n°1 Changement au click */
+
+.card-container-history .card-1 > article:active {
+  font-size: 0;
+  background-image: url("images/Histoirecoffee.png");
+  height: 35rem;
+}
+
+/* * Image plante coffee */
+
+.card-1 > figure {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 5%;
+  width: 100%;
+}
+
+.card-container-history .card-1 > figure > img {
+  width: 40%;
+  object-position: 50px;
+}
+
+/* ? Cards n°2 */
+
+.card-container-history .card-2 > article {
+  width: 70%;
+  margin: 0 auto;
+}
+
+/* ? Cards n°2 Changement au click */
+
+.card-container-history .card-2 > article:active {
+  font-size: 0;
+  background-image: url("images/CarteHarar.png");
+  height: 24rem;
+  width: 33%;
+}
+
+/* * Image plante coffee */
+
+.card-2 > figure {
+  display: flex;
+  justify-content: end;
+  margin-top: 5%;
+  rotate: y 180deg;
+}
+
+.card-container-history .card-2 > figure > img {
+  width: 30%;
+  object-position: 50px;
+}
+
+/* ? Cards n°3 */
+
+.card-container-history .card-3 > article {
+  width: 60%;
+  margin: 0 35%;
+}
+
+/* * Image plante coffee */
+
+.card-3 > figure {
+  display: flex;
+  justify-content: end;
+}
+
+.card-3 > figure > img {
+  width: 40%;
+  object-position: 50px;
+}
+
+/* ? Cards 4 */
+
+.card-container-history .card-4 > article {
+  width: 70%;
+  margin: 0% 10% auto;
+}
+
+.card-container-history .card-4 > article:active {
+  font-size: 0;
+  background-image: url("images/CafeBar.png");
+  height: 50rem;
+}
+
+/* * Image plante coffee */
+
+.card-4 > figure {
+  display: none;
+}
+
+/* ? Cards 5 */
+
+.card-container-history .card-5 > article {
+  width: 50%;
+  margin: 10% 40% auto;
+}
+
+/* * Image plante coffee */
+
+.card-5 > figure {
+  display: flex;
+  justify-content: end;
+  margin-top: 5%;
+  rotate: y 180deg;
+}
+
+.card-5 > figure > img {
+  width: 30%;
+  rotate: 10deg;
+  object-position: 50px;
+}
+
+/* ? Cards 6 */
+
+.card-6 > article {
+  width: 80%;
+  margin: 5% 10% auto;
+}
+
+/* * Image plante coffee */
+
+.card-6 > figure {
+  display: none;
+}
+
+/* * Image Europe */
+
+.image-europe-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.image-europe-container > img {
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* * Image fin de page */
+.image-end-page-container {
+  text-align: center;
+  height: 30%;
+}
+
+.image-end-page-container > img {
+  height: 500px;
+}
+
+/* Button scroll bottom */
+
+.container-central-history .first-button {
+  display: flex;
+  justify-content: end;
+  margin-right: 5%;
+}
+
+.container-central-history .first-button > a {
+  background-color: burlywood;
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 25px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.container-central-history .first-button > a:hover {
+  box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* button scoll top */
+
+section .second-button {
+  display: flex;
+  justify-content: end;
+  text-align: center;
+  margin-right: 5%;
+}
+
+section .second-button > a {
+  background-color: burlywood;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  width: 40px;
+  height: 25px;
+  cursor: pointer;
+}
+
+section .second-button > a:hover {
+  box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+}
