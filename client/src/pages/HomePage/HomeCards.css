@@ -17,7 +17,9 @@
 }
 
 .container-home-cards > a > figure:hover {
-  box-shadow: rgb(115, 115, 115) 10px 15px 15px 5px;
+  box-shadow: black 0 0.7em 0.7em -0.2em;
+  background-color: black;
+  transform: translateY(-0.25em);
   transform: scale(1.1);
 }
 
@@ -54,4 +56,54 @@
   position: absolute;
   top: 25%;
   left: 10%;
+}
+
+/* * RESPONSIVE */
+
+@media screen and (max-width: 1024px) {
+  .container-home-cards > a > figure {
+    height: 25vh;
+  }
+  .container-home-cards > a > figure > figcaption {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container-home-cards > a > figure {
+    height: 20vh;
+  }
+  .container-home-cards > a > figure > figcaption {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container-home-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .container-home-cards > a > figure {
+    height: 28vh;
+  }
+  .container-home-cards > a > figure > figcaption {
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .container-home-cards {
+    width: 75%;
+    padding: 2%;
+    gap: 30px;
+  }
+  .container-home-cards > a > figure {
+    height: 25vh;
+  }
+  .container-home-cards > a > figure > figcaption {
+    font-size: 20px;
+  }
 }

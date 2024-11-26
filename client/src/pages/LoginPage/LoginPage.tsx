@@ -1,17 +1,22 @@
 import { useState } from "react";
 import "./LoginPage.css";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import ErrorDisplay from "../../components/ErrorDisplay";
+import type { UserData } from "../../types/userData";
 import { useAuth } from "../../utils/context/AuthContext";
 
 function LoginPage() {
-  const [formError, setFormError] = useState<string | null>(null);
+  const location = useLocation();
+  const [formError, setFormError] = useState<string | null>(() => {
+    if (location.state) return location.state.message;
+    return null;
+  });
   const [formValues, setFormValues] = useState({
     username: "",
     password: "",
   });
 
-  const { loggedIn, toggleLogin } = useAuth();
+  const { loggedIn, toggleLogin, setUserData } = useAuth();
 
   function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { name } = event.target;
@@ -24,29 +29,34 @@ function LoginPage() {
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     // retreive users data from localstorager
-    type UsersData = { [username: string]: { password: string } };
-    const usersData: UsersData = JSON.parse(
-      localStorage.getItem("super-secured-database-users") || "{}",
+    const usersDataString = localStorage.getItem(
+      "super-secured-database-users",
     );
 
-    // set empty data if their is none
-    if (!usersData) {
-      localStorage.setItem("super-secured-database-users", "{}");
+    // Handle empty localstorage
+    if (!usersDataString) {
+      return setFormError("Oups on dirait qu'il y a une erreur quelque part..");
     }
 
-    // Handle connection
-    if (usersData[formValues.username] !== undefined) {
-      // handle acc existing
-      if (usersData[formValues.username].password === formValues.password) {
-        // handle connection
-        toggleLogin(formValues.username);
+    const usersDataJSON: UserData[] = JSON.parse(usersDataString);
+    const userData: UserData = usersDataJSON.filter(
+      (userdata) => userdata.username === formValues.username,
+    )[0];
+
+    if (userData) {
+      // Handle username found
+      if (userData.password === formValues.password) {
+        // Handle connection
+        setUserData(userData);
         setFormError(null);
+        toggleLogin(formValues.username);
+        localStorage.setItem("connected-user", formValues.username);
       } else {
-        // handle wrong password
         setFormError("Oups on dirait qu'il y a une erreur quelque part..");
+        // Handle wrong password
       }
     } else {
-      // handle acc not existing
+      // Handle username not found
       setFormError("Oups on dirait qu'il y a une erreur quelque part..");
     }
   }
