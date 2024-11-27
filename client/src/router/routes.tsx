@@ -5,7 +5,7 @@ import HistoryOfCoffeePage from "../pages/HistoryPage/HistoryOfCoffeePage";
 import HomePage from "../pages/HomePage/HomePage";
 import LoginPage from "../pages/LoginPage/LoginPage";
 import ProfilePage from "../pages/ProfilePage/ProfilePage";
-import RecipeePage from "../pages/RecipeePage/RecipeePage";
+import RecipePage from "../pages/RecipePage/RecipePage";
 import RegisterPage from "../pages/RegisterPage/RegisterPage";
 import WorldCoffeePage from "../pages/WorldCoffeePage";
 
@@ -37,7 +37,7 @@ const routes = [
   },
   {
     path: "/recipes",
-    element: <RecipeePage />,
+    element: <RecipePage />,
   },
   {
     path: "/world-coffees",

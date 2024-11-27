@@ -1,4 +1,4 @@
-import "/src/pages/RecipeePage/IngredientsList.css";
+import "/src/pages/RecipePage/IngredientsList.css";
 import type { IngredientsListProps } from "../types/RecipePage";
 
 function IngredientsList({ imgSrc, ingredients }: IngredientsListProps) {
