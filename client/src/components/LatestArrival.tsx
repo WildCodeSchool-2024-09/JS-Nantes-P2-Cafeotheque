@@ -31,10 +31,14 @@ function LatestArrival() {
   return (
     <>
       <section className="container-latest-arrival">
-        <img
-          src="./public/images/Café-nouveauté.jpg"
-          alt="Les nouveaux arrivages"
-        />
+        {lastElement?.imgSrc ? (
+          <img src={lastElement.imgSrc} alt="Les nouveaux" />
+        ) : (
+          <img
+            src="./public/images/Cafe-nouveaute.jpg"
+            alt="Les nouveaux arrivages"
+          />
+        )}
         <section className="container-text-latest-arrival">
           <h3>Latest arrival</h3>
           {lastElement ? (
