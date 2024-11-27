@@ -14,13 +14,19 @@ html {
 .card-container-history {
   width: 100%;
 }
+.card-container-history > section > article > h3 {
+  margin-bottom: 16px;
+}
 
 .card-container-history > section > article {
   background-color: #c5b1a6;
   text-align: center;
   border-radius: 15px;
+  font-size: 20px;
   padding: 20px;
-  font-size: 24px;
+  text-align: start;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px
+    3px 7px -3px;
 }
 
 .card-container-history section > article > .info {
@@ -71,8 +77,10 @@ html {
 .card-container-history .card-2 > article:active {
   font-size: 0;
   background-image: url("images/CarteHarar.png");
+  background-size: contain;
+  background-repeat: no-repeat;
   height: 24rem;
-  width: 33%;
+  width: 28%;
 }
 
 /* * Image plante coffee */
@@ -105,6 +113,7 @@ html {
 
 .card-3 > figure > img {
   width: 40%;
+  margin-top: 20px;
   object-position: 50px;
 }
 
@@ -118,7 +127,10 @@ html {
 .card-container-history .card-4 > article:active {
   font-size: 0;
   background-image: url("images/CafeBar.png");
-  height: 50rem;
+  height: 40rem;
+  width: 51%;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 /* * Image plante coffee */
@@ -230,4 +242,126 @@ section .second-button > a {
 
 section .second-button > a:hover {
   box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* * RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+  .image-europe-container > img {
+    width: 80%;
+  }
+  section .second-button {
+    display: none;
+  }
+  .first-button > a {
+    display: none;
+  }
+  .card-container-history > section > article {
+    font-size: 16px;
+  }
+  .card-container-history .card-1 > article:active {
+    height: 36rem;
+    width: 75%;
+  }
+  .card-container-history .card-2 > article:active {
+    height: 23rem;
+    width: 65%;
+  }
+
+  .card-container-history .card-4 > article:active {
+    height: 22rem;
+    width: 70%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .image-end-page-container > img {
+    width: 100%;
+    height: 50%;
+  }
+  .card-container-history .card-1 > article {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  .card-container-history .card-1 > article:active {
+    height: 18rem;
+    width: 68%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .card-container-history .card-2 > article:active {
+    height: 15rem;
+    width: 77%;
+  }
+  .card-container-history .card-3 > article {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .card-container-history > section > article {
+    font-size: 16px;
+  }
+  .card-container-history .card-4 > article:active {
+    height: 14rem;
+    width: 80%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .card-container-history .card-5 > article {
+    width: 80%;
+    margin: 20% 12% auto;
+  }
+  .card-5 > figure > img {
+    rotate: 0deg;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .card-container-history > section > article {
+    font-size: 12px;
+  }
+  .card-container-history .card-1 > article:active {
+    height: 15rem;
+    width: 65%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .card-container-history .card-2 > article:active {
+    height: 13rem;
+    width: 76%;
+  }
+  .card-container-history .card-4 > article:active {
+    height: 12rem;
+    width: 78%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .card-5 > figure > img {
+    rotate: 0deg;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .card-container-history .card-1 > article:active {
+    height: 13rem;
+    width: 65%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .card-container-history .card-2 > article:active {
+    height: 11rem;
+    width: 76%;
+  }
+  .card-container-history .card-4 > article:active {
+    height: 10rem;
+    width: 76%;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .card-5 > figure > img {
+    rotate: 0deg;
+  }
 }
