@@ -1,18 +1,9 @@
-.recipe-video {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.recipe-video > iframe {
-  border: 0;
-}
-
 /* Media Queries */
-
+/*
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .recipe-video {
     width: 100%;
     margin: 0 auto;
   }
 }
+*/

@@ -1,6 +1,9 @@
+/*
+
 .ingredients-list-container {
   display: flex;
-
+  position: absolute;
+  top: 13.5%;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
@@ -33,12 +36,15 @@
   padding: 8px;
   color: #452f25;
 }
+*/
 
 /* Media Queries */
 
+/*
 @media screen and (min-width: 320px) and (max-width: 767px) {
   .ingredients-list-container {
     width: 100%;
+    position: inherit;
     background-color: #ffffff;
     padding: 8px;
   }
@@ -46,13 +52,14 @@
   .ingredients-list-container > img {
     display: none;
   }
-
+/*
   .ingredients-list-title-section {
     width: 100%;
   }
 
   .ingredients-list-title-section > h2 {
-    /*margin: 8px;*/
+    
+
     border: 1px solid #452f25;
     padding: 16px;
     align-items: center;
@@ -71,3 +78,4 @@
     align-self: flex-start;
   }
 }
+*/
