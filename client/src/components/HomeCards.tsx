@@ -19,7 +19,8 @@ function HomeCards() {
         </Link>
         <Link to="/recipes">
           <figure>
-            <img src="/images/livre-coffee.jpg" alt="" />
+            <img src="/images/coffee-recipe-card.jpg" alt="" />
+            <figcaption id="third-card">Recette</figcaption>
           </figure>
         </Link>
       </section>

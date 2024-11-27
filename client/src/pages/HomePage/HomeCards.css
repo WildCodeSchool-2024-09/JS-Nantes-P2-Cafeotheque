@@ -58,6 +58,15 @@
   left: 10%;
 }
 
+/* third card */
+
+.container-home-cards > a > figure > #third-card {
+  position: absolute;
+  top: 70%;
+  left: 3%;
+  opacity: 90%;
+}
+
 /* * RESPONSIVE */
 
 @media screen and (max-width: 1024px) {
