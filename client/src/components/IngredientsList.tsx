@@ -9,7 +9,9 @@ function IngredientsList({ imgSrc, ingredients }: IngredientsListProps) {
         src={`/public/images/${imgSrc}`}
         alt="Illustration Tiramisu"
       />
-      <h2 className="ingredients-list-title">Ingrédients</h2>
+      <section className="ingredients-list-title-section">
+        <h2 className="ingredients-list-title">Ingrédients</h2>
+      </section>
       <ul className="ingredients-list">
         {ingredients.map((ingredient) => {
           return (

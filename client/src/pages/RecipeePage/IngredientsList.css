@@ -14,6 +14,7 @@
   padding: 16px;
   padding-bottom: 3px;
   align-items: center;
+  color: #452f25;
 }
 
 .tiramisu-ingredients-list {
@@ -30,6 +31,7 @@
 
 .el-list-ingredients {
   padding: 8px;
+  color: #452f25;
 }
 
 /* Media Queries */
@@ -38,12 +40,24 @@
   .ingredients-list-container {
     width: 100%;
     background-color: #ffffff;
-    padding: 0px;
+    padding: 8px;
   }
 
   .ingredients-list-container > img {
     display: none;
   }
+
+  .ingredients-list-title-section {
+    width: 100%;
+  }
+
+  .ingredients-list-title-section > h2 {
+    /*margin: 8px;*/
+    border: 1px solid #452f25;
+    padding: 16px;
+    align-items: center;
+  }
+
   .ingredients-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
