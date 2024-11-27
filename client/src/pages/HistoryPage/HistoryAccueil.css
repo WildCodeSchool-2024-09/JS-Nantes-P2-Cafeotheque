@@ -8,8 +8,7 @@
   position: static;
   font-size: 56px;
   text-align: center;
-  width: 40%;
-  margin: -5% 30% auto;
+  margin: -2% 35% auto;
   letter-spacing: 2px;
   color: #000000;
 }
@@ -24,6 +23,7 @@
 
 .container-accueil-title > img {
   width: 100%;
+  height: 100%;
   border-bottom: solid black 5px;
 }
 
@@ -48,4 +48,19 @@
 
 .container-accueil-title > div > a:hover {
   box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.24), 0 2px 2px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* * RESPONSIVE */
+
+@media screen and (max-width: 768px) {
+  .container-accueil-title > h1 {
+    font-size: 24px;
+  }
+  .container-accueil-title {
+    width: 100%;
+  }
+
+  .container-accueil-title > div > a {
+    display: none;
+  }
 }

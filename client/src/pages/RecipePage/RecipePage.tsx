@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import IngredientsList from "../../components/IngredientsList";
 import PreparationSteps from "../../components/PreparationSteps";
-import "./RecipeePage.css";
+import "./RecipePage.css";
 import RecipeVideo from "../../components/RecipeVideo";
 import type { Recipe } from "../../types/RecipePage";
 
-function RecipeePage() {
+function RecipePage() {
   const [recipe, setRecipe] = useState<Recipe[] | null>(null);
 
   useEffect(() => {
@@ -33,4 +33,4 @@ function RecipeePage() {
   );
 }
 
-export default RecipeePage;
+export default RecipePage;

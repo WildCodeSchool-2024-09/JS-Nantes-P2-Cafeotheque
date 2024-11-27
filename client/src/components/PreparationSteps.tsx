@@ -1,5 +1,5 @@
 import type { PreparationStepsProps } from "../types/RecipePage";
-import "/src/pages/RecipeePage/PreparationSteps.css";
+import "/src/pages/RecipePage/PreparationSteps.css";
 
 function PreparationSteps({ preparationSteps }: PreparationStepsProps) {
   return (
