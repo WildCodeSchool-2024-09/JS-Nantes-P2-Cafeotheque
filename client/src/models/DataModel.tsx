@@ -8,5 +8,5 @@ export interface DataModel {
   added_date: string;
   description: string;
   preparation: string;
-  imgSrc?: string;
+  imgSrc: string;
 }
