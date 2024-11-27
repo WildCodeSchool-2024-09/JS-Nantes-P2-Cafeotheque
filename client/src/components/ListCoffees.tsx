@@ -1,4 +1,3 @@
-import "../pages/CoffeesPage/ListCoffees.css";
 import { useEffect, useState } from "react";
 import type { DataModel } from "../types/FilteredList";
 import "../pages/CoffeesPage/ListCoffees.css";
@@ -25,15 +24,25 @@ function ListCoffees({ data }: { data: DataModel[] }) {
 
   return (
     <>
-      <main className="container-cards-list">
+      <section id="container-cards-list">
         {newData.map((el) => {
           return (
-            <Link key="id" to={`/coffee/${el.id}`}>
-              <section id="card-list" key={el.id}>
-                <h3>{el.name}</h3>
-                <h4>{el.profile}</h4>
-                <h5>{el.country}</h5>
-              </section>
+            <Link
+              className="list-coffee-item-container"
+              key="id"
+              to={`/coffee/${el.id}`}
+            >
+              <img
+                alt={el.name}
+                src={
+                  el.imgSrc
+                    ? el.imgSrc
+                    : "https://www.svgrepo.com/show/513896/coffee-cup-tea.svg"
+                }
+              />
+              <h3>{el.name}</h3>
+              <h4>{el.profile}</h4>
+              <h5>{el.country}</h5>
             </Link>
           );
         })}
@@ -54,7 +63,7 @@ function ListCoffees({ data }: { data: DataModel[] }) {
             suivant
           </button>
         </section>
-      </main>
+      </section>
     </>
   );
 }
