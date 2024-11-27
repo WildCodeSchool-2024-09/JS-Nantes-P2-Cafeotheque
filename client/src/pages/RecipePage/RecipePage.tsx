@@ -16,19 +16,26 @@ function RecipePage() {
 
   return (
     recipe && (
-      <main className="main-recipe-tiramisu-page">
+      <body className="main-recipe-tiramisu-page">
         <h1 className="idee-recette-tiramisu-title">
           {`Idée recette : ${recipe[0].mainContent.recipeName}`}
         </h1>
-        <IngredientsList
-          imgSrc={recipe[0].aside.illustration}
-          ingredients={recipe[0].aside.ingredients}
-        />
-        <PreparationSteps
-          preparationSteps={recipe[0].mainContent.preparationSteps}
-        />
-        <RecipeVideo videoUrl={recipe[0].mainContent.videoUrl} />
-      </main>
+        <section className="recipe-components">
+          <aside className="ingredients-list-section">
+            <IngredientsList
+              imgSrc={recipe[0].aside.illustration}
+              ingredients={recipe[0].aside.ingredients}
+            />
+          </aside>
+          <section className="prep-steps-and-videp-section">
+            <PreparationSteps
+              preparationSteps={recipe[0].mainContent.preparationSteps}
+            />
+
+            <RecipeVideo videoUrl={recipe[0].mainContent.videoUrl} />
+          </section>
+        </section>
+      </body>
     )
   );
 }

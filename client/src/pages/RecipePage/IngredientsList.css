@@ -1,6 +1,6 @@
 .ingredients-list-container {
   display: flex;
-  width: 20%;
+
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;

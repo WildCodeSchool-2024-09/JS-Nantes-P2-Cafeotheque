@@ -1,5 +1,27 @@
-.main-recipe-tiramisu-page {
+body {
+  color: #452f25;
+}
+
+/*.main-recipe-tiramisu-page {
   display: flex;
+  flex-direction: column;
+}*/
+
+.recipe-components {
+  display: flex;
+  width: 100%;
+}
+
+.ingredients-list-section {
+  width: 30%;
+}
+
+.prep-steps-and-video-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
 }
 
 /* Media Queries */
