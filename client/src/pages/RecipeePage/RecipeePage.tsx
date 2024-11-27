@@ -17,12 +17,14 @@ function RecipeePage() {
   return (
     recipe && (
       <main className="main-recipe-tiramisu-page">
+        <h1 className="idee-recette-tiramisu-title">
+          {`Idée recette : ${recipe[0].mainContent.recipeName}`}
+        </h1>
         <IngredientsList
           imgSrc={recipe[0].aside.illustration}
           ingredients={recipe[0].aside.ingredients}
         />
         <PreparationSteps
-          name={recipe[0].mainContent.name}
           preparationSteps={recipe[0].mainContent.preparationSteps}
         />
         <RecipeVideo videoUrl={recipe[0].mainContent.videoUrl} />

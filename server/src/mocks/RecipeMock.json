@@ -14,7 +14,7 @@
       ]
     },
     "mainContent": {
-      "name": "le tiramisu",
+      "recipeName": "le tiramisu",
       "preparationSteps": [
         "Séparer les blancs des jaunes d'oeufs. Mélanger les jaunes avec le sucre roux et le sucre vanillé.",
         "Ajouter le mascarpone au fouet.",
@@ -38,7 +38,7 @@
       ]
     },
     "mainContent": {
-      "name": "l'affogato",
+      "recipeName": "l'affogato",
       "preparationSteps": [
         "Préparer les expressos bien chauds et les réserver.",
         "Placer une boule de glace à la vanille dans chaque coupe ou verre résistant à la chaleur.",
@@ -68,7 +68,7 @@
       ]
     },
     "mainContent": {
-      "name": "le moka cake",
+      "recipeName": "le moka cake",
       "preparationSteps": [
         "Préchauffer le four à 180°C (thermostat 6).",
         "Dans un bol, mélanger les œufs et le sucre jusqu'à ce que le mélange blanchisse.",
