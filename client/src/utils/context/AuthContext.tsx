@@ -28,7 +28,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     return uData || null;
   });
 
-  //     [{"username":"123","password":"123","email":"123","likedCoffees":[]},{"username":"456","password":"456","email":"456","likedCoffees":[]}]
   const setUserData = (newUserData: UserData) => {
     const localStorageUserData = localStorage.getItem(
       "super-secured-database-users",
