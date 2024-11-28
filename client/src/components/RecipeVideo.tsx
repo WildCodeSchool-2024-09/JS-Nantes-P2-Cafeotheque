@@ -7,8 +7,6 @@ function RecipeVideo({ videoUrl }: RecipeVideoProps) {
       <iframe
         className="child-recipe-video"
         key={videoUrl}
-        width="640"
-        height="360"
         src={videoUrl}
         title="YoutubeVideo"
       />

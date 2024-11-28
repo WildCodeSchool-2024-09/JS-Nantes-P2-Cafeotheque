@@ -7,32 +7,13 @@
 
 .recipe-page-api-title {
   text-align: center;
-  margin-top: 16px;
+  margin: 16px;
+  padding: 16px;
 }
 .main-recipe-page-card {
   display: flex;
 }
 
-/* containee queries */
-
-/*
-.recipe-components {
-  display: flex;
-  width: 100%;
-}
-
-.ingredients-list-section {
-  width: 30%;
-}
-
-.prep-steps-and-video-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 70%;
-}
-*/
 /* Media Queries */
 
 @media screen and (min-width: 320px) and (max-width: 767px) {
@@ -45,5 +26,13 @@
   .recipe-page-api-title {
     flex-basis: content;
     flex-wrap: wrap;
+    margin: auto;
+    padding: 16px;
+  }
+
+  .prep-steps-and-video-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
