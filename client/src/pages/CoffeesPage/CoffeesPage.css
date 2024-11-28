@@ -8,6 +8,8 @@
 
 .container-central-coffeespages > :first-child {
   width: 10vw;
+  font-size: 20px;
+  margin-left: 20px;
 }
 
 .container-central-coffeespages > :last-child {
