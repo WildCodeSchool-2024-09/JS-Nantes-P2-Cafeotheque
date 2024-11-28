@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import CoffeesLoader from "../loaders/CoffeesLoader";
 import CoffeeDetailPage from "../pages/CoffeeDetailPage/CoffeeDetailPage";
 import CoffeesPage from "../pages/CoffeesPage/CoffeesPage";
@@ -46,6 +47,10 @@ const routes = [
   {
     path: "/the-history-of-coffee",
     element: <HistoryOfCoffeePage />,
+  },
+  {
+    path: "*",
+    element: <Navigate to="/" />,
   },
 ];
 
