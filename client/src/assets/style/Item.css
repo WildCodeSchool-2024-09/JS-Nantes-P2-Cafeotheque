@@ -33,12 +33,12 @@
   outline: none;
   background: none;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
   .item-container {
     width: 42%;
   }
 }
-@media screen and (max-width: 270px) {
+@media screen and (max-width: 350px) {
   .item-container {
     width: 84%;
   }

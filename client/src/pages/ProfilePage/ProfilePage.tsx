@@ -8,6 +8,7 @@ import type { FiltersStateType } from "../../types/FilteredList";
 import { useAuth } from "../../utils/context/AuthContext";
 
 function ProfilePage() {
+  const [anyLiked, setAnyLiked] = useState<boolean>(true);
   const [fullData, setfullData] = useState<DataModel[]>([]);
   const [currentData, setCurrentData] = useState<DataModel[]>([]);
   const [filters, setFilters] = useState<FiltersStateType>({
@@ -25,6 +26,7 @@ function ProfilePage() {
       const filteredData = filterLikedData(fullData);
       setfullData(filteredData);
       setCurrentData(filteredData);
+      setAnyLiked(false);
     };
     fetchData();
   }, []);
@@ -63,7 +65,7 @@ function ProfilePage() {
         }}
       />
     );
-  if (!currentData.length)
+  if (!anyLiked)
     return (
       <main id="no-item-profile-container">
         <p>
