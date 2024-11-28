@@ -25,16 +25,12 @@
   content: "Étape " counter(elementcounter) ". ";
   counter-increment: elementcounter;
   font-weight: bold;
-  z-index: 1;
-  position: relative;
 }
 
 .number-of-step > p {
   margin-left: 16px;
   float: left;
   width: 50%;
-  z-index: 0;
-  position: relative;
 }
 
 /* Media Queries */
