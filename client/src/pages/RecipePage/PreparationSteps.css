@@ -29,8 +29,8 @@
 
 .number-of-step > p {
   margin-left: 16px;
-  float: left;
-  width: 50%;
+  float: right;
+  width: 80%;
 }
 
 /* Media Queries */
@@ -71,11 +71,15 @@
     content: "" counter(elementcounter) " ";
     counter-increment: elementcounter;
     font-weight: bold;
+    border: 1px solid #452f25;
+    padding: 2px 8px;
+    border-radius: 100%;
+    box-shadow: 0px 3px 2px 1px rgb(137 118 96 / 23%);
   }
 
-  .number-of-step > p {
-    margin-top: 16px;
-    float: left;
-    width: 50%;
+  li {
+    display: flex;
+    align-items: center;
+    gap: 32px;
   }
 }

@@ -3,14 +3,16 @@ import type { RecipeVideoProps } from "../types/RecipePage";
 
 function RecipeVideo({ videoUrl }: RecipeVideoProps) {
   return (
-    <aside className="container-recipe-video">
-      <iframe
-        className="child-recipe-video"
-        key={videoUrl}
-        src={videoUrl}
-        title="YoutubeVideo"
-      />
-    </aside>
+    <>
+      <aside className="container-recipe-video">
+        <iframe
+          className="child-recipe-video"
+          key={videoUrl}
+          src={videoUrl}
+          title="YoutubeVideo"
+        />
+      </aside>
+    </>
   );
 }
 
