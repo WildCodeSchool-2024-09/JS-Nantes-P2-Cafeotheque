@@ -40,7 +40,7 @@ function LatestArrival() {
           />
         )}
         <section className="container-text-latest-arrival">
-          <h3>Latest arrival</h3>
+          <h3>Dernier arrivé</h3>
           {lastElement ? (
             <>
               <p>{lastElement.description}</p>
