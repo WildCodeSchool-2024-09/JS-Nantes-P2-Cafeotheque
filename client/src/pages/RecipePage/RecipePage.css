@@ -1,24 +1,20 @@
 .body-recipe-page {
   color: #452f25;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
-.ingredients-list-card {
-  background-color: #a27c67;
-  padding: 20px;
+.recipe-page-api-title {
+  text-align: center;
+  margin-top: 16px;
 }
-
 .main-recipe-page-card {
-  display: grid;
-  grid-template-columns: 420px 1fr;
-  gap: 1em;
+  display: flex;
 }
 
 /* containee queries */
 
-/*.main-recipe-tiramisu-page {
-  display: flex;
-  flex-direction: column;
-}*/
 /*
 .recipe-components {
   display: flex;
@@ -38,11 +34,16 @@
 }
 */
 /* Media Queries */
-/*
+
 @media screen and (min-width: 320px) and (max-width: 767px) {
-  main-recipe-tiramisu-page {
+  .body-recipe-page {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+  }
+
+  .recipe-page-api-title {
+    flex-basis: content;
+    flex-wrap: wrap;
   }
 }
-*/

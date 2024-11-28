@@ -19,5 +19,4 @@ function PreparationSteps({ preparationSteps }: PreparationStepsProps) {
     </main>
   );
 }
-
 export default PreparationSteps;

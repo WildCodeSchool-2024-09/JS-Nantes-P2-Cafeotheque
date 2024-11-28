@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap");
 
-header {
+.header-component-container {
   border-bottom: 0.3rem solid rgba(69, 47, 37, 0.4);
 }
 
-header > nav {
+.header-component-container > nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 16px;
 }
 
-header > nav > button {
+.header-component-container > nav > button {
   border: 0;
   background-color: inherit;
 }
@@ -31,8 +31,14 @@ header > nav > button {
 /* Media Queries */
 
 @media screen and (max-width: 480px) {
-  header {
+  .header-component-container {
     border: none;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .header-component-container > nav {
+    width: 100%;
   }
 
   .title-header {

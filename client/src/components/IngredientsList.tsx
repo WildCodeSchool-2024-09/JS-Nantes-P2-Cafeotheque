@@ -3,9 +3,9 @@ import type { IngredientsListProps } from "../types/RecipePage";
 
 function IngredientsList({ imgSrc, ingredients }: IngredientsListProps) {
   return (
-    <aside className="ingredients-list-container">
+    <aside className="ingredients-list-card">
       <img
-        className="tiramisu-ingredients-list"
+        className="recipe-image"
         src={`/public/images/${imgSrc}`}
         alt="Illustration Tiramisu"
       />

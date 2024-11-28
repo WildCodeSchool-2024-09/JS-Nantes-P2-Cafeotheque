@@ -1,4 +1,3 @@
-/*
 .preparation-steps-list {
   display: flex;
   flex-direction: column;
@@ -26,20 +25,27 @@
   content: "Étape " counter(elementcounter) ". ";
   counter-increment: elementcounter;
   font-weight: bold;
+  z-index: 1;
+  position: relative;
 }
 
-*/
+.number-of-step > p {
+  margin-left: 16px;
+  float: left;
+  width: 50%;
+  z-index: 0;
+  position: relative;
+}
 
 /* Media Queries */
-/*
-@media screen and (min-width: 320px) and (max-width: 767px) {
-  .main-preparation-steps-container {
-    width: 100%;
-    margin: 8px;
-  }
 
-  .idee-recette-tiramisu-title {
-    margin: 32px;
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .main-recipe-page-card {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    margin: 0 auto;
   }
 
   .text-and-video-tiramisu-sections {
@@ -53,10 +59,11 @@
     margin: 8px;
     border: 1px solid #452f25;
     padding: 16px;
-    align-items: center;
+    align-items: flex-start;
   }
   .preparation-title {
     margin: 32px;
+    text-align: left;
   }
 
   .preparation-steps-list {
@@ -72,6 +79,7 @@
 
   .number-of-step > p {
     margin-top: 16px;
+    float: left;
+    width: 50%;
   }
 }
-*/
