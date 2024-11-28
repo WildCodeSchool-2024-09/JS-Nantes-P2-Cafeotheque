@@ -29,7 +29,7 @@ function ListCoffees({ data }: { data: DataModel[] }) {
           return (
             <Link
               className="list-coffee-item-container"
-              key="id"
+              key={el.id}
               to={`/coffee/${el.id}`}
             >
               <img

@@ -1,4 +1,5 @@
 import "../pages/CoffeesPage/FilteredList.css";
+import React from "react";
 import type {
   DataModel,
   FilteredListProps,
@@ -9,16 +10,18 @@ function FilteredList({ filters, setFilters, data }: FilteredListProps) {
   const handleClick = (el: React.ChangeEvent<HTMLInputElement>) => {
     const target = el.target as HTMLInputElement;
     const id = target.id as keyof FiltersStateType;
-    setFilters((prevValues) => ({
-      ...prevValues,
-      [id]: {
-        isActive: !prevValues[id].isActive,
-        filters: prevValues[id].filters,
-      },
-    }));
+    setFilters((prevValues) => {
+      return {
+        ...prevValues,
+        [id]: {
+          isActive: !prevValues[id].isActive,
+          filters: prevValues[id].filters,
+        },
+      };
+    });
   };
 
-  const handleClickSub = (el: React.MouseEvent<HTMLInputElement>) => {
+  const handleClickSub = (el: React.ChangeEvent<HTMLInputElement>) => {
     const target = el.target as HTMLInputElement;
     const clickedFilterName = target.name;
     const filterType = target.dataset.filtertype as keyof FiltersStateType;
@@ -65,21 +68,23 @@ function FilteredList({ filters, setFilters, data }: FilteredListProps) {
       {/* List main filters */}
       {Object.keys(filters).map((filterName) => {
         return (
-          <li key={`main-filter-${filterName}`}>
-            <input
-              className="pointer"
-              onChange={handleClick}
-              type="checkbox"
-              id={filterName}
-              name={filterName}
-              checked={filters[filterName as keyof FiltersStateType].isActive}
-            />
-            <label className="pointer" htmlFor={filterName}>
-              {filterName}
-            </label>
+          <React.Fragment key={`filter-group-${filterName}`}>
+            <li>
+              <input
+                className="pointer"
+                onChange={handleClick}
+                type="checkbox"
+                id={filterName}
+                name={filterName}
+                checked={filters[filterName as keyof FiltersStateType].isActive}
+              />
+              <label className="pointer" htmlFor={filterName}>
+                {filterName}
+              </label>
+            </li>
             {/* List sub-filters if main is checked */}
             {filters[filterName as keyof FiltersStateType].isActive && (
-              <ul className="list-filter">
+              <ul key={`sub-filter-list-${filterName}`} className="list-filter">
                 {getDifferentElement(filterName as keyof DataModel).map(
                   (el) => {
                     return (
@@ -88,7 +93,10 @@ function FilteredList({ filters, setFilters, data }: FilteredListProps) {
                           className="pointer"
                           data-filtertype={filterName}
                           type="checkbox"
-                          onClick={handleClickSub}
+                          onChange={handleClickSub}
+                          checked={filters[
+                            filterName as keyof FiltersStateType
+                          ].filters.includes(el)}
                           name={el}
                         />
                         <label htmlFor={el}>{el}</label>
@@ -98,7 +106,7 @@ function FilteredList({ filters, setFilters, data }: FilteredListProps) {
                 )}
               </ul>
             )}
-          </li>
+          </React.Fragment>
         );
       })}
     </ul>

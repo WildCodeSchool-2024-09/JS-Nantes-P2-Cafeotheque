@@ -19,7 +19,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     return loggedInUser ? loggedInUser : null;
   });
 
-  const [userData, setUserDataState] = useState(() => {
+  const [userData, setUserDataState] = useState<UserData | null>(() => {
     const savedData = localStorage.getItem("super-secured-database-users");
     const loggedInUser = localStorage.getItem("connected-user");
     if (!loggedInUser || !savedData) return null;
@@ -33,9 +33,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       "super-secured-database-users",
     ) as string;
     const JSONUserData = JSON.parse(localStorageUserData);
-    const userIndex = JSONUserData.findIndex(
-      (obj: UserData) => obj.username === userData?.username,
-    );
+    const userIndex = JSONUserData.findIndex((obj: UserData) => {
+      return obj.username === newUserData.username;
+    });
     JSONUserData[userIndex] = newUserData;
     const newData = JSON.stringify(JSONUserData);
     localStorage.setItem("super-secured-database-users", newData);

@@ -1,5 +1,7 @@
 #profile-page-main-container {
   display: flex;
+  margin: 20px 5% 0 0;
+  width: 95%;
 }
 #filters {
   width: 30%;
