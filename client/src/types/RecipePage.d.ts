@@ -16,16 +16,14 @@ export interface Recipe {
 export interface IngredientsListProps {
   imgSrc: string;
   ingredients: string[];
+  recipeName: string;
 }
 
 export interface PreparationStepsProps {
   preparationSteps: string[];
+  recipeName: string;
 }
 
 export interface RecipeVideoProps {
   videoUrl: string;
-}
-
-export interface RecipeNameProps {
-  recipeName: string;
 }

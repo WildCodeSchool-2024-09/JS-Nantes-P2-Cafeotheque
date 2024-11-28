@@ -1,10 +1,17 @@
 import "/src/pages/RecipePage/IngredientsList.css";
 import type { IngredientsListProps } from "../types/RecipePage";
 
-function IngredientsList({ imgSrc, ingredients }: IngredientsListProps) {
+function IngredientsList({
+  imgSrc,
+  ingredients,
+  recipeName,
+}: IngredientsListProps) {
   return (
     <>
       <aside className="ingredients-list-card">
+        <h1 className="recipe-page-api-title-mobile">
+          {`Idée recette : ${recipeName}`}
+        </h1>
         <img
           className="recipe-image"
           src={`/public/images/${imgSrc}`}

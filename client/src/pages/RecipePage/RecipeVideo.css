@@ -1,5 +1,6 @@
 .container-recipe-video {
   display: flex;
+  justify-content: center;
   padding: 32px;
 }
 

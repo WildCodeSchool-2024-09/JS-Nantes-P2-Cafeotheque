@@ -17,18 +17,16 @@ function RecipePage() {
   return (
     recipe && (
       <body className="body-recipe-page">
-        <h1 className="recipe-page-api-title">
-          {`Idée recette : ${recipe[0].mainContent.recipeName}`}
-        </h1>
-
         <main className="main-recipe-page-card">
           <IngredientsList
             imgSrc={recipe[0].aside.illustration}
             ingredients={recipe[0].aside.ingredients}
+            recipeName={recipe[0].mainContent.recipeName}
           />
           <article className="prep-steps-and-video-card">
             <PreparationSteps
               preparationSteps={recipe[0].mainContent.preparationSteps}
+              recipeName={recipe[0].mainContent.recipeName}
             />
             <RecipeVideo videoUrl={recipe[0].mainContent.videoUrl} />
           </article>

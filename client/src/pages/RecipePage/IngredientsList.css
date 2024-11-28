@@ -1,3 +1,7 @@
+.recipe-page-api-title-mobile {
+  display: none;
+}
+
 .ingredients-list-card {
   display: flex;
   flex-direction: column;
@@ -18,7 +22,7 @@
 }
 
 .recipe-image {
-  width: 25%;
+  width: 55%;
   margin: 32px;
 }
 
@@ -49,6 +53,13 @@
     margin: 0 auto;
   }
 
+  .recipe-page-api-title-mobile {
+    display: flex;
+    text-align: center;
+    font-size: 32px;
+    margin: 16px;
+  }
+
   .recipe-image {
     display: none;
   }
@@ -67,6 +78,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
+  }
+  .el-list-ingredients:before {
+    content: "• ";
   }
 
   .ingredients-list-title {
