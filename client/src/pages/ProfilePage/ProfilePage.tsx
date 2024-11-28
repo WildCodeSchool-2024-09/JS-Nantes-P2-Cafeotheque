@@ -26,7 +26,7 @@ function ProfilePage() {
       const filteredData = filterLikedData(fullData);
       setfullData(filteredData);
       setCurrentData(filteredData);
-      setAnyLiked(false);
+      if (!filteredData.length) setAnyLiked(false);
     };
     fetchData();
   }, []);
