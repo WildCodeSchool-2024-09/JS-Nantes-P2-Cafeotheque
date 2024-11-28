@@ -10,10 +10,7 @@ function CoffeeDetailPage() {
 
   const [data, setData] = useState<DataModel | false | null>(null);
   const [alikeItems, setAlikeItems] = useState<DataModel[]>([]);
-  const [isLiked, setIsLiked] = useState<boolean>(() => {
-    if (!loggedIn || !userData || !id) return false;
-    return userData.likedCoffees.includes(Number.parseInt(id));
-  });
+  const [isLiked, setIsLiked] = useState<boolean>(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,9 +27,11 @@ function CoffeeDetailPage() {
       const startIndex = Math.floor(Math.random() * (alikeItems.length - 3));
       alikeItems = alikeItems.slice(startIndex, startIndex + 4);
       setAlikeItems(alikeItems);
+      if (loggedIn && userData && id)
+        setIsLiked(userData.likedCoffees.includes(Number.parseInt(id)));
     };
     fetchData();
-  }, [id]);
+  }, [id, userData, loggedIn]);
 
   function handleLikeItem() {
     if (!userData || !id) return null;
