@@ -7,12 +7,6 @@ function HomeCards() {
       <section className="container-home-cards">
         <Link to="/coffees">
           <figure>
-            <img src="../public/images/Cafetière.jpg" alt="" />
-            <figcaption id="first-card">Cafetière</figcaption>
-          </figure>
-        </Link>
-        <Link to="/coffees">
-          <figure>
             <img src="../public/images/Café-cards.jpg" alt="" />
             <figcaption id="second-card">Café</figcaption>
           </figure>
