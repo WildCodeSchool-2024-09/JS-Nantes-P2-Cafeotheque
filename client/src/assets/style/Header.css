@@ -2,13 +2,14 @@
 
 header {
   border-bottom: 0.3rem solid rgba(69, 47, 37, 0.4);
+  background-color: rgb(253, 241, 226);
 }
 
 header > nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 16px;
+  padding: 16px;
 }
 
 header > nav > button {

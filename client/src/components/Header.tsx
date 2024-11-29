@@ -33,7 +33,7 @@ function Header() {
               />
             </button>
           ) : (
-            <Link to="/profile">
+            <Link to="/login">
               <img
                 className="avatar-profile"
                 src="../public/images/avatar.png"

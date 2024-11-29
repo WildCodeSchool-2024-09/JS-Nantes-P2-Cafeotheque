@@ -6,8 +6,10 @@
   align-items: flex-start;
 }
 
-.container-central-coffeespages > :first-child {
+.filters-container {
   width: 10vw;
+  font-size: 20px;
+  margin-left: 20px;
 }
 
 .container-central-coffeespages > :last-child {
