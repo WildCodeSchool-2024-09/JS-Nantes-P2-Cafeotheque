@@ -29,7 +29,7 @@
   {
     "id": 2,
     "aside": {
-      "illustration": "affogato.jpg",
+      "illustration": "affogato.png",
       "ingredients": [
         "4 boules de glace à la vanille",
         "4 expressos bien chauds",
@@ -53,7 +53,7 @@
   {
     "id": 3,
     "aside": {
-      "illustration": "moka_cake.jpg",
+      "illustration": "moka_cake.png",
       "ingredients": [
         "200 g de farine",
         "150 g de sucre",
