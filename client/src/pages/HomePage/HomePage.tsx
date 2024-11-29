@@ -5,7 +5,7 @@ import "./homepage.css";
 
 function HomePage() {
   return (
-    <main>
+    <main id="homepage-main-container">
       <HomeNav />
       <LatestArrival />
       <HomeCards />

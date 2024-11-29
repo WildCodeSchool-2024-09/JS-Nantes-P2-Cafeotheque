@@ -1,3 +1,7 @@
 main {
   margin-bottom: 20px;
 }
+#homepage-main-container {
+  display: flex;
+  flex-direction: column;
+}
