@@ -17,6 +17,8 @@ export interface IngredientsListProps {
   imgSrc: string;
   ingredients: string[];
   recipeName: string;
+  recipeList: Recipe[] | null;
+  handleOnChange: (event: ChangeEvent<HTMLSelectElement>) => void;
 }
 
 export interface PreparationStepsProps {
