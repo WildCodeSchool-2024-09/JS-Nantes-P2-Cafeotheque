@@ -14,7 +14,7 @@ function Header() {
   }
   return (
     <>
-      <header>
+      <header className="header-component-container">
         <nav>
           <Link to="/">
             <img

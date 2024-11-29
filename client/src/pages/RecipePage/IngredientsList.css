@@ -1,11 +1,15 @@
-.ingredients-list-container {
+.recipe-page-api-title-mobile {
+  display: none;
+}
+
+.ingredients-list-card {
   display: flex;
-  width: 20%;
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
   background-color: #a27c67;
-  padding: 16px;
+  padding: 20px;
+  width: 25%;
 }
 
 .ingredients-list-title {
@@ -14,9 +18,10 @@
   padding: 16px;
   padding-bottom: 3px;
   align-items: center;
+  color: #452f25;
 }
 
-.tiramisu-ingredients-list {
+.recipe-image {
   width: 55%;
   margin: 32px;
 }
@@ -30,4 +35,58 @@
 
 .el-list-ingredients {
   padding: 8px;
+  color: #452f25;
+}
+
+/* Media Queries */
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .ingredients-list-card {
+    width: 100%;
+    position: inherit;
+    background-color: #ffffff;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  .recipe-page-api-title-mobile {
+    display: flex;
+    text-align: center;
+    font-size: 32px;
+    margin: 16px;
+  }
+
+  .recipe-image {
+    display: none;
+  }
+
+  .ingredients-list-title-section {
+    width: 100%;
+  }
+
+  .ingredients-list-title-section > h2 {
+    border: 1px solid #452f25;
+    padding: 16px;
+    align-items: center;
+  }
+
+  .ingredients-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .el-list-ingredients:before {
+    content: "• ";
+  }
+
+  .ingredients-list-title {
+    margin: 8px;
+    border: 1px solid #452f25;
+    padding: 16px;
+    align-self: flex-start;
+  }
 }

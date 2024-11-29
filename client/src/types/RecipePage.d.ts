@@ -7,7 +7,7 @@ export interface Recipe {
   };
 
   mainContent: {
-    name: string;
+    recipeName: string;
     preparationSteps: string[];
     videoUrl: string;
   };
@@ -16,11 +16,12 @@ export interface Recipe {
 export interface IngredientsListProps {
   imgSrc: string;
   ingredients: string[];
+  recipeName: string;
 }
 
 export interface PreparationStepsProps {
-  name: string;
   preparationSteps: string[];
+  recipeName: string;
 }
 
 export interface RecipeVideoProps {
