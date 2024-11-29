@@ -10,9 +10,6 @@ function WorldCoffeePage() {
   return (
     <>
       <section className="container-world-coffee">
-        <section>
-          <input type="text" placeholder="Trouve ton café dans le monde..." />
-        </section>
         <figure className="container-world-image">
           <button
             onClick={() => handleClick("colombie")}
