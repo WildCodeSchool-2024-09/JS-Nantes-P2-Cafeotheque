@@ -14,19 +14,6 @@
   padding: 4%;
 }
 
-/* Barre de recherche */
-
-.container-world-coffee > section > input {
-  width: 40rem;
-  height: 60px;
-  border-radius: 15px;
-  font-size: x-large;
-  padding: 16px;
-  font-style: oblique;
-  border: solid black 2px;
-  background-color: rgb(255, 223, 206);
-}
-
 /* Container World  */
 
 .container-world-image {
@@ -40,7 +27,7 @@
   width: 80%;
   border-radius: 10px;
   border: solid white 2px;
-  margin: 3% 10% 10% 10%;
+  margin: 3% 10% 3% 10%;
 }
 
 /* Button map */
