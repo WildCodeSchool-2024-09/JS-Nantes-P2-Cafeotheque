@@ -1,0 +1,19 @@
+#validation-message {
+  --Validation-color: rgb(26 189 28);
+  border: var(--Validation-color) 1px solid;
+  color: var(--Validation-color);
+  padding: 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  animation: fadeIn 1s ease-out;
+  text-align: center;
+  margin: 16px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

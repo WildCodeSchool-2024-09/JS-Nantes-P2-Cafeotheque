@@ -2,6 +2,7 @@ import "./RegisterPage.css";
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import ErrorDisplay from "../../components/ErrorDisplay";
+import ValidationDisplay from "../../components/ValidationDisplay";
 import type { UserData } from "../../types/userData";
 import { useAuth } from "../../utils/context/AuthContext";
 
@@ -24,6 +25,9 @@ function RegisterPage() {
     subscribe: false,
   });
   const [errorMessage, setErrorMessage] = useState<null | string>(null);
+  const [validationMessage, setValidationMessage] = useState<null | string>(
+    null,
+  );
 
   const { loggedIn } = useAuth();
 
@@ -73,6 +77,15 @@ function RegisterPage() {
       data.password === data.confirmPassword
     ) {
       setErrorMessage(null);
+      setValidationMessage("Vous voilà inscrit !");
+      setFormValues({
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+        acceptedConditions: false,
+        subscribe: false,
+      });
       return true;
     }
   }
@@ -183,6 +196,7 @@ function RegisterPage() {
           </label>
         </div>
       </form>
+      {validationMessage && <ValidationDisplay message={validationMessage} />}
       {errorMessage && <ErrorDisplay message={errorMessage} />}
       <div id="button-container">
         <Link to="/login">Se connecter</Link>
